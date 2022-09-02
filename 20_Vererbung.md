@@ -102,7 +102,7 @@ class Mensch : Lebewesen
 <!-- .slide: class="left" -->
 ### Base
 
-Um aus einer abgeleiteten Klasse auf die Basisklasse zuzugreifen gibt es das Schlüsselwort **base**:
+Um aus einer abgeleiteten Klasse auf die Basisklasse zuzugreifen gibt es das Schlüsselwort [Base](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/base):
 
 * Einen Konstruktor der Basisklasse aufrufen:
 
@@ -141,5 +141,6 @@ In **VS** zeigen:
 
 Note: In **VS** zeigen.
 Zeigen: Beispiel 33_Vererbung virtual override
+Je nach Zeit gibt es später hierzu mehr.
 
 ÜBUNG Flugzeug

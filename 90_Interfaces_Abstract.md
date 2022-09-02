@@ -106,17 +106,21 @@ class Zeitschriften : Medien {
 
   * Ein Interface besitzt nur Definitionen von öffentlichen Eigenschaften und Methoden welche später selbst ausprogrammiert werden müssen.
 
+  * Kein Konstruktor möglich
+
 * abstrakte Klasse:
 
   * Es kann nur von einer abstrakten Klasse geerbt werden.
 
   * Eine abstrakte Klasse kann Felder und Methoden vererben und zusätzlich Methodenrümpfe (Methodendefinitionen) definieren die implementiert werden und ausprogrammiert werden müssen.
 
+  * Konstruktoren können definiert werden
+
 
 <!-- .slide: class="left" -->
 **Interfaces benutzen** um inhaltlich verschiedenen Klassen eine bestimmte Funktionalität zu bieten.
 
-**Abstrakte Klassen nutzen** als Basisklasse um inhaltlich gleichen Klassen eine gemeinsame Basis zu geben und zu erzwingen das bestimmte Methoden implementiert
+**Abstrakte Klassen nutzen** als Basisklasse um inhaltlich gleichen Klassen eine gemeinsame Basis (die aber verändert oder erweitert werden kann) zu geben und zu erzwingen das bestimmte Methoden implementiert
 werden.
 
-Note: Übung Medienverwaltung 5
+Note: Übung Medienverwaltung 6 (fehlt noch)

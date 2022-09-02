@@ -89,10 +89,6 @@ static void Main(string[] args)
 }
 ```
 
-Note: **VS** Exception herbeirufen (z.B. Verwendung eines null-Objects). Abfangen zeigen
-
-Zeigen: Bedingte Breakpoints
-
 
 <!-- .slide: class="left" -->
 ## Übersicht Exceptions
@@ -102,3 +98,69 @@ Zeigen: Bedingte Breakpoints
 [Liste über System-Exceptions](https://www.completecsharptutorial.com/basic/complete-system-exception.php) und [eigene Exceptions](https://docs.microsoft.com/de-de/dotnet/standard/exceptions/how-to-create-user-defined-exceptions)
 
 Note: Datei Fehler z.B. in System.IO Namespace
+
+
+<!-- .slide: class="left" -->
+## Throw
+
+Mit [Throw](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/throw) kann eine Exception manuell ausgelöst werden. 
+
+```csharp
+public class NumberGenerator
+{
+   int[] numbers = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 };
+
+   public int GetNumber(int index)
+   {
+      if (index < 0 || index >= numbers.Length)
+      {
+         throw new IndexOutOfRangeException();
+      }
+      return numbers[index];
+   }
+}
+```
+
+<!-- .slide: class="left" -->
+```csharp
+public static void Main()
+{
+  var gen = new NumberGenerator();
+  int index = 10;
+  try
+  {
+      int value = gen.GetNumber(index);
+      Console.WriteLine($"Retrieved {value}");
+  }
+  catch (IndexOutOfRangeException e)
+  {
+      Console.WriteLine($"{e.GetType().Name}: {index} is outside the bounds of the array"); 
+      // IndexOutOfRangeException: 10 is outside the bounds of the array
+  }
+}
+```
+
+Note: **VS** Exception herbeirufen (z.B. Verwendung eines null-Objects). Abfangen zeigen. Throw zweigen. Bedingte Breakpoints.
+
+
+<!-- .slide: class="left" -->
+## Eigene Ausnahmen
+
+C# beinhaltet einige vordefinierte Fehlerklassen. Jedoch kann es sinnvoll sein, wenn die Geschäftslogik fehlschlägt, eine [benutzerdefinierte Ausnahmeklasse](https://docs.microsoft.com/de-de/dotnet/standard/exceptions/how-to-create-user-defined-exceptions) zu verwenden.
+
+z.B. NotFound, Forbidden, ForeignApiCall, BadArgument
+
+```csharp
+[Serializable]
+public class InvalidStudentNameException : Exception
+{
+    public InvalidStudentNameException() 
+    {  
+    }
+
+    public InvalidStudentNameException(string name)
+        : base(name)
+    {
+    }
+}
+```

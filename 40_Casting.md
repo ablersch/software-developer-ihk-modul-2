@@ -26,6 +26,28 @@ zahl = (int)d; explizit (auch mit Convert möglich)
 
 
 <!-- .slide: class="left" -->
+## Umwandeln nach String
+
+Geht mit allen Objekten die die Methode `ToString()` von  der Klasse System.Object erben.
+
+Die ToString-Methode wandelt den aktuellen Wert einer beliebigen Variablen in eine Textdarstellung um. Einige Typen können nicht sinnvoll als Text dargestellt werden, so dass sie ihren Namespace und Typnamen zurückgeben.
+
+```csharp
+int number = 12;
+WriteLine(number.ToString()); // 12
+
+bool boolean = true;
+WriteLine(boolean.ToString()); // True
+
+DateTime now = DateTime.Now;
+WriteLine(now.ToString()); // aktuelles Datum
+
+object me = new object();
+WriteLine(me.ToString()); // System.Object
+```
+
+
+<!-- .slide: class="left" -->
 ## Beispiel
 
 ```csharp

@@ -11,7 +11,7 @@ Nachteile:
 
 * Die Größe muss festgelegt werden
 
-* Array ist statisch (Größe kann nicht automatisch angepasst werden)
+* Arrays sind statisch (Größe kann nicht automatisch angepasst werden)
 
 * Index bleibt vorhanden wenn ein Element gelöscht wird
 
@@ -35,7 +35,7 @@ Note: **VS** autom Auflösung zeigen
 <!-- .slide: class="left" -->
 ## ArrayList
 
-Eine häufig verwendete Klasse für Aufzählungen ist die Klasse [ArrayList](https://docs.microsoft.com/de-de/dotnet/api/system.collections.arraylist?view=netframework-4.7.2).
+Eine häufig verwendete Klasse für Aufzählungen ist die Klasse [ArrayList](https://docs.microsoft.com/de-de/dotnet/api/system.collections.arraylist?view=net-6.0).
 
 Damit diese verwendet werden kann, muss der folgende Namespace in das
 Projekt eingebunden werden:
@@ -55,7 +55,8 @@ arrayList.Add("text");
 Console.WriteLine($"Elemente: {arrayList.Count}");
 
 // Der Typ wird beim Kompilieren des Codes festgelegt
-foreach (var element in arrayList) {
+foreach (var element in arrayList) 
+{
      Console.WriteLine(element);
 }
 arrayList[1] = 10;
@@ -68,7 +69,7 @@ Console.WriteLine("2. Element: " + arrayList[1]);
 
 Bei einer Liste mit Indizes muss man die Liste so lange durchlaufen bis man eine Übereinstimmung gefunden hat. Bei sehr vielen Einträgen, kann das sehr zeitaufwendig und rechenintensiv sein.
 
-Kommt es nicht auf die Reihenfolge der Elemente an, kann man sich für eine [Hashtabelle](https://docs.microsoft.com/de-de/dotnet/api/system.collections.hashtable?view=netframework-4.7.2) entscheiden. Dort kann ein bestimmtes Element zwar schnell gefunden werden, hat aber keinen Einfluss auf die Positionierung der Elemente in der Liste.
+Kommt es nicht auf die Reihenfolge der Elemente an, kann man sich für eine [Hashtabelle](https://docs.microsoft.com/de-de/dotnet/api/system.collections.hashtable?view=net-6.0) entscheiden. Dort kann ein bestimmtes Element zwar schnell gefunden werden, hat aber keinen Einfluss auf die Positionierung der Elemente in der Liste.
 
 * Elemente können schnell gefunden werden (über Hashcodes)
 
@@ -121,7 +122,7 @@ Projekt eingebunden werden:
 using System.Collections.Generics;
 ```
 
-Mehr zum Thema [List](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1?view=netframework-4.7.2)
+Mehr zum Thema [List](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1?view=net-6.0)
 
 
 <!-- .slide: class="left" -->
@@ -151,7 +152,7 @@ foreach (int i in liste) {
 <!-- .slide: class="left" -->
 ## Dictionary `<TKey, TValue>`
 
-* Das [Dictionary](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2?view=netframework-4.7.2) Stellt eine Auflistung von Schlüsseln und Werten dar
+* Das [Dictionary](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0) Stellt eine Auflistung von Schlüsseln und Werten dar
 
 * Sehr effizient und schnelles Nachschlagen mit Schlüsseln (ist einer Hashtabelle oder einer Liste vorzuziehen)
 
@@ -182,7 +183,7 @@ if (dictionary.TryGetValue("tier1", out tempString)) {
 }
 
 foreach (KeyValuePair<string, string> pair in dictionary) {
-     Console.WriteLine($"Key: {pair.Key} Wert: {pair.Value});
+     Console.WriteLine($"Key: {pair.Key} Wert: {pair.Value}");
 }
 ```
 

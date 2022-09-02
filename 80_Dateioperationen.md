@@ -6,17 +6,17 @@ Mit Dateien arbeiten
 <!-- .slide: class="left" -->
 ## Allgemein
 
-Das .Net Framework stellt im `System.IO` Namespace viele Klassen für Dateioperationen zur Verfügung.
+.Net stellt im `System.IO` Namespace viele Klassen für Dateioperationen zur Verfügung.
 
-* Klassen [StreamReader](https://docs.microsoft.com/de-de/dotnet/api/system.io.streamreader?view=netframework-4.7.2) und [StreamWriter](https://docs.microsoft.com/de-de/dotnet/api/system.io.streamwriter?view=netframework-4.7.2) um Text aus Dateien zu lesen bzw. zu schreiben.
+* Klassen [StreamReader](https://docs.microsoft.com/de-de/dotnet/api/system.io.streamreader?view=net-6.0) und [StreamWriter](https://docs.microsoft.com/de-de/dotnet/api/system.io.streamwriter?view=net-6.0) um Text aus Dateien zu lesen bzw. zu schreiben.
 
-* Klassen [File (static)](https://docs.microsoft.com/de-de/dotnet/api/system.io.file?view=netframework-4.7.2) und [FileInfo](https://docs.microsoft.com/de-de/dotnet/api/system.io.fileinfo?view=netframework-4.7.2) um Dateiinfos anzeigen zu lassen. Werden viele solcher Operationen durchgeführt ist FileInfo zu bevorzugen.
+* Klassen [File (static)](https://docs.microsoft.com/de-de/dotnet/api/system.io.file?view=net-6.0) und [FileInfo](https://docs.microsoft.com/de-de/dotnet/api/system.io.fileinfo?view=net-6.0) um Dateiinfos anzeigen zu lassen. Werden viele solcher Operationen durchgeführt ist FileInfo zu bevorzugen.
 
   * Dateigröße ermitteln
   * Prüfung ob Datei existiert
   * Erstelldatum, Letzte Änderung usw.
 
-* Die Klassen [Directory (static)](https://docs.microsoft.com/de-de/dotnet/api/system.io.directory?view=netframework-4.7.2) und [DirectoryInfo](https://docs.microsoft.com/de-de/dotnet/api/system.io.directoryinfo?view=netframework-4.7.2) um mit Ordnern zu arbeiten.
+* Die Klassen [Directory (static)](https://docs.microsoft.com/de-de/dotnet/api/system.io.directory?view=net-6.0) und [DirectoryInfo](https://docs.microsoft.com/de-de/dotnet/api/system.io.directoryinfo?view=net-6.0) um mit Ordnern zu arbeiten.
   * Dateien eines Ordner lesen
   * Prüfung ob Ordner existiert
   * Order erstellen
@@ -36,16 +36,16 @@ using (StreamWriter writer = new StreamWriter("C:\\log.txt") ) {
 Aus Datei lesen
 
 ```csharp
-using (StreamReader reader = new StreamReader(@"c:\log.txt") ) {
-    string einlesen = reader.ReadToEnd();
-}
+// using declaration syntax
+using StreamReader reader = new StreamReader(@"c:\log.txt"); 
+string einlesen = reader.ReadToEnd();
 ```
 
 Aus Datei lesen mit `FileInfo`
 
 ```csharp
-FileInfo fileInfo = new FileInfo(pfad);
-StreamReader streamReader = fileInfo.OpenText();
+var fileInfo = new FileInfo(pfad);
+var streamReader = fileInfo.OpenText();
 string line;
 // solange lesen solange nicht null zurück kommt
 while ((line = streamReader.ReadLine()) != null) {
@@ -56,7 +56,7 @@ streamReader.Dispose();
 
 Note: **VS** Dateioperationen
 
-Filestream vs StreamWriter: StreamWriter (TextWriter) ist ein Stream Decoder um Text zu schreiben.
+FileStream vs StreamWriter: StreamWriter (TextWriter) ist ein Stream Decoder um Text zu schreiben.
 
 FileStream konvertiert Textdateien in byte[]
 
@@ -111,6 +111,12 @@ using (Klassenname objektname = new Klassenname() )
 }
 ```
 
+```csharp
+// Using declaration C# 8
+using Klassenname objektname = new Klassenname();
+objektname.xxxx;
+```
+
 
 <!-- .slide: class="left" -->
 ### Beispiel
@@ -146,6 +152,6 @@ try {
 } catch (Exception e) {}
 ```
 
-Note: ÜBUNG Logger, Dateien einlesen und Medienverwaltung Aufgabe 4
+Note: ÜBUNG Logger, Dateien einlesen und Medienverwaltung Aufgabe 5
 
 Test mit der DLL vom Nebensitzer oder von mir

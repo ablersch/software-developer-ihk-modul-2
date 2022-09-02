@@ -32,7 +32,7 @@ Mehr zum Thema [objektorientierte Programmierung](https://entwickler.de/online/d
 
 
 <!-- .slide: class="left" -->
-# Klassen
+## Klassen
 
 *Eine Klasse ist ein Modell auf dessen Basis Objekte erstellt werden.*
 
@@ -47,7 +47,7 @@ Mehr zum Thema [objektorientierte Programmierung](https://entwickler.de/online/d
 
 
 <!-- .slide: class="left" -->
-## Syntax der Klassendefinition
+### Syntax der Klassendefinition
 
 * Die Klassendeklaration beginnt mit dem Schlüsselwort **class**.
 
@@ -65,7 +65,7 @@ Mehr zum Thema [objektorientierte Programmierung](https://entwickler.de/online/d
 
 
 <!-- .slide: class="left" -->
-## Zugriffsmodifizierer
+### Zugriffsmodifizierer
 
 Die Zugriffsmodifizierer steuern die Sichtbarkeit der Variablen, Eigenschaften und
 Methoden einer Klasse in C\#. Sie heißen:
@@ -88,7 +88,7 @@ Methoden einer Klasse in C\#. Sie heißen:
 
 
 <!-- .slide: class="left" -->
-## Unsere erste Klasse
+### Unsere erste Klasse
 
 ```csharp
 public class Person // Variablen und Methoden
@@ -99,14 +99,14 @@ public class Person // Variablen und Methoden
 
     public string GetName()
     {
-        return vorname + " " + nachname;
+        return $"{vorname} {nachname}";
     }
 }
 ```
 
 
 <!-- .slide: class="left" -->
-## Klasseninstanzen (Objekte) erzeugen
+### Klasseninstanzen (Objekte) erzeugen
 
 * In C\# werden Instanzen einer Klasse **immer** dynamisch mit **new** erzeugt.
 
@@ -121,7 +121,7 @@ meinePerson = new Person();
 
 
 <!-- .slide: class="left" -->
-## Zugriff auf die Member eines Objekts
+### Zugriff auf die Member eines Objekts
 
 Der Zugriff auf die Member (Attribute) eines Objekts erfolgt über den
 Punktoperator.
@@ -136,7 +136,7 @@ Note: **VS** Klasse erzeugen und nutzen. In **VS** zeigen, Sichtbarkeit von Vari
 
 
 <!-- .slide: class="left" -->
-## Was ist Kapselung
+### Was ist Kapselung
 
 * Die Attribute (Variablen) werden in einer Klasse eingeschlossen und nach außen abgeschirmt (mit Zugriffsmodifizierer).
 
@@ -150,17 +150,17 @@ Note: Prüfen auf Schwellwerte oder entfernen von Leerzeichen
 
 
 <!-- .slide: class="left" -->
-## Darstellung Kapselung
+### Darstellung Kapselung
 
 ![Klassenkapselung](images/Klassenkapselung.png)
 
-Note: Variabeln sind nur intern nutzbar wenn diese private sind
+Note: Variablen sind nur intern nutzbar wenn diese private sind.
 
 Methoden sind meist nach außen sichtbar und greifen auf die geschützten Variablen zu.
 
 
 <!-- .slide: class="left" -->
-## Eigenschaften
+### Eigenschaften
 
 Um die Kapselung zu erreichen werden die Attribute **private** deklariert. Der Zugriff erfolgt über eine [Property (Eigenschaft)](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/properties).
 
@@ -177,14 +177,14 @@ public class Person
         set {alter = value;} // value beinhaltet den übergebenen Wert
     }
 
-    // Alternative expression-bodied members (return nicht notwendig)
+    // Alternative: Expression-bodied members (return nicht notwendig)
     //public int Alter
     //{
     //    get => alter;
     //    set => alter = value;
     //}
 
-    // Alternative automatic Property
+    // Alternative: Automatic Property
     // Dabei ist auch keine Klassenvariable mehr notwendig
     // public int Alter { get; set; }
 }
@@ -197,6 +197,7 @@ Zuweisung von Wert wie bei einer Variable (nicht a.SetName("aa"))
 In einer Eigenschaft sind getter und setter inkludiert.
 * Werte können beim lesen und schreiben geprüft bzw bearbeitet werden
 * Schreib- oder Lesezugriff einschränkbar
+* Name mit Großbuchstabe (wie Klasse)
 
 <!-- .slide: class="left" 
 ## Klassen- & Instanzvariablen
@@ -229,7 +230,7 @@ int cClass = Person.classCount;
 
 
 <!-- .slide: class="left" -->
-## Objektreferenz - THIS
+### Objektreferenz - THIS
 
 * Zusammen mit jedem Objekt wird vom Compiler automatisch eine Objektreferenz auf das eigene Objekt erzeugt.
 
@@ -243,7 +244,7 @@ Identifizieren von Variablen mit gleichem Namen
 
 
 <!-- .slide: class="left" -->
-### Beispiel
+#### Beispiel
 
 ```csharp
 using System;
@@ -278,9 +279,9 @@ namespace Objektreferenz
 
 
 <!-- .slide: class="left" -->
-# Konstruktor & Destruktor
+## Konstruktor & Destruktor
 
-Jede Klasse enthält mindestens einen Konstruktor und einen Destruktor/Finalizer.
+Jede Klasse enthält mindestens einen Konstruktor und einen Destruktor (Finalizer).
 Bei der Erzeugung eines Objekts wird automatisch der Konstruktor
 aufgerufen. Innerhalb des Konstruktors können dann zum Beispiel
 Attribute der Klasse initialisiert oder Variablen mit Standardwerten
@@ -294,9 +295,9 @@ Konstruktor und Destruktor bereit. Es können eigene Konstruktoren und Destrukto
 
 
 <!-- .slide: class="left" -->
-## Konstruktor
+### Konstruktor
 
-* Der Konstruktor ist eine spezielle Methode einer Klasse (kann aber nicht manuell aufgerufen werden)
+* Der [Konstruktoren](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/constructors) ist eine spezielle Methode einer Klasse (kann aber nicht manuell aufgerufen werden)
 
 * Der Konstruktor wird **automatisch beim Instanziieren** (Erzeugen) eines Objekts aufgerufen.
 
@@ -311,25 +312,23 @@ Konstruktor und Destruktor bereit. Es können eigene Konstruktoren und Destrukto
 
 * Er kann nicht wie eine andere Methode aufgerufen werden, sondern wird immer automatisch beim Erzeugen eines Objekts aufgerufen.
 
-* Der Konstruktor ist außerhalb der Klasse aufrufbar; deshalb **muss** er als **public** definiert werden.
+* Der Konstruktor ist außerhalb der Klasse aufrufbar, deshalb **muss** er als **public** definiert werden.
 
 * Auch Konstruktoren können überladen werden, es können verschiedene Parameterlisten mitgegeben werden.<br/>
 --> Bei der Erzeugung eines Objekts **müssen die Parameter mit übergeben werden**.
-
-* Mehr zum Thema [Konstruktoren](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/constructors)
 
 Note: private Konstruktor: wenn die Klasse nicht initialisiert werden soll
 
 
 <!-- .slide: class="left" -->
-### Syntax
+#### Syntax
 
 **Standard-Konstruktor welcher automatisch aufgerufen wird:**
 
 ```csharp
 class Person
 {
-    //Standard-Konstruktor. Gleicher Name wie die Klasse und kein Rückgabewert
+    // Gleicher Name wie die Klasse und kein Rückgabewert
     public Person()
     {
     }
@@ -344,7 +343,7 @@ string vorname;
 
 public Person()
 {
-    //Initialisierung mit festen Werten
+    // Initialisierung mit festen Werten
     name = "Name unbekannt";
     vorname = "Vorname unbekannt";
 }
@@ -352,7 +351,7 @@ public Person()
 
 
 <!-- .slide: class="left" -->
-### Beispiel Konstruktor
+#### Beispiel Konstruktor
 
 ```csharp
     class Person
@@ -360,7 +359,7 @@ public Person()
       private string name;
       private string vorname;
 
-      public Person()  //Standardkonstruktor
+      public Person()  //Standard-Konstruktor
       {
         name = "unbekannt";
         vorname = "unbekannt";
@@ -378,40 +377,31 @@ Note: Werden Konstruktoren definiert gibt es kein Default Konstruktor mehr
 
 
 <!-- .slide: class="left" -->
-### Beispiel
+#### Beispiel
 
 ```csharp
-namespace BeispielKonstruktor
+class Fahrzeug
 {
-    class Fahrzeug
+    public int Geschwindigkeit { get; set; } // Property/Eigenschaft
+
+    public Fahrzeug(int wert)
     {
-        private int aktuelleGeschwindigkeit;
-
-        public int Geschwindigkeit // Property/Eigenschaft
-        {
-            get { return this.aktuelleGeschwindigkeit; }
-            set { this.aktuelleGeschwindigkeit = value; }
-        }
-
-        public Fahrzeug(int wert)
-        {
-            Geschwindigkeit = wert;
-        }
-
-        public Fahrzeug() : this(0) //Verweis auf Konstruktor mit einem Parameter
-        {
-        }
+        Geschwindigkeit = wert;
     }
 
-    class Program
+    public Fahrzeug() : this(0) //Verweis auf den Konstruktor mit einem Parameter
     {
-        static void Main(string[] args)
-        {
-            Fahrzeug audi = new Fahrzeug();
-            Fahrzeug bmw = new Fahrzeug(38);
-            Console.WriteLine($"Geschwindigkeit Audi: {audi.Geschwindigkeit} km/h");
-            Console.WriteLine("Geschwindigkeit Bmw: " + bmw.Geschwindigkeit + " km/h" );
-        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Fahrzeug audi = new Fahrzeug();
+        var bmw = new Fahrzeug(38);
+        Console.WriteLine($"Geschwindigkeit Audi: {audi.Geschwindigkeit} km/h");
+        Console.WriteLine($"Geschwindigkeit Bmw: {bmw.Geschwindigkeit} km/h");
     }
 }
 ```
@@ -424,9 +414,9 @@ Initialisierungscode sollte in nur einem Konstruktor sein der von anderen aufger
 
 
 <!-- .slide: class="left" -->
-## Destruktor (Finalizer)
+### Destruktor (Finalizer)
 
-* Der Destruktor einer Klasse wird beim **Zerstören** eines Objekts aufgerufen.
+* Der [Destruktor (Finalizer)](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/destructors) einer Klasse wird beim **Zerstören** eines Objekts aufgerufen.
 
 * Er besitzt **keine Parameter**, keine Zugriffsmodifizierer und kann **nicht überladen** werden.
 
@@ -438,11 +428,9 @@ Initialisierungscode sollte in nur einem Konstruktor sein der von anderen aufger
 
 * Er kann nicht direkt aufgerufen werden.
 
-* Mehr zum Thema [Destruktor/Finalizer](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/destructors)
-
 
 <!-- .slide: class="left" -->
-### Syntax
+#### Syntax
 
 ```csharp
 

@@ -37,7 +37,7 @@ LINQ-Abfragen geben Ergebnisse als Objekte zurück. So können Sie einen objekto
 * **Lesbarer Code:** LINQ macht den Code besser lesbar (leicht verstehen und pflegen).
 * **Standardisierte Art der Abfrage mehrerer Datenquellen:** Die gleiche LINQ-Syntax kann für die Abfrage mehrerer Datenquellen verwendet werden.
 * **Kompilierzeitsicherheit von Abfragen:** Es bietet Typüberprüfung von Objekten zur Kompilierzeit.
-* **IntelliSense-Unterstützung:** LINQ bietet IntelliSense für generische Sammlungen.
+* **IntelliSense-Unterstützung:** LINQ bietet IntelliSense an.
 
 
 <!-- .slide: class="left" -->
@@ -110,11 +110,16 @@ Verbinden | GroupJoin, Join
 Projektion | Select, SelectMany
 Aggregation | Aggregate, Average, Count, LongCount, Max, Min, Sum
 Quantifizieren | All, Any, Contains
-Elements | ElementAt, ElementAtOrDefault, First, FirstOrDefault, Last, LastOrDefault, Single, SingleOrDefault
+
+
+<!-- .slide: class="left" -->
+Klassifizierung | Standard Query Operatoren
+--------------- | ------------------------
+Element | ElementAt, ElementAtOrDefault, First, FirstOrDefault, Last, LastOrDefault, Single, SingleOrDefault
 Set | Distinct, Except, Intersect, Union
 Aufteilung | Skip, SkipWhile, Take, TakeWhile
 Verkettung | Concat
-Equality | SequenceEqual
+Gleichheit | SequenceEqual
 Generation | DefaultEmpty, Empty, Range, Repeat
 Konvertierung | AsEnumerable, AsQueryable, Cast, ToArray, ToDictionary, ToList
 
@@ -142,13 +147,15 @@ var names = users.Select(x => x.Name).ToList();
 var temp = users.Where(x => x.Age == 8).FirstOrDefault();
 var temp = users.First(x => x.Age == 10); // Exception
 
-// Wieviele Elemente gibt es welche ein Alter größer 20 haben
+// Wieviel Elemente gibt es welche ein Alter größer 20 haben
 int count = users.Where(x => x.Age > 20).Count();
+// Bessere ALternative
 int count = users.Count(x => x.Age > 20);
 
 List<User> sortedUsers = users.OrderBy(user => user.Age).ThenByDescending(user => user.Name).ToList();
 
 ```
+
 
 <!-- .slide: class="left" -->
 ### Konvertierungsoperatoren
@@ -157,14 +164,12 @@ Die Konvertierungsoperatoren in LINQ sind nützlich, um den Typ der Elemente in 
 
 Methode | Beschreibung
 -------| -----------
-AsEnumerable | Returns the input sequence as `IEnumerable<t>`
-AsQueryable |Converts IEnumerable to IQueryable, to simulate a remote query provider
-ToArray | Converts a collection to an array
+AsEnumerable | Gibt die Eingabe zurück als `IEnumerable<t>`
+AsQueryable | Konvertiert die Eingabe zu einem IQueryable um einen Suchprovider zu simulieren.
+ToArray | Konvertiert die EIngabe in ein Array
 ToDictionary | Fügt Elemente in ein Dictionary ein, das auf einer Schlüsselselektor-Funktion basiert
 ToList | Konvertiert eine Collection in eine Liste
 
-TODO: Mehr Beispiele wo die Funktionen gezeigt werden.
-zeigen Umwandlung und Zugriff auf eine LINQ abfrage
-
 Note: 
-**ÜBUNG** Linq
+Zeigen LINQ in VS
+**ÜBUNG** LINQ
