@@ -4,20 +4,28 @@ b- Blackscreen
 space - nächste Folie
 s - Speaker notes
 ALT+ links Klick - Zoom
+Print View: http://localhost:8000/?print-pdf
 -->
 # Kurs Organisation
 
 Ablauf, Termine, Prüfungen, etc.
 
-Note: Persönliche Vorstellung von den Teilnehmern und mir mit Vorkenntnisse
+Note: 
+* Persönliche Vorstellung der Teilnehmer mit Ihren Programmiervorkenntnissen
+* Sitzplan
 
+---
 
 <!-- .slide: class="left" -->
 ## Kurs Organisation
 
-* [Modul Material (Skript und Übungen)](https://github.com/ablersch/software-developer-ihk-modul-2) von GitHub
-* [Stundenplan](Stundenplan_SoftwareDeveloper.pdf)
+* [Skript und Übungen](https://github.com/ablersch/software-developer-ihk-modul-2) von GitHub (https://github.com/ablersch)
+* Stundenplan folgt
 
+Note: 
+* Anmeldung Rechner
+
+---
 
 <!-- .slide: class="left" -->
 ## Ablauf
@@ -37,8 +45,9 @@ Samstags:
     * 10:00 - 10:15 Uhr
     * 11:30 - 12:00 Uhr
 
+---
 
-<!-- .slide: class="left" -->
+<!-- .slide: class="left"-->
 ## Module
 
 | Modul | Punkte |
@@ -48,6 +57,7 @@ Samstags:
 | Modul III - C# GUI und Webanwendungen| 25 |
 | Modul IV - Projektarbeit | 25 |
 
+---
 
 <!-- .slide: class="left" -->
 ## Prüfungen
@@ -60,19 +70,21 @@ Samstags:
 * Projektarbeit
   * Das gelernte in einem kleinen Projekt umsetzen
 
+---
 
 <!-- .slide: class="left" -->
 ## Projektarbeit
 
-Das Projekt muss als reines Softwareprojekt mit einem Zeitaufwand von 30-32
+Das Projekt muss als reines Softwareprojekt mit einem Zeitaufwand von ca 30
 Stunden ausgeführt werden. Es muss eine Projektdokumentation erstellt und
 abgegeben werden welche folgende Bestandteile beinhaltet:
 
-* Ist-Analyse
-* Soll-Zustandsbeschreibung
-* Ziel/Aufgabe der Anwendung
+* Ziel und Aufgabe der Anwendung
 * Dokumentation der Anwendung
 
+Die Anwendung muss beim Dozenten ausführbar sein. D.h. notwendige Abhängigkeiten (Datenbanken, Dateien, Konfiguration) mit abgeben.
+
+---
 
 <!-- .slide: class="left" -->
 ### Ziel der Projekte
@@ -80,11 +92,12 @@ abgegeben werden welche folgende Bestandteile beinhaltet:
 Bearbeitung einer programmiertechnischen Aufgaben- bzw. Fragestellung, die
 
 * Selbständig oder in der Gruppe (wird das Projekt in der Gruppe erarbeitet muss definiert werden wer für welchen Teil zuständig ist)
-* in einer vorgegebenen Frist
+* in einer vorgegebenen Zeit
 * theoretisch fundiert und/oder anwendungsorientiert
 * unter Berücksichtigung des Kenntnisstandes
 * unter Berücksichtigung fachübergreifender Zusammenhänge bearbeitet wird.
 
+---
 
 <!-- .slide: class="left" -->
 ### Themenbereiche

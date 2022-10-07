@@ -2,6 +2,7 @@
 
 Werte umwandeln
 
+---
 
 <!-- .slide: class="left" -->
 ## Casting (Umwandlung bzw. Typkonvertierung)
@@ -24,6 +25,7 @@ int -> Double implizit (autom vom Compiler)
 
 zahl = (int)d; explizit (auch mit Convert möglich)
 
+---
 
 <!-- .slide: class="left" -->
 ## Umwandeln nach String
@@ -46,6 +48,7 @@ object me = new object();
 WriteLine(me.ToString()); // System.Object
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ## Beispiel

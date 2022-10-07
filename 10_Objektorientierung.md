@@ -1,6 +1,7 @@
 # Objektorientierung
 Klassen, Objekte und Instanzen
 
+---
 
 <!-- .slide: class="left" -->
 ## Hintergrund der objektorientierten Programmierung
@@ -11,6 +12,7 @@ Klassen, Objekte und Instanzen
 * Um zur Lösung eines Problems zu kommen, versucht man einzelne Objekte (Klassen) in der Problemstellung zu erkennen.
 * Die Objekte werden mit den zugehörigen Daten und Methoden, die sie beschreiben, nachgebildet.
 
+---
 
 <!-- .slide: class="left" -->
 ## Vorteile der objektorientierten Programmierung
@@ -22,6 +24,7 @@ Klassen, Objekte und Instanzen
 * Neue Klassen können leichter in die Anwendung eingebunden werden.
 * Objekte werden nur dann erzeugt wenn diese benötigt werden (Effizienter Umgang mit Speicherplatz).
 
+---
 
 <!-- .slide: class="left" -->
 ## Objektorientierung
@@ -30,6 +33,7 @@ Klassen, Objekte und Instanzen
 
 Mehr zum Thema [objektorientierte Programmierung](https://entwickler.de/online/development/einfuehrung-programmierung-objektorientierte-programmentwicklung-197372.html)
 
+---
 
 <!-- .slide: class="left" -->
 ## Klassen
@@ -45,6 +49,7 @@ Mehr zum Thema [objektorientierte Programmierung](https://entwickler.de/online/d
 * Auf Basis einer Klasse können beliebig viele Objekte erzeugt
     (instanziiert) werden.
 
+---
 
 <!-- .slide: class="left" -->
 ### Syntax der Klassendefinition
@@ -63,6 +68,7 @@ Mehr zum Thema [objektorientierte Programmierung](https://entwickler.de/online/d
 
 * Mehr zum Thema [Klassen](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/classes)
 
+---
 
 <!-- .slide: class="left" -->
 ### Zugriffsmodifizierer
@@ -86,6 +92,7 @@ Methoden einer Klasse in C\#. Sie heißen:
 
 * Der Zugriff auf das Element ist nicht eingeschränkt.
 
+---
 
 <!-- .slide: class="left" -->
 ### Unsere erste Klasse
@@ -104,6 +111,7 @@ public class Person // Variablen und Methoden
 }
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ### Klasseninstanzen (Objekte) erzeugen
@@ -119,6 +127,7 @@ Person meinePerson;
 meinePerson = new Person();
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ### Zugriff auf die Member eines Objekts
@@ -134,6 +143,7 @@ Note: **VS** Klasse erzeugen und nutzen. In **VS** zeigen, Sichtbarkeit von Vari
 
 ÜBUNG Medienverwaltung 2
 
+---
 
 <!-- .slide: class="left" -->
 ### Was ist Kapselung
@@ -148,6 +158,7 @@ Note: **VS** Klasse erzeugen und nutzen. In **VS** zeigen, Sichtbarkeit von Vari
 
 Note: Prüfen auf Schwellwerte oder entfernen von Leerzeichen
 
+---
 
 <!-- .slide: class="left" -->
 ### Darstellung Kapselung
@@ -158,6 +169,7 @@ Note: Variablen sind nur intern nutzbar wenn diese private sind.
 
 Methoden sind meist nach außen sichtbar und greifen auf die geschützten Variablen zu.
 
+---
 
 <!-- .slide: class="left" -->
 ### Eigenschaften
@@ -228,6 +240,7 @@ int cClass = Person.classCount;
 ```
 -->
 
+---
 
 <!-- .slide: class="left" -->
 ### Objektreferenz - THIS
@@ -242,6 +255,7 @@ Note: Sich selbst als Parameter übergeben.
 
 Identifizieren von Variablen mit gleichem Namen
 
+---
 
 <!-- .slide: class="left" -->
 #### Beispiel
@@ -277,6 +291,7 @@ namespace Objektreferenz
 }
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ## Konstruktor & Destruktor
@@ -293,6 +308,7 @@ und gibt somit den Speicherplatz wieder frei.
 Der Compiler stellt für jede Klasse automatisch einen parameterlosen
 Konstruktor und Destruktor bereit. Es können eigene Konstruktoren und Destruktoren, mit erweiterter Funktionalität, programmiert werden.
 
+---
 
 <!-- .slide: class="left" -->
 ### Konstruktor
@@ -303,6 +319,7 @@ Konstruktor und Destruktor bereit. Es können eigene Konstruktoren und Destrukto
 
 * Wird innerhalb der Klasse vom Programmierer **kein Konstruktor formuliert**, so wird automatisch der **Standard-Konstruktor** (ohne Parameter) aufgerufen.
 
+---
 
 <!-- .slide: class="left" -->
 
@@ -319,6 +336,7 @@ Konstruktor und Destruktor bereit. Es können eigene Konstruktoren und Destrukto
 
 Note: private Konstruktor: wenn die Klasse nicht initialisiert werden soll
 
+---
 
 <!-- .slide: class="left" -->
 #### Syntax
@@ -349,6 +367,7 @@ public Person()
 }
 ```
 
+---
 
 <!-- .slide: class="left" -->
 #### Beispiel Konstruktor
@@ -375,6 +394,7 @@ public Person()
 
 Note: Werden Konstruktoren definiert gibt es kein Default Konstruktor mehr
 
+---
 
 <!-- .slide: class="left" -->
 #### Beispiel
@@ -412,6 +432,7 @@ Initialisierungscode sollte in nur einem Konstruktor sein der von anderen aufger
 
 **VS** Konstruktor zeigen (Klasse erstellen mit zwei Konstruktoren. Der  Konstruktor mit einem Wert ruft anderen Konstruktor mit zwei Werten auf)
 
+---
 
 <!-- .slide: class="left" -->
 ### Destruktor (Finalizer)
@@ -428,6 +449,7 @@ Initialisierungscode sollte in nur einem Konstruktor sein der von anderen aufger
 
 * Er kann nicht direkt aufgerufen werden.
 
+---
 
 <!-- .slide: class="left" -->
 #### Syntax

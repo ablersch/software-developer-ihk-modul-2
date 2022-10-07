@@ -2,6 +2,7 @@
 
 Daten abfragen und filtern.
 
+---
 
 <!-- .slide: class="left" -->
 ## Was ist LINQ
@@ -12,6 +13,7 @@ Wie SQL ist [LINQ](https://docs.microsoft.com/de-de/dotnet/csharp/programming-gu
 
 Note: Aussprache: Link
 
+---
 
 <!-- .slide: class="left" -->
 ### LINQ Benutzung
@@ -20,6 +22,7 @@ Note: Aussprache: Link
 
 Note: Verschiedene LINQ Provider z.B. LINQ-to-SQL, LINQ-to-XML, LINQ-to-DataSets, ...
 
+---
 
 <!-- .slide: class="left" -->
 ### LINQ Abfragen
@@ -28,6 +31,7 @@ LINQ-Abfragen geben Ergebnisse als Objekte zurück. So können Sie einen objekto
 
 ![LINQ Benutzung](images/Linq-execution.png)
 
+---
 
 <!-- .slide: class="left" -->
 ### Vorteile von LINQ
@@ -39,6 +43,7 @@ LINQ-Abfragen geben Ergebnisse als Objekte zurück. So können Sie einen objekto
 * **Kompilierzeitsicherheit von Abfragen:** Es bietet Typüberprüfung von Objekten zur Kompilierzeit.
 * **IntelliSense-Unterstützung:** LINQ bietet IntelliSense an.
 
+---
 
 <!-- .slide: class="left" -->
 ## Syntaxvarianten
@@ -74,6 +79,7 @@ foreach (var name in shortNames)
 
 Note: In nur einer Zeile kann man z.B. alle Namen abfragen welche 8 oder weniger Zeichen lang sind und der Länge nach sortieren
 
+---
 
 <!-- .slide: class="left" -->
 ### LINQ Methodensyntax
@@ -95,6 +101,7 @@ var sortNum = numbers.OrderBy(number => number).ToList();
 
 Note: Abfrage wird erst ausgeführt wenn mit den Daten gearbeitet wird z.B. iterieren, ToList(), Count(),  D.h. es sind Abfragen über mehrere Zeilen möglich.
 
+---
 
 <!-- .slide: class="left" -->
 ### Standard Abfrageoperatoren
@@ -111,6 +118,7 @@ Projektion | Select, SelectMany
 Aggregation | Aggregate, Average, Count, LongCount, Max, Min, Sum
 Quantifizieren | All, Any, Contains
 
+---
 
 <!-- .slide: class="left" -->
 Klassifizierung | Standard Query Operatoren
@@ -127,6 +135,7 @@ Note:
 * OrderBy ist aufsteigend
 * ToLookup ist dasselbe wie GroupBy; der einzige Unterschied ist, dass die Ausführung von GroupBy aufgeschoben wird, während ToLookup sofort ausgeführt wird.
 
+---
 
 <!-- .slide: class="left" -->
 ### LINQ Beispiel
@@ -156,6 +165,7 @@ List<User> sortedUsers = users.OrderBy(user => user.Age).ThenByDescending(user =
 
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ### Konvertierungsoperatoren

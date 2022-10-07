@@ -2,6 +2,7 @@
 
 Fehler abfangen und behandeln
 
+---
 
 <!-- .slide: class="left" -->
 ## Fehlerarten
@@ -18,6 +19,7 @@ Fehler abfangen und behandeln
 
 Note: Syntaxfehler werden in VS angezeigt
 
+---
 
 <!-- .slide: class="left" -->
 ## Strukturierte Fehlerbehandlung
@@ -33,12 +35,14 @@ eine stabile und umfassende Fehlerbehandlung.
 
 Note: Ohne Try catch Programmfehler oder unsicherer Zustand (Dateizugriffe oder SQL Operationen)
 
+---
 
 <!-- .slide: class="left" -->
 ## Ablauf Fehlerbehandlung
 
 ![Fehlerbehandlung ](images/Fehlerbehandlung.png)
 
+---
 
 <!-- .slide: class="left" -->
 ### Syntax für try-catch-finally
@@ -60,6 +64,7 @@ catch (ExceptionType ExceptionName)
 
 Mehr zum Thema [Try-Catch](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/try-catch) und [Best practices für Fehlerbehandlung](https://docs.microsoft.com/de-de/dotnet/standard/exceptions/best-practices-for-exceptions)
 
+---
 
 <!-- .slide: class="left" -->
 ### Beispiel
@@ -89,6 +94,7 @@ static void Main(string[] args)
 }
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ## Übersicht Exceptions
@@ -99,6 +105,7 @@ static void Main(string[] args)
 
 Note: Datei Fehler z.B. in System.IO Namespace
 
+---
 
 <!-- .slide: class="left" -->
 ## Throw
@@ -121,6 +128,8 @@ public class NumberGenerator
 }
 ```
 
+---
+
 <!-- .slide: class="left" -->
 ```csharp
 public static void Main()
@@ -142,6 +151,7 @@ public static void Main()
 
 Note: **VS** Exception herbeirufen (z.B. Verwendung eines null-Objects). Abfangen zeigen. Throw zweigen. Bedingte Breakpoints.
 
+---
 
 <!-- .slide: class="left" -->
 ## Eigene Ausnahmen

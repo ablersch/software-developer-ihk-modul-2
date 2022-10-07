@@ -2,6 +2,7 @@
 
 Die Vererbung ermöglicht es, neue Klassen zu erstellen, die das in anderen Klassen definierte Verhalten wiederverwenden, erweitern und ändern.
 
+---
 
 <!-- .slide: class="left" -->
 ## Problemstellung
@@ -20,12 +21,14 @@ Zum Beispiel bei den Klassen **Mensch** und **Tier**.
 
 Man versucht, zu ähnlichen Klassen, eine gemeinsame **Oberklasse** zu finden die alle Gemeinsamkeiten beinhaltet. In den **Unterklassen** werden lediglich die Unterschiede ergänzt.
 
+---
 
 <!-- .slide: class="left" -->
 ## Vererbung
 
 ![Vererbung](images/Vererbung3.png)
 
+---
 
 <!-- .slide: class="left" -->
 ## Vererbung
@@ -42,6 +45,7 @@ Mitarbeiter        Kunde
 
 fest Angestellter     Leiharbeiter
 
+---
 
 <!-- .slide: class="left" -->
 ## Beispiel
@@ -54,6 +58,7 @@ Assoziation = Beziehung, keine Vererbung
 
 ÜBUNG Klassendiagramm
 
+---
 
 <!-- .slide: class="left" -->
 ## Beispiel
@@ -64,6 +69,7 @@ Note: Konstruktor und private Elemente werden nicht vererbt.
 
 ChangeRequest kann alle Methoden und Variabeln von der Basisklasse verwenden
 
+---
 
 <!-- .slide: class="left" -->
 ## Syntax
@@ -84,6 +90,7 @@ class Mensch : Lebewesen
 }
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ## Vererbung und Konstruktoren
@@ -98,6 +105,7 @@ class Mensch : Lebewesen
 :base(Parameter)
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ### Base
@@ -127,6 +135,7 @@ In **VS** zeigen:
 
 ÜBUNG Medienverwaltung 3
 
+---
 
 <!-- .slide: class="left" -->
 ## Weitere Schlüsselworte

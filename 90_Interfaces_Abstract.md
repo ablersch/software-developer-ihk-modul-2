@@ -2,6 +2,7 @@
 
 Wie muss eine Klasse aussehen?
 
+---
 
 <!-- .slide: class="left" -->
 ## Schnittstellen (Interfaces)
@@ -30,6 +31,7 @@ Jeder muss in der Klasse welche ein Interface nutzt alle Methoden implementieren
 
 **VS** Interface
 
+---
 
 <!-- .slide: class="left" -->
 ### Beispiel Interface
@@ -53,6 +55,7 @@ class Zeitschriften : IMedien {
 }
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ## abstrakte Klassen
@@ -75,6 +78,7 @@ class Zeitschriften : IMedien {
 
 Note: z.B. geometrische Berechnung: Umfang gilt bei allen Klassen (Kreis, Rechteck, Dreieck), ist aber überall anderst zu berechnen.
 
+---
 
 <!-- .slide: class="left" -->
 ### Beispiel abstrakte Klasse
@@ -96,6 +100,7 @@ class Zeitschriften : Medien {
 }
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ## Interface vs abstrakte Klasse
@@ -116,6 +121,7 @@ class Zeitschriften : Medien {
 
   * Konstruktoren können definiert werden
 
+---
 
 <!-- .slide: class="left" -->
 **Interfaces benutzen** um inhaltlich verschiedenen Klassen eine bestimmte Funktionalität zu bieten.

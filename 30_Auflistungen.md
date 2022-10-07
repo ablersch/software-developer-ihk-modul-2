@@ -2,6 +2,7 @@
 
 Gruppieren von Objekten (alternativen für Arrays).
 
+---
 
 <!-- .slide: class="left" -->
 ## Collection Klassen
@@ -19,6 +20,7 @@ Dafür gibt es neue Klassen sogenannte **Collections**. Diese können ihre Kapaz
 
 Damit diese verwendet werden können, müssen folgende Namespaces in das Projekt eingebunden werden:
 
+---
 
 <!-- .slide: class="left" -->
 ### Collection Namespaces
@@ -31,6 +33,7 @@ Mehr zum Thema [Collections](https://docs.microsoft.com/de-de/dotnet/csharp/prog
 
 Note: **VS** autom Auflösung zeigen
 
+---
 
 <!-- .slide: class="left" -->
 ## ArrayList
@@ -44,6 +47,7 @@ Projekt eingebunden werden:
 using System.Collections;
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ### Beispiel ArrayList
@@ -63,6 +67,7 @@ arrayList[1] = 10;
 Console.WriteLine("2. Element: " + arrayList[1]);
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ## Hashtable
@@ -79,6 +84,7 @@ Kommt es nicht auf die Reihenfolge der Elemente an, kann man sich für eine [Has
 
 Note: Hashcode: Int Wert welcher über Algorithmus berechnet wird
 
+---
 
 <!-- .slide: class="left" -->
 ### Beispiel Hashtable
@@ -105,6 +111,7 @@ foreach (DictionaryEntry hashElements in hashTable) {
 }
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ## List `<T>`
@@ -124,6 +131,7 @@ using System.Collections.Generics;
 
 Mehr zum Thema [List](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1?view=net-6.0)
 
+---
 
 <!-- .slide: class="left" -->
 ### Beispiel List `<T>`
@@ -148,6 +156,7 @@ foreach (int i in liste) {
 }
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ## Dictionary `<TKey, TValue>`
@@ -160,6 +169,7 @@ foreach (int i in liste) {
 
 * **TValue** Der Typ der Werte im Wörterbuch.
 
+---
 
 <!-- .slide: class="left" -->
 ### Beispiel Dictionary `<TKey, TValue>`

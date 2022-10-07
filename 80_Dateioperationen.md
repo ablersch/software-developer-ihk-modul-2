@@ -2,6 +2,7 @@
 
 Mit Dateien arbeiten
 
+---
 
 <!-- .slide: class="left" -->
 ## Allgemein
@@ -21,6 +22,7 @@ Mit Dateien arbeiten
   * Prüfung ob Ordner existiert
   * Order erstellen
 
+---
 
 <!-- .slide: class="left" -->
 ## StreamReader und StreamWriter
@@ -60,6 +62,7 @@ FileStream vs StreamWriter: StreamWriter (TextWriter) ist ein Stream Decoder um 
 
 FileStream konvertiert Textdateien in byte[]
 
+---
 
 <!-- .slide: class="left" -->
 ## Dispose() Methode
@@ -80,6 +83,7 @@ FileStream konvertiert Textdateien in byte[]
 
 Note: Möglichkeit Ressourcen frei zu geben
 
+---
 
 <!-- .slide: class="left" -->
 ## using Anweisung
@@ -98,6 +102,7 @@ Note: Möglichkeit Ressourcen frei zu geben
 
 * **Fehler müssen nach wie vor abgefangen werden**
 
+---
 
 <!-- .slide: class="left" -->
 ### Syntax
@@ -117,6 +122,7 @@ using Klassenname objektname = new Klassenname();
 objektname.xxxx;
 ```
 
+---
 
 <!-- .slide: class="left" -->
 ### Beispiel
