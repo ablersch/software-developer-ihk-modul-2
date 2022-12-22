@@ -1,6 +1,6 @@
 # Fehlerbehandlung
 
-Fehler abfangen und behandeln
+Fehler abfangen und behandeln.
 
 ---
 
@@ -47,7 +47,7 @@ Note: Ohne Try catch Programmfehler oder unsicherer Zustand (Dateizugriffe oder 
 <!-- .slide: class="left" -->
 ### Syntax für try-catch-finally
 
-```csharp
+```csharp []
 try
 {
   ...
@@ -69,7 +69,7 @@ Mehr zum Thema [Try-Catch](https://docs.microsoft.com/de-de/dotnet/csharp/langua
 <!-- .slide: class="left" -->
 ### Beispiel
 
-```csharp
+```csharp []
 static void Main(string[] args)
 {
   int x = 10;
@@ -112,16 +112,18 @@ Note: Datei Fehler z.B. in System.IO Namespace
 
 Mit [Throw](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/throw) kann eine Exception manuell ausgelöst werden. 
 
-```csharp
+```csharp []
 public class NumberGenerator
 {
    int[] numbers = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 };
 
    public int GetNumber(int index)
    {
+      // Prüfen ob der Wert von 'index' gültig ist.
       if (index < 0 || index >= numbers.Length)
       {
-         throw new IndexOutOfRangeException();
+          // Fehler werfen
+          throw new IndexOutOfRangeException();
       }
       return numbers[index];
    }
@@ -131,7 +133,7 @@ public class NumberGenerator
 ---
 
 <!-- .slide: class="left" -->
-```csharp
+```csharp []
 public static void Main()
 {
   var gen = new NumberGenerator();
@@ -141,6 +143,7 @@ public static void Main()
       int value = gen.GetNumber(index);
       Console.WriteLine($"Retrieved {value}");
   }
+  // Fehler abfangen.
   catch (IndexOutOfRangeException e)
   {
       Console.WriteLine($"{e.GetType().Name}: {index} is outside the bounds of the array"); 
@@ -149,7 +152,9 @@ public static void Main()
 }
 ```
 
-Note: **VS** Exception herbeirufen (z.B. Verwendung eines null-Objects). Abfangen zeigen. Throw zweigen. Bedingte Breakpoints.
+Note: 
+* **VS** Exception herbeirufen (z.B. Verwendung eines null-Objects).  
+  * Abfangen zeigen. Throw zweigen. Bedingte Breakpoints.
 
 ---
 
@@ -160,7 +165,7 @@ C# beinhaltet einige vordefinierte Fehlerklassen. Jedoch kann es sinnvoll sein, 
 
 z.B. NotFound, Forbidden, ForeignApiCall, BadArgument
 
-```csharp
+```csharp []
 [Serializable]
 public class InvalidStudentNameException : Exception
 {
@@ -174,3 +179,7 @@ public class InvalidStudentNameException : Exception
     }
 }
 ```
+
+Note:
+
+* Beispiel hierzu in Visual Studio zeigen

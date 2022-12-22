@@ -97,7 +97,7 @@ Methoden einer Klasse in C\#. Sie heißen:
 <!-- .slide: class="left" -->
 ### Unsere erste Klasse
 
-```csharp
+```csharp []
 public class Person // Variablen und Methoden
 {
     private string vorname;
@@ -122,7 +122,7 @@ public class Person // Variablen und Methoden
 
 * Erzeugen eines Objekts:
 
-```csharp
+```csharp []
 Person meinePerson;
 meinePerson = new Person();
 ```
@@ -135,13 +135,15 @@ meinePerson = new Person();
 Der Zugriff auf die Member (Attribute) eines Objekts erfolgt über den
 Punktoperator.
 
-```csharp
+```csharp []
 meinePerson.alter = 20;
 ```
 
-Note: **VS** Klasse erzeugen und nutzen. In **VS** zeigen, Sichtbarkeit von Variablen (Klassenvariable, Variable in Methode, in Schleife) als Wdh
+Note:
 
-ÜBUNG Medienverwaltung 2
+* **VS** Klasse erzeugen und nutzen. 
+* In **VS** zeigen, Sichtbarkeit von Variablen (Klassenvariable, Variable in Methode, in Schleife) als Wdh
+* **ÜBUNG 1** Medienverwaltung 2
 
 ---
 
@@ -165,9 +167,10 @@ Note: Prüfen auf Schwellwerte oder entfernen von Leerzeichen
 
 ![Klassenkapselung](images/Klassenkapselung.png)
 
-Note: Variablen sind nur intern nutzbar wenn diese private sind.
+Note:
 
-Methoden sind meist nach außen sichtbar und greifen auf die geschützten Variablen zu.
+* Variablen sind nur intern nutzbar wenn diese private sind.
+* Methoden sind meist nach außen sichtbar und greifen auf die geschützten Variablen zu.
 
 ---
 
@@ -176,7 +179,7 @@ Methoden sind meist nach außen sichtbar und greifen auf die geschützten Variab
 
 Um die Kapselung zu erreichen werden die Attribute **private** deklariert. Der Zugriff erfolgt über eine [Property (Eigenschaft)](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/properties).
 
-```csharp
+```csharp []
 public class Person
 {
     private string vorname;
@@ -202,11 +205,13 @@ public class Person
 }
 ```
 
-Note: **VS** Eigenschaft zeigen mit automa. Generierung
+Note:
 
-Zuweisung von Wert wie bei einer Variable (nicht a.SetName("aa"))
+* **VS** Eigenschaft zeigen mit automa. Generierung
+* Zuweisung von Wert wie bei einer Variable (nicht a.SetName("aa"))
 
 In einer Eigenschaft sind getter und setter inkludiert.
+
 * Werte können beim lesen und schreiben geprüft bzw bearbeitet werden
 * Schreib- oder Lesezugriff einschränkbar
 * Name mit Großbuchstabe (wie Klasse)
@@ -260,7 +265,7 @@ Identifizieren von Variablen mit gleichem Namen
 <!-- .slide: class="left" -->
 #### Beispiel
 
-```csharp
+```csharp []
 using System;
 
 namespace Objektreferenz
@@ -343,7 +348,7 @@ Note: private Konstruktor: wenn die Klasse nicht initialisiert werden soll
 
 **Standard-Konstruktor welcher automatisch aufgerufen wird:**
 
-```csharp
+```csharp []
 class Person
 {
     // Gleicher Name wie die Klasse und kein Rückgabewert
@@ -355,7 +360,7 @@ class Person
 
 **Definition des Standard-Konstruktor:**
 
-```csharp
+```csharp []
 string name;
 string vorname;
 
@@ -372,7 +377,7 @@ public Person()
 <!-- .slide: class="left" -->
 #### Beispiel Konstruktor
 
-```csharp
+```csharp []
     class Person
     {
       private string name;
@@ -399,7 +404,7 @@ Note: Werden Konstruktoren definiert gibt es kein Default Konstruktor mehr
 <!-- .slide: class="left" -->
 #### Beispiel
 
-```csharp
+```csharp []
 class Fahrzeug
 {
     public int Geschwindigkeit { get; set; } // Property/Eigenschaft
@@ -426,11 +431,11 @@ class Program
 }
 ```
 
-Note: Anderer überladener Konstruktor wird zuerst mit this aufgerufen. Danach wird der restliche Code durchlaufen.
+Note:
 
-Initialisierungscode sollte in nur einem Konstruktor sein der von anderen aufgerufen wird.
-
-**VS** Konstruktor zeigen (Klasse erstellen mit zwei Konstruktoren. Der  Konstruktor mit einem Wert ruft anderen Konstruktor mit zwei Werten auf)
+* Anderer überladener Konstruktor wird zuerst mit this aufgerufen. Danach wird der restliche Code durchlaufen.
+* Initialisierungscode sollte in nur einem Konstruktor sein der von anderen aufgerufen wird.
+* **VS** Konstruktor zeigen (Klasse erstellen mit zwei Konstruktoren. Der  Konstruktor mit einem Wert ruft anderen Konstruktor mit zwei Werten auf)
 
 ---
 
@@ -454,7 +459,7 @@ Initialisierungscode sollte in nur einem Konstruktor sein der von anderen aufger
 <!-- .slide: class="left" -->
 #### Syntax
 
-```csharp
+```csharp []
 
 class Person
 {
@@ -466,4 +471,4 @@ class Person
 }
 ```
 
-Note: ÜBUNG Intervall und Sekundenspeicher
+Note: **ÜBUNG 2** Intervall und **ÜBUNG 3** Sekundenspeicher

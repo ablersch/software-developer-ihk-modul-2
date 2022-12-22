@@ -20,7 +20,13 @@ Note: Aussprache: Link
 
 ![LINQ Benutzung](images/Linq.png)
 
-Note: Verschiedene LINQ Provider z.B. LINQ-to-SQL, LINQ-to-XML, LINQ-to-DataSets, ...
+Note:
+
+* Verschiedene LINQ Provider z.B.:
+    * LINQ-to-SQL
+    * LINQ-to-XML
+    * LINQ-to-DataSets
+    * ...
 
 ---
 
@@ -51,7 +57,7 @@ LINQ-Abfragen geben Ergebnisse als Objekte zurück. So können Sie einen objekto
 * Abfragensyntax (Query syntax)
 * Methodensyntax (Method syntax / Fluent syntax)
 
-```csharp
+```csharp []
 var names = new List<string>()  
 {  
     "John Doe",  
@@ -61,7 +67,7 @@ var names = new List<string>()
 };  
 ```
 
-```csharp
+```csharp []
 // Alle Namen holen welche 8 oder weniger Zeichen haben
 // Abfragesyntax
 var shortNames = from name in names where name.Length <= 8 orderby name.Length select name;
@@ -88,14 +94,14 @@ Bei [Lambda Expressions](https://docs.microsoft.com/de-de/dotnet/csharp/programm
 
 ![Lambda Expression](Images/LambdaExpressionStructure.png)
 
-```csharp
+```csharp []
 var numbers = new List<int>()
 {
     1, 7, 2, 61, 14
 };
 ```
 
-```csharp
+```csharp []
 var sortNum = numbers.OrderBy(number => number).ToList();
 ```
 
@@ -131,7 +137,8 @@ Gleichheit | SequenceEqual
 Generation | DefaultEmpty, Empty, Range, Repeat
 Konvertierung | AsEnumerable, AsQueryable, Cast, ToArray, ToDictionary, ToList
 
-Note: 
+Note:
+
 * OrderBy ist aufsteigend
 * ToLookup ist dasselbe wie GroupBy; der einzige Unterschied ist, dass die Ausführung von GroupBy aufgeschoben wird, während ToLookup sofort ausgeführt wird.
 
@@ -140,7 +147,7 @@ Note:
 <!-- .slide: class="left" -->
 ### LINQ Beispiel
 
-```csharp
+```csharp []
 var users = new List<User>()
 {
     new User() { Name = "John Doe", Age = 42 },
@@ -156,7 +163,7 @@ var names = users.Select(x => x.Name).ToList();
 var temp = users.Where(x => x.Age == 8).FirstOrDefault();
 var temp = users.First(x => x.Age == 10); // Exception
 
-// Wieviel Elemente gibt es welche ein Alter größer 20 haben
+// Wieviele Elemente gibt es welche ein Alter größer 20 haben
 int count = users.Where(x => x.Age > 20).Count();
 // Bessere ALternative
 int count = users.Count(x => x.Age > 20);
@@ -180,6 +187,7 @@ ToArray | Konvertiert die EIngabe in ein Array
 ToDictionary | Fügt Elemente in ein Dictionary ein, das auf einer Schlüsselselektor-Funktion basiert
 ToList | Konvertiert eine Collection in eine Liste
 
-Note: 
-Zeigen LINQ in VS
-**ÜBUNG** LINQ
+Note:
+
+* Zeigen LINQ in **VS**
+* **ÜBUNG 9** LINQ

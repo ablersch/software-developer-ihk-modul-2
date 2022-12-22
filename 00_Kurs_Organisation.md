@@ -1,4 +1,4 @@
-<!-- 
+﻿<!-- 
 f - Fullscreen
 b- Blackscreen
 space - nächste Folie
@@ -11,8 +11,12 @@ Print View: http://localhost:8000/?print-pdf
 Ablauf, Termine, Prüfungen, etc.
 
 Note: 
-* Persönliche Vorstellung der Teilnehmer mit Ihren Programmiervorkenntnissen
-* Sitzplan
+* Persönliche Vorstellung der Teilnehmer 
+  * Name, Alter, Wohnort
+  * Arbeit
+  * Programmiervorkenntnisse
+  * Warum dieser Kurs? Welche Ziele werden verfolgt?
+* Sitzplan erstellen
 
 ---
 
@@ -23,7 +27,7 @@ Note:
 * Stundenplan folgt
 
 Note: 
-* Anmeldung Rechner
+* Anmeldung Computer
 
 ---
 

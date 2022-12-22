@@ -13,7 +13,7 @@ Werte umwandeln
 
 * **Klassische Konvertierung:** Um eine Umwandlung durchzuführen, legen Sie den Typ, in den Sie umwandeln, in Klammern vor den zu konvertierenden Wert/Variable. Bei einem Fehler wird eine Exception geworfen.
 
-```csharp
+```csharp []
 double d = 1234.7;
 int zahl;
 // Cast double to int
@@ -21,9 +21,9 @@ zahl = (int)d;    -> Ergebnis: 1234
 ```
 
 Note:
-int -> Double implizit (autom vom Compiler)
 
-zahl = (int)d; explizit (auch mit Convert möglich)
+* int -> Double implizit (autom vom Compiler)
+* zahl = (int)d; explizit (auch mit Convert möglich)
 
 ---
 
@@ -34,7 +34,7 @@ Geht mit allen Objekten die die Methode `ToString()` von  der Klasse System.Obje
 
 Die ToString-Methode wandelt den aktuellen Wert einer beliebigen Variablen in eine Textdarstellung um. Einige Typen können nicht sinnvoll als Text dargestellt werden, so dass sie ihren Namespace und Typnamen zurückgeben.
 
-```csharp
+```csharp []
 int number = 12;
 WriteLine(number.ToString()); // 12
 
@@ -53,7 +53,7 @@ WriteLine(me.ToString()); // System.Object
 <!-- .slide: class="left" -->
 ## Beispiel
 
-```csharp
+```csharp []
 Person hans;
 Object myObject = new Person();
 if (myObject is Person) // Prüft ob myObject mit Person kompatibel ist
@@ -62,9 +62,7 @@ if (myObject is Person) // Prüft ob myObject mit Person kompatibel ist
     hans.GetName();
 }
 
-```
 
-```csharp
 hans = myObject as Person; // Führt eine Konvertierung aus
 if (hans != null) // Erfolgreich wenn person nicht null ist
 {
@@ -72,8 +70,8 @@ if (hans != null) // Erfolgreich wenn person nicht null ist
 }
 ```
 
-Note: **VS** Casting, und Static (z.B. Methode zum prüfen ob Email Adresse) zeigen. Casting machen in VS.
+Note:
 
-ÜBUNG Medienverwaltung 4
-
-Erklärung zu statisch
+* **VS** Casting, und Static (z.B. Methode zum prüfen ob Email Adresse) zeigen. Casting machen in VS.
+* **ÜBUNG 8** Medienverwaltung Aufgabe 4
+* Erklärung zu statisch

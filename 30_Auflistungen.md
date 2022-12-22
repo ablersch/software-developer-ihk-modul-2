@@ -43,7 +43,7 @@ Eine häufig verwendete Klasse für Aufzählungen ist die Klasse [ArrayList](htt
 Damit diese verwendet werden kann, muss der folgende Namespace in das
 Projekt eingebunden werden:
 
-```csharp
+```csharp []
 using System.Collections;
 ```
 
@@ -52,7 +52,7 @@ using System.Collections;
 <!-- .slide: class="left" -->
 ### Beispiel ArrayList
 
-```csharp
+```csharp []
 ArrayList arrayList = new ArrayList();
 arrayList.Add(5);
 arrayList.Add("text");
@@ -89,7 +89,7 @@ Note: Hashcode: Int Wert welcher über Algorithmus berechnet wird
 <!-- .slide: class="left" -->
 ### Beispiel Hashtable
 
-```csharp
+```csharp []
 Hashtable hashTable = new Hashtable();
 
 hashTable.Add("auto1", "Das Auto ist ein Audi");
@@ -125,7 +125,7 @@ foreach (DictionaryEntry hashElements in hashTable) {
 Damit diese verwendet werden kann, muss der folgende Namespace in das
 Projekt eingebunden werden:
 
-```csharp
+```csharp []
 using System.Collections.Generics;
 ```
 
@@ -136,7 +136,7 @@ Mehr zum Thema [List](https://docs.microsoft.com/de-de/dotnet/api/system.collect
 <!-- .slide: class="left" -->
 ### Beispiel List `<T>`
 
-```csharp
+```csharp []
 List<int> liste = new List<int>();
 
 liste.Add(40);
@@ -174,7 +174,7 @@ foreach (int i in liste) {
 <!-- .slide: class="left" -->
 ### Beispiel Dictionary `<TKey, TValue>`
 
-```csharp
+```csharp []
 string tempString;
 
 Dictionary<string, string> dictionary = new Dictionary<string, string>();
@@ -197,7 +197,7 @@ foreach (KeyValuePair<string, string> pair in dictionary) {
 }
 ```
 
-Note: Gibt noch weitere wie z.B. HashSet, Queue, SortedList, Stack, ..
-
-**VS** In VS z.B. List Verwendung zeigen mit Zuweisung von Objekten und Objekten mit Vererbung.
-ÜBUNG Wetterstation
+Note: 
+* Gibt noch weitere wie z.B. HashSet, Queue, SortedList, Stack, ..
+* **VS** List Verwendung zeigen mit Zuweisung von Objekten und Objekten mit Vererbung.
+* **ÜBUNG 7** Wetterstation

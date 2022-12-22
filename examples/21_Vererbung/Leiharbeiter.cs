@@ -7,18 +7,21 @@ internal class Leiharbeiter : Mitarbeiter
     // Attribut
     private string leiharbeitervermittlung;
 
-    public Leiharbeiter()  // Zugriff auf Konstruktor der Basisklasse
+    // Zugriff auf Konstruktor der Basisklasse
+    public Leiharbeiter()
     {
         Console.WriteLine("Name der Leiharbeitervermittlung");
         Leiharbeitervermittlung = Console.ReadLine();
     }
 
-    public Leiharbeiter(string leiharbeitervermittlung) // Aufruf des Konstruktor der Basisklasse
+    // Aufruf des Konstruktor der Basisklasse
+    public Leiharbeiter(string leiharbeitervermittlung)
     {
         Leiharbeitervermittlung = leiharbeitervermittlung;
     }
 
-    public Leiharbeiter(string leiharbeitervermittlung, string name) : base(name) // Aufruf des Konstruktor der Basisklasse mit einem Parameter
+    // Aufruf des Konstruktor der Basisklasse mit einem Parameter
+    public Leiharbeiter(string leiharbeitervermittlung, string name) : base(name)
     {
         Leiharbeitervermittlung = leiharbeitervermittlung;
     }
@@ -30,7 +33,7 @@ internal class Leiharbeiter : Mitarbeiter
         set
         {
             // Das Schlüsselwort "value" verweist auf den Wert,
-            // der der Eigenschaft vom Clientcode zugewiesen werden soll
+            // der der Eigenschaft vom Clientcode zugewiesen werden soll.
             if (string.IsNullOrWhiteSpace(value))
             {
                 leiharbeitervermittlung = "Nicht bekannt";

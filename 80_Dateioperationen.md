@@ -1,6 +1,6 @@
 # Dateioperationen
 
-Mit Dateien arbeiten
+Mit Dateien arbeiten.
 
 ---
 
@@ -29,7 +29,7 @@ Mit Dateien arbeiten
 
 In Datei schreiben
 
-```csharp
+```csharp []
 using (StreamWriter writer = new StreamWriter("C:\\log.txt") ) {
     writer.WriteLine("Schreibe das in die Datei");
 }
@@ -37,7 +37,7 @@ using (StreamWriter writer = new StreamWriter("C:\\log.txt") ) {
 
 Aus Datei lesen
 
-```csharp
+```csharp []
 // using declaration syntax
 using StreamReader reader = new StreamReader(@"c:\log.txt"); 
 string einlesen = reader.ReadToEnd();
@@ -45,7 +45,7 @@ string einlesen = reader.ReadToEnd();
 
 Aus Datei lesen mit `FileInfo`
 
-```csharp
+```csharp []
 var fileInfo = new FileInfo(pfad);
 var streamReader = fileInfo.OpenText();
 string line;
@@ -56,11 +56,11 @@ while ((line = streamReader.ReadLine()) != null) {
 streamReader.Dispose();
 ```
 
-Note: **VS** Dateioperationen
-
-FileStream vs StreamWriter: StreamWriter (TextWriter) ist ein Stream Decoder um Text zu schreiben.
-
-FileStream konvertiert Textdateien in byte[]
+Note: 
+* **VS** Dateioperationen
+* FileStream vs StreamWriter
+  * StreamWriter (TextWriter) ist ein Stream Decoder um Text zu schreiben.
+  * FileStream konvertiert Textdateien in byte[]
 
 ---
 
@@ -109,14 +109,14 @@ Note: Möglichkeit Ressourcen frei zu geben
 
 Im Anweisungsblock wird das zu verwendende Objekt initialisiert.
 
-```csharp
+```csharp []
 using (Klassenname objektname = new Klassenname() )
 {
   // Code der das Objekt, welches im Anweisungsblock erstellt wurde, benutzt.
 }
 ```
 
-```csharp
+```csharp []
 // Using declaration C# 8
 using Klassenname objektname = new Klassenname();
 objektname.xxxx;
@@ -129,7 +129,7 @@ objektname.xxxx;
 
 Am Ende des Using Blocks wird für dieses Objekt automatisch die `Dispose()` Methode aufgerufen, und das Objekt somit verworfen/freigegeben.
 
-```csharp
+```csharp []
 try {
   using (StreamReader sr = StreamReader("C:\\test.txt"))
   {
@@ -140,7 +140,7 @@ try {
 
 Die selbe Funktionalität wie using bietet ein try-finally Block.
 
-```csharp
+```csharp []
 try {
   // sr Objekt ist nur innerhalb dieses Bereichs gültig
   StreamReader sr = new StreamReader("C:\\test.txt"));
@@ -158,6 +158,9 @@ try {
 } catch (Exception e) {}
 ```
 
-Note: ÜBUNG Logger, Dateien einlesen und Medienverwaltung Aufgabe 5
+Note:
 
-Test mit der DLL vom Nebensitzer oder von mir
+* **ÜBUNG** Logger
+* **ÜBUNG** Dateien einlesen
+  * Test mit der DLL vom Nebensitzer oder von mir
+* **ÜBUNG** Medienverwaltung Aufgabe 5

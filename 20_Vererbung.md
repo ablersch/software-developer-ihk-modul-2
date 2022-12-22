@@ -52,11 +52,10 @@ fest Angestellter     Leiharbeiter
 
 ![Vererbung](images/Vererbung2.png)
 
-Note: **Ist ein** oder **ist eine Art von**
-
-Assoziation = Beziehung, keine Vererbung
-
-ÜBUNG Klassendiagramm
+Note: 
+* **Ist ein** oder **ist eine Art von**
+* Assoziation = Beziehung, keine Vererbung
+* **ÜBUNG 4** Klassendiagramm
 
 ---
 
@@ -74,7 +73,7 @@ ChangeRequest kann alle Methoden und Variabeln von der Basisklasse verwenden
 <!-- .slide: class="left" -->
 ## Syntax
 
-```csharp
+```csharp []
 class <abgeleitete Klasse> : <Basisklasse>
 {
     ...
@@ -83,7 +82,7 @@ class <abgeleitete Klasse> : <Basisklasse>
 
 Die Implementierung der Vererbung in C\#
 
-```csharp
+```csharp []
 class Mensch : Lebewesen
 {
     ...
@@ -101,7 +100,7 @@ class Mensch : Lebewesen
 
 * Besitzt die Basisklasse einen Konstruktor mit Parameter (und keinen ohne Parameter) wird dieser nicht aufgerufen. In diesem Fall muss (wenn ein Konstruktor nötig ist) der Konstruktor aus der abgeleiteten Klasse explizit aufgerufen werden.
 
-```csharp
+```csharp []
 :base(Parameter)
 ```
 
@@ -114,26 +113,26 @@ Um aus einer abgeleiteten Klasse auf die Basisklasse zuzugreifen gibt es das Sch
 
 * Einen Konstruktor der Basisklasse aufrufen:
 
-```csharp
+```csharp []
 public Person(string beruf, string name, int alter) : base(name, alter)
 ```
 
 * Auf eine Methode oder Eigenschaft der Basisklasse zugreifen:
 
-```csharp
+```csharp []
 base.Name = "Fritz";
 ```
 
-Note: **VS** Beispiel Vererbung
-In **VS** zeigen:
+Note: 
 
-* Reihenfolge von Konstruktoraufrufe
-* region --> wenn Gliederung in VS aktiv ist
-* Klasse erstellen mit zwei Methoden
-* Aufruf der Methoden
-* Aufruf Konstruktor
-
-ÜBUNG Medienverwaltung 3
+* **VS** Beispiel Vererbung
+* In **VS** zeigen:
+    * Reihenfolge von Konstruktoraufrufe
+    * region --> wenn Gliederung in VS aktiv ist
+    * Klasse erstellen mit zwei Methoden
+    * Aufruf der Methoden
+    * Aufruf Konstruktor
+* **ÜBUNG 5** Medienverwaltung Aufgabe 3
 
 ---
 
@@ -148,8 +147,9 @@ In **VS** zeigen:
 
 * [sealed:](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/sealed) Eine als sealed deklarierte Klasse erlaubt keine Ableitung.
 
-Note: In **VS** zeigen.
-Zeigen: Beispiel 33_Vererbung virtual override
-Je nach Zeit gibt es später hierzu mehr.
+Note:
 
-ÜBUNG Flugzeug
+* In **VS** zeigen.
+    * Zeigen: Beispiel 33_Vererbung virtual override
+    * Je nach Zeit gibt es später hierzu mehr.
+* **ÜBUNG 6** Flugzeug
