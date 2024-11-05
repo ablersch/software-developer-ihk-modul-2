@@ -31,9 +31,13 @@ Oft wird `null` als Rückgabewert verwendet, um anzuzeigen, dass eine Methode ke
 public string? FindName(int id)
 {
     if (id == 1)
+    {
         return "Anna";
+    }
     else
+    {
         return null;  // Kein Name für diese ID gefunden.
+    }
 }
 ```
 

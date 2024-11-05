@@ -130,18 +130,25 @@ objektname.xxxx;
 Am Ende des Using Blocks wird für dieses Objekt automatisch die `Dispose()` Methode aufgerufen, und das Objekt somit verworfen/freigegeben.
 
 ```csharp []
-try {
+try 
+{
   using (StreamReader sr = StreamReader("C:\\test.txt"))
   {
     Console.WriteLine(sr.ReadLine());
   }
-} catch (Exception e) { }
+} 
+catch (Exception e) 
+{ }
 ```
 
+---
+
+<!-- .slide: class="left" -->
 Die selbe Funktionalität wie using bietet ein try-finally Block.
 
 ```csharp []
-try {
+try 
+{
   // sr Objekt ist nur innerhalb dieses Bereichs gültig
   StreamReader sr = new StreamReader("C:\\test.txt"));
   try
@@ -155,7 +162,9 @@ try {
       ((IDisposable)sr).Dispose();
     }
   }
-} catch (Exception e) {}
+} 
+catch (Exception e) 
+{}
 ```
 
 Note:

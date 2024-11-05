@@ -9,7 +9,7 @@ Klassen, Objekte und Instanzen
 * [Skript und Übungen](https://github.com/ablersch/software-developer-ihk-modul-2) von GitHub (https://github.com/ablersch)
 * [Stundenplan](https://ablersch.github.io/software-developer-ihk-modul-1/Stundenplan_SoftwareDeveloper.pdf)
 
---
+---
 
 <!-- .slide: class="left" -->
 ## Hintergrund der objektorientierten Programmierung

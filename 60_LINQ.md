@@ -92,7 +92,7 @@ Note: In nur einer Zeile kann man z.B. alle Namen abfragen welche 8 oder weniger
 
 Bei [Lambda Expressions](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions) werden anonyme Methoden aufgerufen. [weiteres zu Lambda Expressions](https://www.tutorialsteacher.com/linq/linq-lambda-expression)
 
-![Lambda Expression](Images/LambdaExpressionStructure.png)
+![Lambda Expression](images/LambdaExpressionStructure.png)
 
 ```csharp []
 var numbers = new List<int>()
