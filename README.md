@@ -20,12 +20,16 @@ Optimiert für Chrome!
 ## Inhalt
 
 * Objektorientierung
+* Nullable
+* Vererbung
 * Auflistungen
-* Namensräume
 * Casting
+* LINQ
 * Fehlerbehandlung
 * Dateioperationen
+* Paketmanager
+* JSON
+* Serialisieren und Deserialisieren
 * Interfaces und abstrakte Klassen
-* Hilfestellungen und Tipps für Visual Studio
 
 Mit Übungsaufgaben zu den einzelnen Themen.

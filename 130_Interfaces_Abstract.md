@@ -18,7 +18,7 @@ Wie muss eine Klasse aussehen?
 <!-- .slide: class="left" -->
 ## Interfaces (Schnittstellen)
 
-* Werden definiert mit _interface_
+* Werden definiert mit `interface`
 * Die Schnittstellenmember besitzen selbst keine Codeimplementierung sondern nur Definitionen.
 * Schnittstellenmember sind automatisch öffentlich.
 * Sie dürfen keine Felder(Attribute) enthalten.
@@ -27,7 +27,7 @@ Wie muss eine Klasse aussehen?
 
 Note:
 
-* Interface Klasse beginnt mit "I"
+* `Interface`-Klasse beginnt mit "I"
 * Schnittstellen können aus Methoden, Eigenschaften und Ereignissen bestehen.
 * Keine Zugriffsmodifizierer zugelassen.
 * Es müssen in einer Klasse, welche ein Interface einbindet, alle Methoden implementiert werden.
@@ -37,7 +37,7 @@ Note:
 <!-- .slide: class="left" -->
 ## Anwendungsfälle
 
-* Code definition von der Implementierung trennen.
+* Codedefinition von der Implementierung trennen.
 * Damit Klassen einfach testbar werden.
 * Um Sicherheit zu erreichen, sollten bestimmte Details ausgeblendet werden und nur die wichtigen Details eines Objekts (einer Schnittstelle) angezeigt werden.
 * C# unterstützt keine "Mehrfachvererbung". Mit Schnittstellen kann dies jedoch erreicht werden, da die Klasse mehrere Schnittstellen implementieren kann.
@@ -146,4 +146,4 @@ class Zeitschriften : Medien
 
 **Abstrakte Klassen nutzen** als Basisklasse um inhaltlich gleichen Klassen eine gemeinsame Basis (die aber verändert oder erweitert werden kann) zu geben und zu erzwingen das bestimmte Methoden implementiert werden.
 
-Note: **ÜBUNG** Medienverwaltung Aufgabe 6 (fehlt noch)
+Note: **ÜBUNG** Medienverwaltung Aufgabe 7 (noch weiter ausarbeiten)

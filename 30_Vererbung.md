@@ -101,7 +101,7 @@ class Mensch : Lebewesen
 * Besitzt die Basisklasse einen Konstruktor mit Parameter (und keinen ohne Parameter) wird dieser nicht aufgerufen. In diesem Fall muss (wenn ein Konstruktor nötig ist) der Konstruktor aus der abgeleiteten Klasse explizit aufgerufen werden.
 
 ```csharp []
-:base(Parameter)
+: base(Parameter)
 ```
 
 ---

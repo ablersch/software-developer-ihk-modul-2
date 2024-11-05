@@ -4,6 +4,14 @@ Klassen, Objekte und Instanzen
 ---
 
 <!-- .slide: class="left" -->
+## Kurs Organisation
+
+* [Skript und Übungen](https://github.com/ablersch/software-developer-ihk-modul-2) von GitHub (https://github.com/ablersch)
+* [Stundenplan](https://ablersch.github.io/software-developer-ihk-modul-1/Stundenplan_SoftwareDeveloper.pdf)
+
+--
+
+<!-- .slide: class="left" -->
 ## Hintergrund der objektorientierten Programmierung
 
 **Definition Objektorientierung**: Eine Sichtweise auf ein System, das durch das Zusammenspiel kooperierender Objekte beschrieben wird.
@@ -97,8 +105,10 @@ Methoden einer Klasse in C\#. Sie heißen:
 <!-- .slide: class="left" -->
 ### Unsere erste Klasse
 
+Enthält Variablen und Methoden.
+
 ```csharp []
-public class Person // Variablen und Methoden
+public class Person
 {
     private string vorname;
     private string nachname;
@@ -111,12 +121,16 @@ public class Person // Variablen und Methoden
 }
 ```
 
+Note: 
+Eine Klasse wird definiert mit `class`.
+Es ist üblich jede Klasse in eine eigene Daeti zu schreiben. Der Name der Datei ist identisch zum Klassenname.
+
 ---
 
 <!-- .slide: class="left" -->
 ### Klasseninstanzen (Objekte) erzeugen
 
-* In C\# werden Instanzen einer Klasse **immer** dynamisch mit **new** erzeugt.
+* In C\# werden Instanzen (Objekte) einer Klasse **immer** dynamisch mit **new** erzeugt.
 
 * Speicherplatz wird erst beim Anlegen der Instanzen reserviert.
 
@@ -188,8 +202,8 @@ public class Person
 
     public int Alter // Eigenschaft (Property)
     {
-        get {return alter;}
-        set {alter = value;} // value beinhaltet den übergebenen Wert
+        get { return alter; }
+        set { alter = value; } // value beinhaltet den übergebenen Wert
     }
 
     // Alternative: Expression-bodied members (return nicht notwendig)
@@ -208,7 +222,7 @@ public class Person
 Note:
 
 * **VS** Eigenschaft zeigen mit automa. Generierung
-* Zuweisung von Wert wie bei einer Variable (nicht a.SetName("aa"))
+* Zuweisung eines Wertes, wie bei einer Variable (nicht a.SetName("aa"))
 
 In einer Eigenschaft sind getter und setter inkludiert.
 
@@ -248,7 +262,7 @@ int cClass = Person.classCount;
 ---
 
 <!-- .slide: class="left" -->
-### Objektreferenz - THIS
+### Objektreferenz `this`
 
 * Zusammen mit jedem Objekt wird vom Compiler automatisch eine Objektreferenz auf das eigene Objekt erzeugt.
 
@@ -301,14 +315,9 @@ namespace Objektreferenz
 <!-- .slide: class="left" -->
 ## Konstruktor & Destruktor
 
-Jede Klasse enthält mindestens einen Konstruktor und einen Destruktor (Finalizer).
-Bei der Erzeugung eines Objekts wird automatisch der Konstruktor
-aufgerufen. Innerhalb des Konstruktors können dann zum Beispiel
-Attribute der Klasse initialisiert oder Variablen mit Standardwerten
-belegt werden.
+Jede Klasse enthält mindestens einen Konstruktor und einen Destruktor (Finalizer). Bei der Erzeugung eines Objekts wird automatisch der Konstruktor aufgerufen. Innerhalb des Konstruktors können dann zum Beispiel Attribute der Klasse initialisiert oder Variablen mit Standardwerten belegt werden.
 
-Der Destruktor zerstört die vom Konstruktor erzeugte Instanz des Objekts
-und gibt somit den Speicherplatz wieder frei.
+Der Destruktor zerstört die vom Konstruktor erzeugte Instanz des Objekts und gibt somit den Speicherplatz wieder frei.
 
 Der Compiler stellt für jede Klasse automatisch einen parameterlosen
 Konstruktor und Destruktor bereit. Es können eigene Konstruktoren und Destruktoren, mit erweiterter Funktionalität, programmiert werden.
@@ -318,7 +327,7 @@ Konstruktor und Destruktor bereit. Es können eigene Konstruktoren und Destrukto
 <!-- .slide: class="left" -->
 ### Konstruktor
 
-* Der [Konstruktoren](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/constructors) ist eine spezielle Methode einer Klasse (kann aber nicht manuell aufgerufen werden)
+* Der [Konstruktor](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/constructors) ist eine spezielle Methode einer Klasse (kann aber nicht manuell aufgerufen werden)
 
 * Der Konstruktor wird **automatisch beim Instanziieren** (Erzeugen) eines Objekts aufgerufen.
 
@@ -383,7 +392,7 @@ public Person()
       private string name;
       private string vorname;
 
-      public Person()  //Standard-Konstruktor
+      public Person()  // Standard-Konstruktor
       {
         name = "unbekannt";
         vorname = "unbekannt";
@@ -397,7 +406,7 @@ public Person()
     }
 ```
 
-Note: Werden Konstruktoren definiert gibt es kein Default Konstruktor mehr
+Note: Werden Konstruktoren definiert gibt es kein Standard-Konstruktor mehr.
 
 ---
 
@@ -414,7 +423,7 @@ class Fahrzeug
         Geschwindigkeit = wert;
     }
 
-    public Fahrzeug() : this(0) //Verweis auf den Konstruktor mit einem Parameter
+    public Fahrzeug() : this(0) // Verweis auf den Konstruktor mit einem Parameter
     {
     }
 }
@@ -433,9 +442,9 @@ class Program
 
 Note:
 
-* Anderer überladener Konstruktor wird zuerst mit this aufgerufen. Danach wird der restliche Code durchlaufen.
+* Anderer überladener Konstruktor wird zuerst mit `this` aufgerufen. Danach wird der restliche Code durchlaufen.
 * Initialisierungscode sollte in nur einem Konstruktor sein der von anderen aufgerufen wird.
-* **VS** Konstruktor zeigen (Klasse erstellen mit zwei Konstruktoren. Der  Konstruktor mit einem Wert ruft anderen Konstruktor mit zwei Werten auf)
+* **VS** Konstruktor zeigen (Klasse erstellen mit zwei Konstruktoren. Der Konstruktor mit einem Wert ruft den anderen Konstruktor mit zwei Werten auf).
 
 ---
 
