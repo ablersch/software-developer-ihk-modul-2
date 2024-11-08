@@ -180,6 +180,14 @@ Es ist üblich jede Klasse in eine eigene Datei zu schreiben. Der Name der Datei
 Person nameMeinerVariable = new Person();
 ```
 
+
+Note:
+
+* **VS** 
+  * Klasse erzeugen und nutzen. 
+  * Feld nutzen.
+* **ÜBUNG 1** Medienverwaltung 2
+
 ---
 
 <!-- .slide: class="left" -->
@@ -291,12 +299,10 @@ meinePerson.Alter = 20;
 Note:
 
 * **VS** 
-  * Klasse erzeugen und nutzen. 
-  * Feld und Eigenschaft nutzen.
+  * Eigenschaft nutzen.
   * Wert einer Eigenschaft zuweisen.
   * Prüfen auf leeren String.
   * Sichtbarkeit von Variablen (Felder, Eigenschaften, Methoden) als Wdh
-* **ÜBUNG 1** Medienverwaltung 2
 
 ---
 
