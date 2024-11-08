@@ -4,7 +4,7 @@ namespace Vererbung;
 
 internal class Leiharbeiter : Mitarbeiter
 {
-    // Attribut
+    // Feld
     private string leiharbeitervermittlung;
 
     // Zugriff auf Konstruktor der Basisklasse
@@ -26,7 +26,7 @@ internal class Leiharbeiter : Mitarbeiter
         Leiharbeitervermittlung = leiharbeitervermittlung;
     }
 
-    // Eigenschaft (Property) für das Attribut leiharbeitervermittlung
+    // Eigenschaft (Property) für das Feld leiharbeitervermittlung
     public string Leiharbeitervermittlung
     {
         get { return leiharbeitervermittlung; }

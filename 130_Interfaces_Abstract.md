@@ -21,7 +21,7 @@ Wie muss eine Klasse aussehen?
 * Werden definiert mit `interface`
 * Die Schnittstellenmember besitzen selbst keine Codeimplementierung sondern nur Definitionen.
 * Schnittstellenmember sind automatisch öffentlich.
-* Sie dürfen keine Felder(Attribute) enthalten.
+* Sie dürfen keine Felder enthalten.
 * Eine Klasse darf von mehreren Schnittstellen erben.
 * Von einer Schnittstelle kann keine Instanz erstellt werden.
 
@@ -86,7 +86,7 @@ Note:
 
 * Alles was in dieser Klasse als abstrakt gekennzeichnet wird hat die ähnlichen Eigenschaften wie ein Interface:
 
-  * Es dürfen keine Felder(Attribute) enthalten sein.
+  * Es dürfen keine Felder enthalten sein.
 
   * Die Member besitzen selbst keine Codeimplementierungen sondern nur Definitionen.
 

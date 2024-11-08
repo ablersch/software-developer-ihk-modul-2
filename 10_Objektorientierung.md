@@ -1,4 +1,5 @@
 # Objektorientierung
+
 Klassen, Objekte und Instanzen
 
 ---
@@ -12,9 +13,36 @@ Klassen, Objekte und Instanzen
 ---
 
 <!-- .slide: class="left" -->
-## Hintergrund der objektorientierten Programmierung
+## Was ist Objektorientierung
+
+Objektorientierung (OO) ist ein Programmierparadigma, das darauf abzielt, Programme in Form von Objekten zu strukturieren, die Daten (Eigenschaften) und Verhalten (Methoden) kombinieren. 
+
+In C# wird die objektorientierte Programmierung (OOP) durch Klassen und Objekte umgesetzt.
 
 **Definition Objektorientierung**: Eine Sichtweise auf ein System, das durch das Zusammenspiel kooperierender Objekte beschrieben wird.
+
+
+Durch Objektorientierung lassen sich komplexe Probleme einfach in Code übersetzen und klar strukturieren.
+
+---
+
+<!-- .slide: class="left" -->
+## Grundkonzepte der Objektorientierung
+
+**Klassen:** 
+* Eine Klasse ist eine Vorlage oder ein Bauplan für Objekte. 
+* Sie definiert, welche Eigenschaften und Methoden ein Objekt haben wird. 
+* z.B.: Klasse "Auto" mit Eigenschaften wie Marke, Modell und Baujahr.
+
+**Objekte:** 
+* Ein Objekt ist eine Instanz einer Klasse. 
+* Wenn wir z.B. ein Objekt der Klasse "Auto" erzeugen, erstellen wir ein spezielles Auto mit bestimmten Eigenschaften (z.B. ein roter VW Golf, Baujahr 2020).
+
+**Kapselung:** 
+* Kapselung bedeutet, dass die Daten eines Objekts vor direktem Zugriff von außen geschützt werden. 
+* Dies wird oft durch private Felder und öffentliche Methoden erreicht. So können Daten nur auf kontrollierte Weise verändert werden.
+
+Note:
 
 * Zusammengehörende Teile werden beim programmieren zusammen verwaltet.
 * Um zur Lösung eines Problems zu kommen, versucht man einzelne Objekte (Klassen) in der Problemstellung zu erkennen.
@@ -25,17 +53,23 @@ Klassen, Objekte und Instanzen
 <!-- .slide: class="left" -->
 ## Vorteile der objektorientierten Programmierung
 
-* Der Schutz von Daten verbessert sich durch die Kapselung der Daten und Methoden.
-* Die Fehlersuche wird durch die kompakte Struktur der Objekte vereinfacht.
-* Quellcode wird überschaubarer.
-* Änderungen können einfacher vorgenommen werden.
-* Neue Klassen können leichter in die Anwendung eingebunden werden.
-* Objekte werden nur dann erzeugt wenn diese benötigt werden (Effizienter Umgang mit Speicherplatz).
+**Strukturierung und Wartbarkeit:** OOP hilft, den Code klar zu strukturieren, da verwandte Daten und Methoden in einer Klasse zusammengefasst sind. Das erleichtert die Wartung und Lesbarkeit des Codes.
 
+**Wiederverwendbarkeit:** Durch Klassen und Vererbung können Teile des Codes wiederverwendet werden. Einmal geschriebene Klassen können in anderen Projekten ohne Anpassungen verwendet werden.
+
+**Erweiterbarkeit:** Neue Klassen können leicht erstellt und in das bestehende System integriert werden. Auch bestehende Klassen lassen sich oft problemlos erweitern.
+
+**Fehlervermeidung durch Kapselung:** Durch Kapselung werden unkontrollierte Veränderungen der Daten eines Objekts verhindert, was die Zuverlässigkeit und Stabilität des Codes erhöht.
+
+Note:
+
+* Objekte werden nur dann erzeugt wenn diese benötigt werden (Effizienter Umgang mit Speicherplatz).
+* Die Fehlersuche wird durch die kompakte Struktur der Objekte vereinfacht.
+  
 ---
 
 <!-- .slide: class="left" -->
-## Objektorientierung
+## Beispiel Objektorientierung
 
 ![Objektorientierung](images/ObjektorientierteProgrammierung.jpg)
 
@@ -48,31 +82,30 @@ Mehr zum Thema [objektorientierte Programmierung](https://entwickler.de/online/d
 
 *Eine Klasse ist ein Modell auf dessen Basis Objekte erstellt werden.*
 
-* In einer Klasse werden Attribute und zugehörige Methoden vereint.
+* In einer Klasse werden Felder, Eigenschaften und zugehörige Methoden vereint.
 
-* Da die Attribute und Methoden zur Klasse gehören spricht man von **Klassenmember**.
+* Da die Felder, Eigenschaften und Methoden zur Klasse gehören spricht man von Klassenmember.
 
 * Objekte (Instanzen) stellen konkrete Exemplare der Klasse dar.
 
-* Auf Basis einer Klasse können beliebig viele Objekte erzeugt
-    (instanziiert) werden.
+* Auf Basis einer Klasse können beliebig viele Objekte erzeugt (instanziiert) werden.
 
 ---
 
 <!-- .slide: class="left" -->
 ### Syntax der Klassendefinition
 
-* Die Klassendeklaration beginnt mit dem Schlüsselwort **class**.
+* Die Klassendeklaration beginnt mit dem Schlüsselwort `class`.
 
-* Bei Bedarf kann ein Zugriffsmodifizierer vorangestellt werden. Wird keiner vorangestellt, wird die Klasse als **internal** deklariert.
+* Bei Bedarf kann ein Zugriffsmodifizierer vorangestellt werden. Wird keiner vorangestellt, wird die Klasse als `internal` deklariert.
 
 * Anschließend folgt der Klassenname, dieser beginnt üblicherweise mit einem Großbuchstaben.
 
-* In der geschweiften Klammer folgt die Definition der Member.
+* In der geschweiften Klammer folgt die Definition der Klassenmember.
 
-* Eine Klasse kann Variablen, Konstante und Methoden enthalten.
+* Eine Klasse kann Felder, Eigenschaften, Konstanten und Methoden enthalten.
 
-* Auch den Klassenmember können Modifizierer vorangestellt werden. Ohne Angabe werden die Elemente als **private** deklariert.
+* Den Klassenmembern können Zugriffsmodifizierer vorangestellt werden. Ohne Angabe werden diese als `private` deklariert.
 
 * Mehr zum Thema [Klassen](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/classes)
 
@@ -81,40 +114,49 @@ Mehr zum Thema [objektorientierte Programmierung](https://entwickler.de/online/d
 <!-- .slide: class="left" -->
 ### Zugriffsmodifizierer
 
-Die Zugriffsmodifizierer steuern die Sichtbarkeit der Variablen, Eigenschaften und
-Methoden einer Klasse in C\#. Sie heißen:
+In C# gibt es mehrere Zugriffsmodifizierer, die den Zugriff auf Klassen, Methoden und andere Typen innerhalb des Codes steuern. Sie bestimmen, wo und wie auf Elemente zugegriffen werden kann.
 
-**private:**
+**`private`:**
 
-* Der Zugriff auf das Element ist nur innerhalb der Klasse möglich. `private` ist die Standardeinstellung.
+* Der Zugriff auf das Element ist nur innerhalb der Klasse möglich. Es ist von außen nicht zugänglich.
 
-**protected:**
+**`protected`:**
 
 * Zugriff innerhalb der Klasse und von allen davon abgeleiteten Klassen.
 
-**internal:**
+---
 
-* Der Zugriff auf das Element ist innerhalb der Assembly (Programm, Klassenbibliothek) möglich.
+<!-- .slide: class="left" -->
+### Zugriffsmodifizierer
 
-**public:**
+**`internal`:**
 
-* Der Zugriff auf das Element ist nicht eingeschränkt.
+* Der Zugriff auf das Element ist nur innerhalb derselben Assembly möglich. Es kann nicht von einer anderen Assembly aus zugegriffen werden.
+
+**`public`:**
+
+* Das Element ist überall sichtbar und kann von jeder anderen Klasse und Assembly verwendet werden. Der Zugriff auf das Element ist nicht eingeschränkt.
+
+Note:
+Es gibt noch: 
+* `protected internal`: Ist sowohl in abgeleiteten Klassen als auch innerhalb derselben Assembly sichtbar.
+* `private protected`: Ist nur innerhalb der definierten Klasse und von abgeleiteten Klassen innerhalb derselben Assembly zugänglich.
 
 ---
 
 <!-- .slide: class="left" -->
 ### Unsere erste Klasse
 
-Enthält Variablen und Methoden.
-
 ```csharp []
-public class Person
+public class Person // Definition der Klasse.
 {
-    private string vorname;
+    // Alle Felder, Eigenschaften und Methoden sind Klassenmember.
+    private string vorname; // Feld (nur innerhalb der Klasse zugreifbar).
     private string nachname;
-    public int alter;
 
-    public string GetName()
+    public int alter; // öffentliches Feld (auch von außerhalb der Klasse zugreifbar).
+
+    public string GetName() // Methode welche die Klasse bereitstellt.
     {
         return $"{vorname} {nachname}";
     }
@@ -123,112 +165,140 @@ public class Person
 
 Note: 
 Eine Klasse wird definiert mit `class`.
-Es ist üblich jede Klasse in eine eigene Daeti zu schreiben. Der Name der Datei ist identisch zum Klassenname.
+Es ist üblich jede Klasse in eine eigene Datei zu schreiben. Der Name der Datei ist identisch zum Klassenname.
 
 ---
 
 <!-- .slide: class="left" -->
-### Klasseninstanzen (Objekte) erzeugen
+### Klasseninstanz (Objekt) erzeugen
 
-* In C\# werden Instanzen (Objekte) einer Klasse **immer** dynamisch mit **new** erzeugt.
+* In C\# werden Instanzen (Objekte) einer Klasse immer dynamisch mit `new` erzeugt.
 
-* Speicherplatz wird erst beim Anlegen der Instanzen reserviert.
+* Speicherplatz wird erst beim Anlegen der Instanz reserviert.
 
-* Erzeugen eines Objekts:
-
-```csharp []
-Person meinePerson;
-meinePerson = new Person();
+```csharp
+Person nameMeinerVariable = new Person();
 ```
-
----
-
-<!-- .slide: class="left" -->
-### Zugriff auf die Member eines Objekts
-
-Der Zugriff auf die Member (Attribute) eines Objekts erfolgt über den
-Punktoperator.
-
-```csharp []
-meinePerson.alter = 20;
-```
-
-Note:
-
-* **VS** Klasse erzeugen und nutzen. 
-* In **VS** zeigen, Sichtbarkeit von Variablen (Klassenvariable, Variable in Methode, in Schleife) als Wdh
-* **ÜBUNG 1** Medienverwaltung 2
 
 ---
 
 <!-- .slide: class="left" -->
 ### Was ist Kapselung
 
-* Die Attribute (Variablen) werden in einer Klasse eingeschlossen und nach außen abgeschirmt (mit Zugriffsmodifizierer).
+* Die Felder werden in einer Klasse eingeschlossen und vor direktem Zugriff geschützt.
 
-* Nur Methoden und Eigenschaften (Properties) einer Klasse haben darauf Zugriff.
+* Nur Methoden und Eigenschaften einer Klasse haben darauf Zugriff.
 
 * Werte können beim schreiben geprüft und verändert werden.
 
 * Werte können beim lesen verändert und aufbereitet werden.
 
-Note: Prüfen auf Schwellwerte oder entfernen von Leerzeichen
-
----
-
-<!-- .slide: class="left" -->
-### Darstellung Kapselung
-
-![Klassenkapselung](images/Klassenkapselung.png)
-
 Note:
-
 * Variablen sind nur intern nutzbar wenn diese private sind.
 * Methoden sind meist nach außen sichtbar und greifen auf die geschützten Variablen zu.
 
 ---
 
 <!-- .slide: class="left" -->
-### Eigenschaften
+### Eigenschaft (Property)
 
-Um die Kapselung zu erreichen werden die Attribute **private** deklariert. Der Zugriff erfolgt über eine [Property (Eigenschaft)](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/properties).
+Eine [Eigenschaft](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/properties) ist eine spezielle Methode, die den Zugriff auf die Daten einer Klasse kontrolliert. 
 
-```csharp []
+Sie ähnelt einem Feld, das Daten speichert, erlaubt jedoch zusätzliche Logik beim Lesen oder Schreiben der Daten, z.B. zur Validierung oder Formatierung. 
+
+Eigenschaften helfen dabei, Daten sicher und kontrolliert verfügbar zu machen, ohne dass die internen Felder der Klasse direkt von außen verändert werden können (Kapselung).
+
+```csharp
 public class Person
 {
-    private string vorname;
-    private string nachname;
     private int alter;
 
-    public int Alter // Eigenschaft (Property)
+    public int Alter // Eigenschaft (erlaubt den Zugriff von außen)
     {
         get { return alter; }
-        set { alter = value; } // value beinhaltet den übergebenen Wert
+        set { alter = value; } // Value beinhaltet den übergebenen Wert
     }
-
-    // Alternative: Expression-bodied members (return nicht notwendig)
-    //public int Alter
-    //{
-    //    get => alter;
-    //    set => alter = value;
-    //}
-
-    // Alternative: Automatic Property
-    // Dabei ist auch keine Klassenvariable mehr notwendig
-    // public int Alter { get; set; }
 }
 ```
 
 Note:
 
-* **VS** Eigenschaft zeigen mit automa. Generierung
-* Zuweisung eines Wertes, wie bei einer Variable (nicht a.SetName("aa"))
+* Eigenschaft besteht aus einem `get`- (Getter) und einen `set`-Accessor (Setter).
 
-In einer Eigenschaft sind getter und setter inkludiert.
+---
 
-* Werte können beim lesen und schreiben geprüft bzw bearbeitet werden
+<!-- .slide: class="left" -->
+### Eigenschaft (Property)
+
+Eigenschaften können automatisch erstellt werden, wenn keine zusätzliche Logik benötigt wird. Das vereinfacht den Code:
+
+```csharp
+public class Person
+{
+    // Auto-Property, dabei ist kein Feld mehr notwendig.
+    public int Alter { get; set; }
+}
+```
+
+Note: Schreibzugriff kein entfernt werden wenn der Setter entfernt wird. Schreiben nur noch über den Konstruktor.
+
+---
+
+<!-- .slide: class="left" -->
+### Beispiel für eine Prüfung im Setter:
+
+```csharp
+public class Person
+{
+    private int alter;
+
+    public int Alter
+    {
+        get { return alter; }
+        set
+        {
+            if (value < 0)
+            {
+                throw new ArgumentException("Das Alter kann nicht negativ sein.");
+            }
+            alter = value;
+        }
+    }
+}
+
+```
+
+In diesem Beispiel stellt die Alter-Eigenschaft sicher, dass der Wert nicht negativ sein kann. Wenn ein ungültiger Wert übergeben wird, löst der Setter eine Ausnahme aus.
+
+Note:
+
+* Prüfen auf Schwellwerte oder entfernen von Leerzeichen
 * Schreib- oder Lesezugriff einschränkbar
 * Name mit Großbuchstabe (wie Klasse)
+
+---
+
+<!-- .slide: class="left" -->
+### Zugriff auf die Eigenschaft
+
+Der Zugriff auf die Eigenschaft eines Objekts erfolgt über den
+Punktoperator.
+
+```csharp []
+meinePerson.Alter = 20;
+```
+
+Note:
+
+* **VS** 
+  * Klasse erzeugen und nutzen. 
+  * Feld und Eigenschaft nutzen.
+  * Wert einer Eigenschaft zuweisen.
+  * Prüfen auf leeren String.
+  * Sichtbarkeit von Variablen (Felder, Eigenschaften, Methoden) als Wdh
+* **ÜBUNG 1** Medienverwaltung 2
+
+---
 
 <!-- .slide: class="left" 
 ## Klassen- & Instanzvariablen
@@ -259,20 +329,18 @@ int cClass = Person.classCount;
 ```
 -->
 
----
-
 <!-- .slide: class="left" -->
 ### Objektreferenz `this`
 
 * Zusammen mit jedem Objekt wird vom Compiler automatisch eine Objektreferenz auf das eigene Objekt erzeugt.
 
-* Diese Referenzvariable [this](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/this) kann in allen Methoden des Objekts eingesetzt werden.
+* Diese Referenzvariable [`this`](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/this) kann in allen Methoden des Objekts eingesetzt werden.
 
 * Kennzeichnet das aktuelle Objekt.
 
-Note: Sich selbst als Parameter übergeben.
-
-Identifizieren von Variablen mit gleichem Namen
+Note: 
+* Sich selbst als Parameter übergeben.
+* Identifizieren von Variablen mit gleichem Namen
 
 ---
 
@@ -280,8 +348,6 @@ Identifizieren von Variablen mit gleichem Namen
 #### Beispiel
 
 ```csharp []
-using System;
-
 namespace Objektreferenz
 {
     class Person
@@ -302,9 +368,8 @@ namespace Objektreferenz
     {
         static void Main(string[] args)
         {
-            Person hugo = new Person();
-            hugo.Anlegen("Hugo", "Musterhugo", 33);
-            Console.Read();
+            Person max = new Person();
+            hugo.Anlegen("Max", "Mustermann", 33);
         }
     }
 }
@@ -315,7 +380,7 @@ namespace Objektreferenz
 <!-- .slide: class="left" -->
 ## Konstruktor & Destruktor
 
-Jede Klasse enthält mindestens einen Konstruktor und einen Destruktor (Finalizer). Bei der Erzeugung eines Objekts wird automatisch der Konstruktor aufgerufen. Innerhalb des Konstruktors können dann zum Beispiel Attribute der Klasse initialisiert oder Variablen mit Standardwerten belegt werden.
+Jede Klasse enthält mindestens einen Konstruktor und einen Destruktor (Finalizer). Bei der Erzeugung eines Objekts wird automatisch der Konstruktor aufgerufen. Innerhalb des Konstruktors können Felder oder Eigenschaften der Klasse initialisiert werden.
 
 Der Destruktor zerstört die vom Konstruktor erzeugte Instanz des Objekts und gibt somit den Speicherplatz wieder frei.
 
@@ -329,26 +394,27 @@ Konstruktor und Destruktor bereit. Es können eigene Konstruktoren und Destrukto
 
 * Der [Konstruktor](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/constructors) ist eine spezielle Methode einer Klasse (kann aber nicht manuell aufgerufen werden)
 
-* Der Konstruktor wird **automatisch beim Instanziieren** (Erzeugen) eines Objekts aufgerufen.
+* Der Konstruktor wird automatisch beim Instanziieren (Erzeugen) eines Objekts aufgerufen.
 
-* Wird innerhalb der Klasse vom Programmierer **kein Konstruktor formuliert**, so wird automatisch der **Standard-Konstruktor** (ohne Parameter) aufgerufen.
+* Wird innerhalb der Klasse vom Programmierer kein Konstruktor formuliert, so wird automatisch der Standard-Konstruktor (ohne Parameter) aufgerufen.
 
 ---
 
 <!-- .slide: class="left" -->
 
-* Der Konstruktor ist eine Methode, die **immer** den Namen der Klasse besitzt.
+* Der Konstruktor ist eine Methode, die immer den Namen der Klasse besitzt.
 
-* Er liefert **keinen** Wert zurück, **auch nicht void!**
+* Er liefert keinen Wert zurück, auch nicht `void`!
 
 * Er kann nicht wie eine andere Methode aufgerufen werden, sondern wird immer automatisch beim Erzeugen eines Objekts aufgerufen.
 
-* Der Konstruktor ist außerhalb der Klasse aufrufbar, deshalb **muss** er als **public** definiert werden.
+* Der Konstruktor ist außerhalb der Klasse aufrufbar, deshalb muss er als `public` definiert werden.
 
-* Auch Konstruktoren können überladen werden, es können verschiedene Parameterlisten mitgegeben werden.<br/>
---> Bei der Erzeugung eines Objekts **müssen die Parameter mit übergeben werden**.
+* Auch Konstruktoren können überladen werden, es können verschiedene Parameter mitgegeben werden.<br/>
+Bei der Erzeugung eines Objekts müssen die Parameter mit übergeben werden.
 
-Note: private Konstruktor: wenn die Klasse nicht initialisiert werden soll
+Note: 
+`private` Konstruktor: wenn die Klasse nicht initialisiert werden soll
 
 ---
 
@@ -406,7 +472,8 @@ public Person()
     }
 ```
 
-Note: Werden Konstruktoren definiert gibt es kein Standard-Konstruktor mehr.
+Note: 
+Werden Konstruktoren definiert gibt es kein Standard-Konstruktor mehr.
 
 ---
 
@@ -416,7 +483,7 @@ Note: Werden Konstruktoren definiert gibt es kein Standard-Konstruktor mehr.
 ```csharp []
 class Fahrzeug
 {
-    public int Geschwindigkeit { get; set; } // Property/Eigenschaft
+    public int Geschwindigkeit { get; set; }
 
     public Fahrzeug(int wert)
     {
@@ -451,9 +518,9 @@ Note:
 <!-- .slide: class="left" -->
 ### Destruktor (Finalizer)
 
-* Der [Destruktor (Finalizer)](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/destructors) einer Klasse wird beim **Zerstören** eines Objekts aufgerufen.
+* Der [Destruktor (Finalizer)](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/destructors) einer Klasse wird beim Zerstören eines Objekts aufgerufen.
 
-* Er besitzt **keine Parameter**, keine Zugriffsmodifizierer und kann **nicht überladen** werden.
+* Er besitzt keine Parameter, keine Zugriffsmodifizierer und kann nicht überladen werden.
 
 * Destruktoren werden verwendet, wenn vor der Zerstörung des Objekts noch Aktionen ausgeführt werden müssen.
 
@@ -480,4 +547,6 @@ class Person
 }
 ```
 
-Note: **ÜBUNG 2** Intervall und **ÜBUNG 3** Sekundenspeicher
+Note: 
+* **ÜBUNG 2** Intervall 
+* **ÜBUNG 3** Sekundenspeicher
