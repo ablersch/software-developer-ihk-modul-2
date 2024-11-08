@@ -28,7 +28,7 @@ Note:
 Oft wird `null` als Rückgabewert verwendet, um anzuzeigen, dass eine Methode kein Ergebnis hat.
 
 ```csharp
-public string? FindName(int id)
+public string FindName(int id)
 {
     if (id == 1)
     {
@@ -36,7 +36,7 @@ public string? FindName(int id)
     }
     else
     {
-        return null;  // Kein Name für diese ID gefunden.
+        return null;  // Kein Name für diese ID gefunden. Vorsicht beim Zugriff!
     }
 }
 ```
@@ -51,7 +51,7 @@ Der Umgang mit `null` erfordert Vorsicht, weil der Versuch, auf eine Variable zu
 Um solche Fehler zu vermeiden, sollte immer geprüft werden, ob eine Variable `null` ist, bevor man auf sie zugreift:
 
 ```csharp
-string? name = null;
+string name = null;
 
 if (name != null)
 {
@@ -96,13 +96,6 @@ string value = null;  // Das funktioniert in älteren Versionen.
 
 Der Grund, warum `string?` eingeführt wurde, ist die Verbesserung der `Null`-Sicherheit des Codes.
 
----
-
-<!-- .slide: class="left" -->
-## Warum `string?` verwenden?
-
-Vor C# 8.0 war es möglich, einem string den Wert `null` zuzuweisen, aber es gab keine Möglichkeit für den Compiler, dich darauf hinzuweisen, dass du bei der Verwendung dieser Variable vorsichtig sein musst. Das führte oft zu `NullReferenceException`-Fehlern, wenn versucht wurde, auf einen `null`-Wert zuzugreifen:
-
 ```csharp
 string name = null;
 Console.WriteLine(name.Length);  // Führt zu NullReferenceException!
@@ -115,7 +108,7 @@ Console.WriteLine(name.Length);  // Führt zu NullReferenceException!
 
 Seit C# 8.0 gibt es die sogenannten **nullable reference type**. Wenn du `string?` verwendest, gibst du explizit an, dass diese Variable `null` sein kann. Dadurch wird der Compiler strenger und fordert dich auf, mit möglichen `null`-Werten vorsichtig umzugehen. Gleichzeitig wird der Standard-Referenztyp, wie `string`, als nicht-nullable betrachtet.
 
-Das bedeutet, dass du dem Compiler sagst: "`string` darf keinen `null`-Wert enthalten", und er wird dich warnen, wenn man es versucht:
+Das bedeutet, dass du dem Compiler sagst das ein `string` keinen `null`-Wert enthalten darf. Wenn er trotzdem `null` ist, warnt der Compiler:
 
 ```csharp
 string? name = null;  // Erlaubt, weil es ein nullable string ist.
@@ -139,13 +132,14 @@ Das bedeutet, dass du dem Compiler mitteilst, dass diese Variablen niemals null 
 
 Vorteile:
 * Erhöhte Code-Sicherheit
-* Expliziter Code: Es wird klarer, welche Variablen null sein dürfen und welche nicht. Das erhöht die Lesbarkeit und Wartbarkeit des Codes.
-* Frühe Fehlererkennung
+* Expliziter Code: Es wird klarer, welche Variablen `null` sein dürfen und welche nicht. Das erhöht die Lesbarkeit und Wartbarkeit des Codes.
+* Frühere Fehlererkennung
 
 ---
 
 <!-- .slide: class="left" -->
 ## Zusammenfassung
+
 * Vor C# 8.0: Alle Referenztypen (`string`, `object`, etc.) konnten `null` sein. Es gab keine Compiler-Unterstützung, um dich vor `null`-Fehlern zu warnen.
 
 * Ab C# 8.0: Mit `nullable reference types` kannst du klar angeben, welche Variablen `null` sein dürfen (`string?`) und welche nicht (`string`). Das hilft, Fehler zu vermeiden und sichereren Code zu schreiben.
