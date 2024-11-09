@@ -195,7 +195,7 @@ Eigenschaften helfen dabei, Daten sicher und kontrolliert verfügbar zu machen, 
 ```csharp
 public class Person
 {
-    private int alter;
+    private int alter; // Feld
 
     public int Alter // Eigenschaft (erlaubt den Zugriff von außen)
     {
@@ -207,7 +207,7 @@ public class Person
 
 Note:
 
-* Eigenschaft besteht aus einem `get`- (Getter) und einen `set`-Accessor (Setter).
+* Eigenschaft besteht aus einem `get`- (Getter) und einem `set`-Accessor (Setter).
   * Werte können beim schreiben geprüft und verändert werden.
   * Werte können beim lesen verändert und aufbereitet werden.
 
@@ -274,7 +274,7 @@ Note:
 Der Zugriff auf die Eigenschaft eines Objekts erfolgt über den
 Punktoperator.
 
-```csharp []
+```csharp
 meinePerson.Alter = 20;
 ```
 
@@ -382,7 +382,7 @@ Note:
 
 **Standard-Konstruktor welcher automatisch aufgerufen wird:**
 
-```csharp []
+```csharp
 class Person
 {
     // Gleicher Name wie die Klasse und kein Rückgabewert
@@ -467,10 +467,11 @@ class Program
 ```
 
 Note:
-
 * Anderer überladener Konstruktor wird zuerst mit `this` aufgerufen. Danach wird der restliche Code durchlaufen.
 * Initialisierungscode sollte in nur einem Konstruktor sein der von anderen aufgerufen wird.
-* **VS** Konstruktor zeigen (Klasse erstellen mit zwei Konstruktoren. Der Konstruktor mit einem Wert ruft den anderen Konstruktor mit zwei Werten auf).
+* **VS** Konstruktor zeigen 
+  * Klasse erstellen mit zwei Konstruktoren. 
+  * Der Konstruktor mit einem Wert ruft den anderen Konstruktor mit zwei Werten auf.
 
 ---
 
@@ -494,8 +495,7 @@ Note:
 <!-- .slide: class="left" -->
 #### Syntax
 
-```csharp []
-
+```csharp
 class Person
 {
     ...

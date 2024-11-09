@@ -43,7 +43,7 @@ Eine häufig verwendete Klasse für Aufzählungen ist die Klasse [ArrayList](htt
 Damit diese verwendet werden kann, muss der folgende Namespace in das
 Projekt eingebunden werden:
 
-```csharp []
+```csharp
 using System.Collections;
 ```
 
@@ -114,7 +114,7 @@ foreach (DictionaryEntry hashElements in hashTable) {
 ---
 
 <!-- .slide: class="left" -->
-## List `<T>`
+## List
 
 * Zugriff über Index
 
@@ -134,7 +134,7 @@ Mehr zum Thema [List](https://docs.microsoft.com/de-de/dotnet/api/system.collect
 ---
 
 <!-- .slide: class="left" -->
-### Beispiel List `<T>`
+### Beispiel List
 
 ```csharp []
 List<int> liste = new List<int>();
@@ -159,7 +159,7 @@ foreach (int i in liste) {
 ---
 
 <!-- .slide: class="left" -->
-## Dictionary `<TKey, TValue>`
+## Dictionary
 
 * Das [Dictionary](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0) Stellt eine Auflistung von Schlüsseln und Werten dar
 
@@ -172,7 +172,7 @@ foreach (int i in liste) {
 ---
 
 <!-- .slide: class="left" -->
-### Beispiel Dictionary `<TKey, TValue>`
+### Beispiel Dictionary
 
 ```csharp []
 string tempString;

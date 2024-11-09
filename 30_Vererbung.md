@@ -73,7 +73,7 @@ ChangeRequest kann alle Methoden und Variabeln von der Basisklasse verwenden
 <!-- .slide: class="left" -->
 ## Syntax
 
-```csharp []
+```csharp
 class <abgeleitete Klasse> : <Basisklasse>
 {
     ...
@@ -82,7 +82,7 @@ class <abgeleitete Klasse> : <Basisklasse>
 
 Die Implementierung der Vererbung in C\#
 
-```csharp []
+```csharp
 class Mensch : Lebewesen
 {
     ...
@@ -100,7 +100,7 @@ class Mensch : Lebewesen
 
 * Besitzt die Basisklasse einen Konstruktor mit Parameter (und keinen ohne Parameter) wird dieser nicht aufgerufen. In diesem Fall muss (wenn ein Konstruktor nötig ist) der Konstruktor aus der abgeleiteten Klasse explizit aufgerufen werden.
 
-```csharp []
+```csharp
 : base(Parameter)
 ```
 
@@ -113,13 +113,13 @@ Um aus einer abgeleiteten Klasse auf die Basisklasse zuzugreifen gibt es das Sch
 
 * Einen Konstruktor der Basisklasse aufrufen:
 
-```csharp []
+```csharp
 public Person(string beruf, string name, int alter) : base(name, alter)
 ```
 
 * Auf eine Methode oder Eigenschaft der Basisklasse zugreifen:
 
-```csharp []
+```csharp
 base.Name = "Fritz";
 ```
 
