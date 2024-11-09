@@ -140,7 +140,7 @@ In C# gibt es mehrere Zugriffsmodifizierer, die den Zugriff auf Klassen, Methode
 Note:
 Es gibt noch: 
 * `protected internal`: Ist sowohl in abgeleiteten Klassen als auch innerhalb derselben Assembly sichtbar.
-* `private protected`: Ist nur innerhalb der definierten Klasse und von abgeleiteten Klassen innerhalb derselben Assembly zugänglich.
+* `private protected`: Ist nur innerhalb der Klasse und von abgeleiteten Klassen innerhalb derselben Assembly zugänglich.
 
 ---
 
@@ -161,50 +161,25 @@ public class Person // Definition der Klasse.
         return $"{vorname} {nachname}";
     }
 }
+
+public class Program
+{
+    private static void Main(string[] args)
+    {
+        Person nameMeinerVariable = new Person();
+    }
+}
 ```
 
 Note: 
-Eine Klasse wird definiert mit `class`.
-Es ist üblich jede Klasse in eine eigene Datei zu schreiben. Der Name der Datei ist identisch zum Klassenname.
-
----
-
-<!-- .slide: class="left" -->
-### Klasseninstanz (Objekt) erzeugen
-
-* In C\# werden Instanzen (Objekte) einer Klasse immer dynamisch mit `new` erzeugt.
-
-* Speicherplatz wird erst beim Anlegen der Instanz reserviert.
-
-```csharp
-Person nameMeinerVariable = new Person();
-```
-
-
-Note:
-
+* Eine Klasse wird definiert mit `class`.
+* Es ist üblich jede Klasse in eine eigene Datei zu schreiben. Der Name der Datei ist identisch zum Klassenname.
+* Instanzen (Objekte) einer Klasse werden mit `new` erzeugt.
 * **VS** 
   * Klasse erzeugen und nutzen. 
   * Feld nutzen.
-  * Leeres Klassenobjekt, prüfen auf `null`
+  * Leeres Klassenobjekt, prüfen auf `null`.
 * **ÜBUNG 1** Medienverwaltung 2
-
----
-
-<!-- .slide: class="left" -->
-### Was ist Kapselung
-
-* Die Felder werden in einer Klasse eingeschlossen und vor direktem Zugriff geschützt.
-
-* Nur Methoden und Eigenschaften einer Klasse haben darauf Zugriff.
-
-* Werte können beim schreiben geprüft und verändert werden.
-
-* Werte können beim lesen verändert und aufbereitet werden.
-
-Note:
-* Variablen sind nur intern nutzbar wenn diese private sind.
-* Methoden sind meist nach außen sichtbar und greifen auf die geschützten Variablen zu.
 
 ---
 
@@ -233,6 +208,8 @@ public class Person
 Note:
 
 * Eigenschaft besteht aus einem `get`- (Getter) und einen `set`-Accessor (Setter).
+  * Werte können beim schreiben geprüft und verändert werden.
+  * Werte können beim lesen verändert und aufbereitet werden.
 
 ---
 
@@ -249,7 +226,9 @@ public class Person
 }
 ```
 
-Note: Schreibzugriff kein entfernt werden wenn der Setter entfernt wird. Schreiben nur noch über den Konstruktor.
+Note: 
+* Schreibzugriff kann entfernt werden wenn der Setter entfernt wird. 
+* Schreiben nur noch über den Konstruktor.
 
 ---
 
@@ -268,7 +247,9 @@ public class Person
         {
             if (value < 0)
             {
-                throw new ArgumentException("Das Alter kann nicht negativ sein.");
+                alter = 0;
+                // Oder z.B. Exception werfen
+                // throw new ArgumentException("Das Alter kann nicht negativ sein.");
             }
             alter = value;
         }
@@ -277,7 +258,7 @@ public class Person
 
 ```
 
-In diesem Beispiel stellt die Alter-Eigenschaft sicher, dass der Wert nicht negativ sein kann. Wenn ein ungültiger Wert übergeben wird, löst der Setter eine Ausnahme aus.
+In diesem Beispiel stellt die Alter-Eigenschaft sicher, dass der Wert nicht negativ sein kann.
 
 Note:
 
@@ -302,39 +283,10 @@ Note:
 * **VS** 
   * Eigenschaft nutzen.
   * Wert einer Eigenschaft zuweisen.
-  * Prüfen auf leeren String.
+  * Prüfen auf leeren String in der Eigenschaft.
   * Sichtbarkeit von Variablen (Felder, Eigenschaften, Methoden) als Wdh
 
 ---
-
-<!-- .slide: class="left" 
-## Klassen- & Instanzvariablen
-
-Je nach Gültigkeit unterscheidet man in Instanz- und Klassenvariablen.\
-Der Unterschied ist gut zu erkennen am Beispiel eines Objektzählers.
-
-* **Instanzvariablen**
-    Variablen die nur innerhalb von Objekten gültig sind.
-
-```csharp
-public int count;
-```
-
-* **Klassenvariablen**
-Variablen die unabhängig von Objekten existieren.
-
-```csharp
-public static int classCount;
-```
-
-**Zugriff außerhalb der Klasse:**
-
-```csharp
-Person meinObjekt = new Person();
-int c = meinObjekt.count;
-int cClass = Person.classCount;
-```
--->
 
 <!-- .slide: class="left" -->
 ### Objektreferenz `this`
