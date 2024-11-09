@@ -186,6 +186,7 @@ Note:
 * **VS** 
   * Klasse erzeugen und nutzen. 
   * Feld nutzen.
+  * Leeres Klassenobjekt, prüfen auf `null`
 * **ÜBUNG 1** Medienverwaltung 2
 
 ---
