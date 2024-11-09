@@ -207,6 +207,11 @@ public class Person
 
 Note:
 
+* In anderen Programmiersprachen werden dazu Getter und Setter verwendet. Vorteile Property:
+  * Klarere und lesbarere Syntax, Zugriff wie auf eine Variable.
+  * Einheitlicher Zugriff, egal ob lesend oder schreibend.
+  * Datenbindung in UI (WPF)
+  * Serialisierung erwartet Property und keine Methode
 * Eigenschaft besteht aus einem `get`- (Getter) und einem `set`-Accessor (Setter).
   * Werte können beim schreiben geprüft und verändert werden.
   * Werte können beim lesen verändert und aufbereitet werden.
@@ -248,10 +253,11 @@ public class Person
             if (value < 0)
             {
                 alter = 0;
-                // Oder z.B. Exception werfen
-                // throw new ArgumentException("Das Alter kann nicht negativ sein.");
+            } 
+            else 
+            {
+                alter = value;
             }
-            alter = value;
         }
     }
 }
@@ -298,8 +304,8 @@ Note:
 * Kennzeichnet das aktuelle Objekt.
 
 Note: 
-* Sich selbst als Parameter übergeben.
-* Identifizieren von Variablen mit gleichem Namen
+* Identifizieren von Variablen mit gleichem Namen (Beispiel unten)
+* Sich selbst als Parameter übergeben (Beispiel im Link)
 
 ---
 

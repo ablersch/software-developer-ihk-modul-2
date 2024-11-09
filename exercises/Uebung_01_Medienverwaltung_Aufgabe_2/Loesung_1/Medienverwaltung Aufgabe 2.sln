@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medienverwaltung Aufgabe 2", "Medienverwaltung Aufgabe 2.csproj", "{4BD05EA7-2F24-440E-93AA-E61FC0C7D850}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BD05EA7-2F24-440E-93AA-E61FC0C7D850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD05EA7-2F24-440E-93AA-E61FC0C7D850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD05EA7-2F24-440E-93AA-E61FC0C7D850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD05EA7-2F24-440E-93AA-E61FC0C7D850}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86AF2357-BD82-46C4-BB87-EBD6D2B4CAA2}
+	EndGlobalSection
+EndGlobal
