@@ -80,11 +80,10 @@ public class Program
 <!-- .slide: class="left" -->
 ## Vorteile der JSON-Serialisierung
 
-* JSON ist leichtgewichtig und menschenlesbar.
+* JSON ist leichtgewichtig und gut lesbar.
 * Es ist plattformunabhängig und wird in vielen Sprachen unterstützt.
 * JSON-Serialisierung in C# ist effizient und direkt in der `System.Text.Json`-Bibliothek integriert (seit .NET Core 3.0).
 
 Für fortgeschrittene Anwendungsfälle kannst man auch Einstellungen beim Serialisieren und Deserialisieren verwenden, um z. B. benutzerdefinierte Regeln zu definieren, wie Daten formatiert werden.
 
 Note:
-* 

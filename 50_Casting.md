@@ -7,9 +7,9 @@ Werte umwandeln
 <!-- .slide: class="left" -->
 ## Casting (Umwandlung bzw. Typkonvertierung)
 
-* **is Schlüsselwort:** Prüft ob ein Objekt mit einem bestimmten Typ kompatibel ist.
+* **is** Prüft ob ein Objekt mit einem bestimmten Typ kompatibel ist.
 
-* **as Schlüsselwort:** Führt eine Konvertierung in den angegebenen Datentyp durch. Bei einem Fehler ist das Objekt null.
+* **as** Führt eine Konvertierung in den angegebenen Datentyp durch. Bei einem Fehler ist das Objekt null.
 
 * **Klassische Konvertierung:** Um eine Umwandlung durchzuführen, legen Sie den Typ, in den Sie umwandeln, in Klammern vor den zu konvertierenden Wert/Variable. Bei einem Fehler wird eine Exception geworfen.
 
@@ -22,7 +22,7 @@ zahl = (int)d;    -> Ergebnis: 1234
 
 Note:
 
-* int -> Double implizit (autom vom Compiler)
+* int -> Double implizit (autom. vom Compiler)
 * zahl = (int)d; explizit (auch mit Convert möglich)
 
 ---

@@ -10,7 +10,7 @@ Was ist `null`, wo wird es eingesetzt und was muss beachtet werden?
 `null` ein spezieller Wert, der anzeigt, dass eine Variable keinen gültigen Wert oder keine Referenz auf ein Objekt hat.
 
 ```csharp
-string name = null;  // "name" verweist auf nichts, sie enthält keinen String.
+string name = null;  // "name" verweist auf nichts, enthält keinen String.
 ```
 
 Note:
@@ -51,22 +51,42 @@ Der Umgang mit `null` erfordert Vorsicht, weil der Versuch, auf eine Variable zu
 Um solche Fehler zu vermeiden, sollte immer geprüft werden, ob eine Variable `null` ist, bevor man auf sie zugreift:
 
 ```csharp
-string name = null;
+string name;
 
-if (name != null)
+if (person != null)
 {
-    Console.WriteLine(name.Length);  // Sicher, weil "name" nicht null ist.
+    name = person.Name;  // Sicher, weil "name" nicht null ist.
 }
 else
 {
-    Console.WriteLine("Name ist null");
+    name = "Name nicht bekannt";
 }
 ```
+
+Der **Null-conditional Operator** erlaubt es, auf Eigenschaften oder Methoden eines Objekts zuzugreifen, ohne vorher explizit zu prüfen, ob das Objekt `null` ist.
+
+
+```csharp
+string name = person?.Name;
+```
+
+Es wird nur auf `Name` zugegriffen wenn `person` nicht `null` ist.
+
+Note:
+* Weniger Code: Der Null-conditional Operator reduziert die Anzahl der expliziten null-Prüfungen.
+* Lesbarkeit: Der Code bleibt übersichtlicher und besser lesbar.
+* Sicherheit: Er hilft dabei, NullReferenceException-Fehler zu vermeiden.
+
+---
+
+<!-- .slide: class="left" -->
+## Null-Prüfung
 
 Der `??`-Operator in C# wird als **Null-Coalescing-Operator** bezeichnet. Er wird verwendet, um eine Null-Prüfung durchzuführen und einen Standardwert anzugeben, falls eine Variable `null` ist.
 
 ```csharp
-string result = name ?? "Unbekannt";  // Wenn "name" null ist, wird "Unbekannt" verwendet.
+// Wenn "person" order "Name" null ist, wird "Name nicht bekannt" gesetzt.
+string name = person?.Name ?? "Name nicht bekannt";  
 ```
 
 Note:
@@ -76,7 +96,6 @@ Wenn der linke Operand `null` ist, wird der rechte Operand zurückgegeben.
 
 Besonders hilfreich bei der Initialisierung von Variablen mit einem Standardwert, wenn die Möglichkeit besteht, dass sie `null` sein könnten.
 
----
 
 <!-- .slide: class="left" -->
 ## Was bedeutet nullable?
@@ -140,10 +159,8 @@ Vorteile:
 <!-- .slide: class="left" -->
 ## Zusammenfassung
 
-* Vor C# 8.0: Alle Referenztypen (`string`, `object`, etc.) konnten `null` sein. Es gab keine Compiler-Unterstützung, um dich vor `null`-Fehlern zu warnen.
+* Vor C# 8.0: Alle Referenztypen (`string`, `object`, etc.) konnten `null` sein. Es gab keine Compiler-Unterstützung, um vor `null`-Fehlern zu warnen.
 
-* Ab C# 8.0: Mit `nullable reference types` kannst du klar angeben, welche Variablen `null` sein dürfen (`string?`) und welche nicht (`string`). Das hilft, Fehler zu vermeiden und sichereren Code zu schreiben.
-
-`string?` ist also ein hilfreiches Werkzeug, um `null`-Fehler frühzeitig zu erkennen und deinen Code robuster zu machen.
+* Ab C# 8.0: Mit `nullable reference types` kann klar angeben, welche Variablen `null` sein dürfen (`string?`) und welche nicht (`string`). Das hilft, Fehler zu vermeiden und sichereren Code zu schreiben.
 
 Note: **Übung** tbd

@@ -7,7 +7,7 @@ Daten abfragen und filtern.
 <!-- .slide: class="left" -->
 ## Was ist LINQ
 
-LINQ (Language-Integrated Query bzw Sprachintegrierte Abfrage) ist eine einheitliche Abfragesyntax in C# und VB.NET zum Abrufen von Daten aus verschiedenen Quellen und Formaten. Sie ist in C# oder VB integriert, wodurch die Diskrepanz zwischen Programmiersprachen und Datenbanken beseitigt wird und eine einzige Abfrageschnittstelle für verschiedene Arten von Datenquellen bereitgestellt wird.
+LINQ (Language-Integrated Query bzw sprachintegrierte Abfrage) ist eine einheitliche Abfragesyntax in C# und VB.NET zum Abrufen von Daten aus verschiedenen Quellen und Formaten. Sie ist in C# oder VB integriert, wodurch die Diskrepanz zwischen Programmiersprachen und Datenbanken beseitigt wird und eine einzige Abfrageschnittstelle für verschiedene Arten von Datenquellen bereitgestellt wird.
 
 Wie SQL ist [LINQ](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries) eine strukturierte Abfragesyntax um Daten aus verschiedenen Arten von Datenquellen wie Sammlungen, ADO.Net DataSet, XML Dokumente, Webservice und Datenbanken abzurufen.
 
@@ -46,7 +46,6 @@ LINQ-Abfragen geben Ergebnisse als Objekte zurück. So können Sie einen objekto
 * **Weniger Kodierung:** Die Menge des zu schreibenden Codes wird im Vergleich zu einem traditionelleren Ansatz reduziert.
 * **Lesbarer Code:** LINQ macht den Code besser lesbar (leicht verstehen und pflegen).
 * **Standardisierte Art der Abfrage mehrerer Datenquellen:** Die gleiche LINQ-Syntax kann für die Abfrage mehrerer Datenquellen verwendet werden.
-* **Kompilierzeitsicherheit von Abfragen:** Es bietet Typüberprüfung von Objekten zur Kompilierzeit.
 * **IntelliSense-Unterstützung:** LINQ bietet IntelliSense an.
 
 ---
@@ -184,7 +183,7 @@ Methode | Beschreibung
 AsEnumerable | Gibt die Eingabe zurück als `IEnumerable<t>`
 AsQueryable | Konvertiert die Eingabe zu einem IQueryable um einen Suchprovider zu simulieren.
 ToArray | Konvertiert die EIngabe in ein Array
-ToDictionary | Fügt Elemente in ein Dictionary ein, das auf einer Schlüsselselektor-Funktion basiert
+ToDictionary | Fügt Elemente in ein Dictionary ein
 ToList | Konvertiert eine Collection in eine Liste
 
 Note:

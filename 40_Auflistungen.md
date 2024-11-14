@@ -31,7 +31,7 @@ Damit diese verwendet werden können, müssen folgende Namespaces in das Projekt
 
 Mehr zum Thema [Collections](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/concepts/collections)
 
-Note: **VS** autom Auflösung zeigen
+Note: **VS** autom. Auflösung zeigen
 
 ---
 
