@@ -162,8 +162,9 @@ Das [Dictionary](https://docs.microsoft.com/de-de/dotnet/api/system.collections.
 
 Die Schlüssel und Werte können unterschiedliche Typen haben, wobei der Schlüssel typischerweise ein einzigartiges Objekt sein muss, um Verwechslungen zu vermeiden.
 
-* **TKey** Der Typ des Schlüssels im Wörterbuch.
-* **TValue** Der Typ des Wertes im Wörterbuch.
+**TKey** Der Typ des Schlüssels im Wörterbuch.
+**TValue** Der Typ des Wertes im Wörterbuch.
+
 
 * Schneller Zugriff mit Schlüsseln (ist einer `Hashtable` oder einer `List` vorzuziehen)
 * Schlüssel-Wert-Paare
