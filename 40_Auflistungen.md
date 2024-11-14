@@ -1,24 +1,28 @@
 # Collections (Auflistungen)
 
-Gruppieren von Objekten (alternativen für Arrays).
+Datenstrukturen zum Speichern und Verwalten von Daten.
 
 ---
 
 <!-- .slide: class="left" -->
 ## Collection Klassen
 
-Zur Zeit kennen wir nur Arrays für Aufzählungen. Diese haben aber einige
-Nachteile:
+Collections sind spezialisierte Datenstrukturen, die das Speichern, Verwalten und Durchsuchen von Objekten auf effiziente und benutzerfreundliche Weise ermöglichen. Es gibt verschiedene Arten von Collections, die jeweils für unterschiedliche Anwendungsfälle optimiert sind.
 
-* Die Größe muss festgelegt werden
+Vorteile gegenüber Arrays:
 
-* Arrays sind statisch (Größe kann nicht automatisch angepasst werden)
+* Dynamische Größe
+* Erweiterte Funktionalitäten
+* Leistungsfähige Datenzugriffsmethoden
+* bessere Performance mit LINQ
+* Erweiter- und anpassbar
 
-* Index bleibt vorhanden wenn ein Element gelöscht wird
-
-Dafür gibt es neue Klassen sogenannte **Collections**. Diese können ihre Kapazität dynamisch verwalten und enthalten keine leeren Indizes.
-
-Damit diese verwendet werden können, müssen folgende Namespaces in das Projekt eingebunden werden:
+Note:
+* Dynamische Größe: Arrays haben eine feste Größe; Collections passen die zur Laufzeit dynamisch an.
+* großer Funktionsumfang: Arrays bieten nur grundlegende Funktionen und erfordern oft zusätzliche Logik; Collections bieten eine Vielzahl von Methoden und Eigenschaften, die Operationen wie Hinzufügen, Entfernen, Suchen, Sortieren und Filtern erleichtern.
+* Leistungsfähige Datenzugriffsmethoden: Bestimmte Collections ermöglicht schnellen Zugriff auf Elemente über Schlüssel (Dictionary) oder über die Reihenfolge (Queue)
+* bessere Performance mit LINQ: Arrays können auch mit LINQ abgefragt werden; Collections lassen sich nahtlos mit LINQ abfragen und bieten bessere Performance und Flexibilität bei größeren Datenmengen.
+* Erweiter- und anpassbar: Arrays sind weniger flexibel und bieten keine eingebauten Mechanismen zur Erweiterung; Collections können erweitert werden, um benutzerdefinierte Funktionen bereitzustellen
 
 ---
 
@@ -38,14 +42,13 @@ Note: **VS** autom. Auflösung zeigen
 <!-- .slide: class="left" -->
 ## ArrayList
 
-Eine häufig verwendete Klasse für Aufzählungen ist die Klasse [ArrayList](https://docs.microsoft.com/de-de/dotnet/api/system.collections.arraylist?view=net-6.0).
+Eine [ArrayList](https://docs.microsoft.com/de-de/dotnet/api/system.collections.arraylist?view=net-6.0) ist eine dynamische Liste von Objekten. Im Gegensatz zu Arrays, die eine feste Größe haben, kann eine ArrayList in ihrer Größe dynamisch wachsen und schrumpfen, wenn Elemente hinzugefügt oder entfernt werden.
+Eine häufig verwendete Klasse für Aufzählungen ist die Klasse
 
-Damit diese verwendet werden kann, muss der folgende Namespace in das
-Projekt eingebunden werden:
-
-```csharp
-using System.Collections;
-```
+* Dynamische Größe
+* Zugriff über Index
+* kann beliebige Objekte speichern
+* Performance schlechter als bei `List<T>`
 
 ---
 
@@ -72,17 +75,17 @@ Console.WriteLine("2. Element: " + arrayList[1]);
 <!-- .slide: class="left" -->
 ## Hashtable
 
-Bei einer Liste mit Indizes muss man die Liste so lange durchlaufen bis man eine Übereinstimmung gefunden hat. Bei sehr vielen Einträgen, kann das sehr zeitaufwendig und rechenintensiv sein.
+Eine [Hashtabelle](https://docs.microsoft.com/de-de/dotnet/api/system.collections.hashtable?view=net-6.0) ist eine spezielle Art von Datenstruktur die Daten in Form von Schlüssel-Wert-Paaren speichert und über einen sogenannten Hashing-Mechanismus schnellen Zugriff auf die gespeicherten Daten bietet.
 
-Kommt es nicht auf die Reihenfolge der Elemente an, kann man sich für eine [Hashtabelle](https://docs.microsoft.com/de-de/dotnet/api/system.collections.hashtable?view=net-6.0) entscheiden. Dort kann ein bestimmtes Element zwar schnell gefunden werden, hat aber keinen Einfluss auf die Positionierung der Elemente in der Liste.
+Kommt es nicht auf die Reihenfolge der Elemente an, kann man sich für eine  entscheiden. Dort kann ein bestimmtes Element zwar schnell gefunden werden, hat aber keinen Einfluss auf die Positionierung der Elemente in der Liste.
 
-* Elemente können schnell gefunden werden (über Hashcodes)
-
+* Schneller Zugriff über Schlüssel (Hashcode)
 * Kein Einfluss auf den Index
+* Reihenfolge nicht beeinflussbar
 
-* Zugriff erfolgt über einen Schlüssel
-
-Note: Hashcode: Int Wert welcher über Algorithmus berechnet wird
+Note: 
+Bei einer Liste mit Indizes muss die Liste so lange durchlaufen werden bis eine Übereinstimmung gefunden wurde. Bei sehr vielen Einträgen, kann das sehr zeitaufwendig und rechenintensiv sein.
+Hashcode: Int Wert welcher über Algorithmus aus dem Schlüssel berechnet wird
 
 ---
 
@@ -114,22 +117,16 @@ foreach (DictionaryEntry hashElements in hashTable) {
 ---
 
 <!-- .slide: class="left" -->
-## List
+## List<T>
 
+Eine [List<T>](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1?view=net-6.0) ist eine generische, dynamische Liste. Sie speichert Elemente vom spezifischen Typ `T`, wodurch Typensicherheit gewährleistet wird.
+
+* Typsicherheit
+* Dynamische Größe
 * Zugriff über Index
-
-* Kein schneller Zugriff (Dictionary ist schneller)
-
+* Kein schneller Zugriff (`Dictionary` ist schneller)
 * Listen sind ideal für Schleifen
-
-Damit diese verwendet werden kann, muss der folgende Namespace in das
-Projekt eingebunden werden:
-
-```csharp []
-using System.Collections.Generics;
-```
-
-Mehr zum Thema [List](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1?view=net-6.0)
+* Werden in C\# häufig genutzt
 
 ---
 
@@ -159,15 +156,18 @@ foreach (int i in liste) {
 ---
 
 <!-- .slide: class="left" -->
-## Dictionary
+## Dictionary<TKey, TValue>
 
-* Das [Dictionary](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0) Stellt eine Auflistung von Schlüsseln und Werten dar
+Das [Dictionary](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0) ist eine Sammlung von Schlüssel-Wert-Paaren, die einen schnellen Zugriff auf Elemente anhand ihres eindeutigen Schlüssels ermöglicht.
 
-* Sehr effizient und schnelles Nachschlagen mit Schlüsseln (ist einer Hashtabelle oder einer Liste vorzuziehen)
+Die Schlüssel und Werte können unterschiedliche Typen haben, wobei der Schlüssel typischerweise ein einzigartiges Objekt sein muss, um Verwechslungen zu vermeiden.
 
-* **TKey** Der Typ der Schlüssel im Wörterbuch.
+* **TKey** Der Typ des Schlüssels im Wörterbuch.
+* **TValue** Der Typ des Wertes im Wörterbuch.
 
-* **TValue** Der Typ der Werte im Wörterbuch.
+* Schneller Zugriff mit Schlüsseln (ist einer `Hashtable` oder einer `List` vorzuziehen)
+* Schlüssel-Wert-Paare
+* Typsicherheit
 
 ---
 
@@ -188,7 +188,6 @@ if (dictionary.ContainsKey("tier1")) {
 }
 
 if (dictionary.TryGetValue("tier1", out tempString)) {
-     // analog Int32.TryParse(...)
      Console.WriteLine($"found Wert: {tempString}");
 }
 
@@ -198,6 +197,22 @@ foreach (KeyValuePair<string, string> pair in dictionary) {
 ```
 
 Note: 
-* Gibt noch weitere wie z.B. HashSet, Queue, SortedList, Stack, ..
 * **VS** List Verwendung zeigen mit Zuweisung von Objekten und Objekten mit Vererbung.
 * **ÜBUNG 7** Wetterstation
+
+---
+
+<!-- .slide: class="left" -->
+## weitere Collections
+
+* **`HashSet<T>`**: Sammlung eindeutiger Werte ohne bestimmter Reihenfolge, keine Duplikate.
+* **`Queue<T>`**: FIFO-Warteschlange (First In, First Out).
+* **`Stack<T>`**: LIFO-Stapel (Last In, First Out).
+* **`SortedList`**<TKey, TValue>: Sortierte Schlüssel-Wert-Paare.
+* **`LinkedList<T>`**: Doppelt verkettete Liste, flexibel für Einfügungen.
+* **`ObservableCollection<T>`**: Benachrichtigt bei Änderungen, ideal für GUI-Bindings.
+* **`ConcurrentDictionary<TKey, TValue>`**: Thread-sicheres Dictionary für parallelen Zugriff.
+* **`ImmutableList<T>`**: Unveränderliche Liste, ideal für unveränderliche Daten.
+
+Note:
+Jede Collection bietet Lösungen für spezifische Anforderungen wie Geschwindigkeit, Sortierung, Einzigartigkeit und Thread-Sicherheit.

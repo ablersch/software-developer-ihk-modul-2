@@ -1,6 +1,6 @@
 # Casting
 
-Werte umwandeln
+Werte umwandeln.
 
 ---
 
