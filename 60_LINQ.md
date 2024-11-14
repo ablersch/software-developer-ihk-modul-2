@@ -11,7 +11,8 @@ LINQ (Language-Integrated Query bzw sprachintegrierte Abfrage) ist eine einheitl
 
 Wie SQL ist [LINQ](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries) eine strukturierte Abfragesyntax um Daten aus verschiedenen Arten von Datenquellen wie Sammlungen, ADO.Net DataSet, XML Dokumente, Webservice und Datenbanken abzurufen.
 
-Note: Aussprache: Link
+Note: 
+Aussprache: Link
 
 ---
 
@@ -53,7 +54,7 @@ LINQ-Abfragen geben Ergebnisse als Objekte zurück. So können Sie einen objekto
 <!-- .slide: class="left" -->
 ## Syntaxvarianten
 
-* Abfragensyntax (Query syntax)
+* Abfragesyntax (Query syntax)
 * Methodensyntax (Method syntax / Fluent syntax)
 
 ```csharp []
@@ -82,7 +83,8 @@ foreach (var name in shortNames)
 
 ```
 
-Note: In nur einer Zeile kann man z.B. alle Namen abfragen welche 8 oder weniger Zeichen lang sind und der Länge nach sortieren
+Note: 
+In nur einer Zeile kann man z.B. alle Namen abfragen welche 8 oder weniger Zeichen lang sind und der Länge nach sortieren
 
 ---
 
@@ -104,12 +106,13 @@ var numbers = new List<int>()
 var sortNum = numbers.OrderBy(number => number).ToList();
 ```
 
-Note: Abfrage wird erst ausgeführt wenn mit den Daten gearbeitet wird z.B. iterieren, ToList(), Count(),  D.h. es sind Abfragen über mehrere Zeilen möglich.
+Note: 
+Abfrage wird erst ausgeführt wenn mit den Daten gearbeitet wird z.B. iterieren, ToList(), Count(),  D.h. es sind Abfragen über mehrere Zeilen möglich.
 
 ---
 
 <!-- .slide: class="left" -->
-### Standard Abfrageoperatoren
+### Standard-Abfrageoperatoren
 
 Standard-Abfrageoperatoren können auf der von ihnen bereitgestellten Funktionalität klassifiziert werden.
 
@@ -138,8 +141,8 @@ Konvertierung | AsEnumerable, AsQueryable, Cast, ToArray, ToDictionary, ToList
 
 Note:
 
-* OrderBy ist aufsteigend
-* ToLookup ist dasselbe wie GroupBy; der einzige Unterschied ist, dass die Ausführung von GroupBy aufgeschoben wird, während ToLookup sofort ausgeführt wird.
+* `OrderBy` ist aufsteigend
+* `ToLookup` ist dasselbe wie `GroupBy`; der einzige Unterschied ist, dass die Ausführung von `GroupBy` aufgeschoben wird, während `ToLookup` sofort ausgeführt wird.
 
 ---
 
@@ -162,7 +165,7 @@ var names = users.Select(x => x.Name).ToList();
 var temp = users.Where(x => x.Age == 8).FirstOrDefault();
 var temp = users.First(x => x.Age == 10); // Exception
 
-// Wieviele Elemente gibt es welche ein Alter größer 20 haben
+// Wie viele Elemente gibt es welche ein Alter größer 20 haben
 int count = users.Where(x => x.Age > 20).Count();
 // Bessere ALternative
 int count = users.Count(x => x.Age > 20);
