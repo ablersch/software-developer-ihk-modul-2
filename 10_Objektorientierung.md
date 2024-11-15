@@ -291,6 +291,7 @@ Note:
   * Wert einer Eigenschaft zuweisen.
   * Prüfen auf leeren String in der Eigenschaft.
   * Sichtbarkeit von Variablen (Felder, Eigenschaften, Methoden) als Wdh
+  * * **ÜBUNG 2** Sekundenspeicher
 
 ---
 
@@ -349,8 +350,7 @@ Jede Klasse enthält mindestens einen Konstruktor und einen Destruktor (Finalize
 
 Der Destruktor zerstört die vom Konstruktor erzeugte Instanz des Objekts und gibt somit den Speicherplatz wieder frei.
 
-Der Compiler stellt für jede Klasse automatisch einen parameterlosen
-Konstruktor und Destruktor bereit. Es können eigene Konstruktoren und Destruktoren, mit erweiterter Funktionalität, programmiert werden.
+Der Compiler stellt für jede Klasse automatisch einen parameterlosen Konstruktor und Destruktor bereit. Es können eigene Konstruktoren und Destruktoren, mit erweiterter Funktionalität, programmiert werden.
 
 ---
 
@@ -400,7 +400,7 @@ class Person
 
 **Definition des Standard-Konstruktor:**
 
-```csharp []
+```csharp
 string name;
 string vorname;
 
@@ -488,9 +488,9 @@ Note:
 
 * Er besitzt keine Parameter, keine Zugriffsmodifizierer und kann nicht überladen werden.
 
-* Destruktoren werden verwendet, wenn vor der Zerstörung des Objekts noch Aktionen ausgeführt werden müssen.
+* Destruktoren werden verwendet, wenn vor der Zerstörung des Objekts noch Aktionen ausgeführt werden sollen.
 
-* Freigabe von dynamisch allokiertem Speicher oder Abspeichern einer Datei vor dem Schließen.
+* Freigabe von Ressourcen oder Abspeichern einer Datei vor dem Schließen.
 
 * Der Destruktor besitzt den selben Namen wie die Klasse nur mit vorangestellter Tilde "\~".
 
@@ -513,5 +513,4 @@ class Person
 ```
 
 Note: 
-* **ÜBUNG 2** Intervall 
-* **ÜBUNG 3** Sekundenspeicher
+* **ÜBUNG 3** Intervall 
