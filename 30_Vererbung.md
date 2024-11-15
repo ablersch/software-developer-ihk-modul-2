@@ -64,9 +64,9 @@ Note:
 
 ![Vererbung](images/Vererbung.png)
 
-Note: Konstruktor und private Elemente werden nicht vererbt.
-
-ChangeRequest kann alle Methoden und Variabeln von der Basisklasse verwenden
+Note: 
+* Konstruktor und private Elemente werden nicht vererbt.
+* ChangeRequest kann alle Methoden und Variablen der Basisklasse verwenden
 
 ---
 
@@ -126,9 +126,8 @@ base.Name = "Fritz";
 Note: 
 
 * **VS** Beispiel Vererbung
-* In **VS** zeigen:
+* **VS** zeigen:
     * Reihenfolge von Konstruktoraufrufe
-    * region --> wenn Gliederung in VS aktiv ist
     * Klasse erstellen mit zwei Methoden
     * Aufruf der Methoden
     * Aufruf Konstruktor
@@ -150,6 +149,6 @@ Note:
 Note:
 
 * In **VS** zeigen.
-    * Zeigen: Beispiel 33_Vererbung virtual override
+    * Zeigen: Beispiel "33_Vererbung virtual override"
     * Je nach Zeit gibt es später hierzu mehr.
 * **ÜBUNG 6** Flugzeug
