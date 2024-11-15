@@ -96,6 +96,7 @@ Wenn der linke Operand `null` ist, wird der rechte Operand zurückgegeben.
 
 Besonders hilfreich bei der Initialisierung von Variablen mit einem Standardwert, wenn die Möglichkeit besteht, dass sie `null` sein könnten.
 
+---
 
 <!-- .slide: class="left" -->
 ## Was bedeutet nullable?
@@ -107,7 +108,7 @@ In C# bedeutet "nullable," dass ein Datentyp einen zusätzlichen Zustand haben k
 <!-- .slide: class="left" -->
 ## In früheren Versionen
 
-In älteren C#-Versionen (vor C# 8.0) konnte man `null` einem `string` zuweisen, ohne `string?` zu verwenden:
+In früheren C#-Versionen (vor C# 8.0) konnte man `null` einem `string` zuweisen, ohne `string?` zu verwenden:
 
 ```csharp
 string value = null;  // Das funktioniert in älteren Versionen.
