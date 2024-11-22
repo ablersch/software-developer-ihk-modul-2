@@ -6,7 +6,7 @@ Unsere Medienverwaltung beinhaltet aktuell viele redundante Felder und Methoden.
 
 ### Klassenhierarchie
 
-![Klassendiagramm](./Loesung_5/docs/diagrams/out/Klassendiagramm.png)
+![Klassendiagramm](Klassendiagramm.png)
 
 D.h. `Buch` und `Video` erben von `Medium`.
 
