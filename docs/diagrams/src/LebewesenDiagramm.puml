@@ -1,0 +1,30 @@
+@startuml LebewesenDiagramm
+class Lebewesen {
+    + Gewicht
+    + Alter
+    + Nachwuchs
+    NahrungAufnehmen()
+}
+note right: Gemeinsame Basisklasse
+
+class Tier {
+    <s>+ Gewicht</s>
+    <s>+ Alter</s>
+    <s>+ Nachwuchs</s>
+    + Besitzer
+    <s>+ NahrungAufnehmen()</s>
+    + GassiGehen()
+}
+Lebewesen <|-- Tier
+note right: Gemeinsamkeiten zusammenfassen
+
+class Mensch {
+    <s>+ Gewicht</s>
+    <s>+ Alter</s>
+    <s>+ Nachwuchs</s>
+    + Beruf
+    <s>+ NahrungAufnehmen()</s>
+    + Arbeiten()
+}
+Lebewesen <|-- Mensch
+@enduml

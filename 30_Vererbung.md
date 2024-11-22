@@ -12,9 +12,7 @@ Oft werden mehrere Klassen benötigt, die in weiten Teilen gleiche Funktionalit�
 Zum Beispiel bei den Klassen **Mensch** und **Tier**.
 
 * viel Schreibarbeit
-
 * mehrfacher Code
-
 * bei Änderungen müssen alle Klassen angepasst werden
 
 **Lösung:**
@@ -26,7 +24,7 @@ Man versucht, zu ähnlichen Klassen, eine gemeinsame **Oberklasse** zu finden di
 <!-- .slide: class="left" -->
 ## Vererbung
 
-![Vererbung](images/Vererbung3.png)
+![Vererbung](docs/diagrams/out/LebewesenDiagramm.png)
 
 ---
 
@@ -50,7 +48,7 @@ fest Angestellter     Leiharbeiter
 <!-- .slide: class="left" -->
 ## Beispiel
 
-![Vererbung](images/Vererbung2.png)
+![Vererbung](docs/diagrams/out/LebewesenDiagrammErweitert.png)
 
 Note: 
 * **Ist ein** oder **ist eine Art von**
@@ -96,7 +94,7 @@ class Mensch : Lebewesen
 
 * Es werden keine Konstruktoren vererbt!
 
-* Von der Kindklasse wird der parameterlose Konstruktor der Basisklasse aufgerufen wenn kein anderer Konstruktor definiert wurde.
+* Von der abgeleiteten Klasse wird der parameterlose Konstruktor der Basisklasse aufgerufen wenn kein anderer Konstruktor definiert wurde.
 
 * Besitzt die Basisklasse einen Konstruktor mit Parameter (und keinen ohne Parameter) wird dieser nicht aufgerufen. In diesem Fall muss (wenn ein Konstruktor nötig ist) der Konstruktor aus der abgeleiteten Klasse explizit aufgerufen werden.
 
@@ -109,7 +107,7 @@ class Mensch : Lebewesen
 <!-- .slide: class="left" -->
 ### Base
 
-Um aus einer abgeleiteten Klasse auf die Basisklasse zuzugreifen gibt es das Schlüsselwort [Base](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/base):
+Um aus einer abgeleiteten Klasse auf die Basisklasse zuzugreifen kann das Schlüsselwort [`base`](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/base) verwendet werden.
 
 * Einen Konstruktor der Basisklasse aufrufen:
 
@@ -136,19 +134,107 @@ Note:
 ---
 
 <!-- .slide: class="left" -->
-## Weitere Schlüsselworte
+## Virtual
 
-* [virtual:](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/virtual) Wird ein Klassenmember in der Basisklasse mit virtual deklariert kann er später von einer abgeleiteten Klasse überschrieben werden.
+`Virtual` und `override` ermöglichen, dass Methoden und Eigenschaften in abgeleiteten Klassen angepasst oder ersetzt werden können.
 
-* [abstract:](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/abstract) Damit kann angegeben werden dass die Klasse nur als Basisklasse verwendet werden kann (es darf keine Instanz erstellt werden). Klassen die von einer abstrakten Klasse erben müssen alle Klassenmember die abstract sind implementieren und haben keine Implementierung von Code sondern nur die Definition!
+Das Schlüsselwort [`virtual`](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/virtual) wird in einer Basis-Klasse verwendet, um anzugeben, dass eine Methode in einer abgeleiteten Klasse überschrieben werden kann.
 
-* [override:](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/override) Überschreibt einen Klassenmember der als **virtual** deklariert wurde (erweitert bzw ändert Funktion der Basisklasse). Die zuletzt überschriebene Methode wird immer benutzt!
+```csharp
+public class Tier
+{
+    public virtual void LautGeben()
+    {
+        Console.WriteLine("Das Tier macht ein Geräusch.");
+    }
+}
 
-* [sealed:](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/sealed) Eine als sealed deklarierte Klasse erlaubt keine Ableitung.
+```
+
+Note: 
+* Die Methode `LautGeben` in der Klasse `Tier` kann von einer abgeleiteten Klasse überschrieben werden.
+* Wird sie nicht überschrieben, bleibt die Standardimplementierung erhalten.
+* (Polymorphismus: Ermöglicht es, eine Methode je nach Typ der Instanz unterschiedlich auszuführen.)
+
+---
+
+<!-- .slide: class="left" -->
+## Override
+
+Das Schlüsselwort [`override`](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/override) wird in einer abgeleiteten Klasse verwendet, um eine `virtual`-Methode der Basis-Klasse zu überschreiben (erweitert bzw ändert Funktion der Basisklasse).
+
+```csharp
+public class Hund : Tier
+{
+    public override void LautGeben()
+    {
+        Console.WriteLine("Der Hund bellt: Wuff!");
+    }
+}
+
+```
 
 Note:
+* Die Methode `LautGeben` wird in der Klasse `Hund` überschrieben.
+* Jetzt verwendet `Hund` seine eigene Version der Methode, anstatt die der Basis-Klasse.
+* `override` funktioniert nur, wenn die Basis-Klasse die Methode als `virtual`, `abstract` oder `override` definiert hat.
 
+---
+
+<!-- .slide: class="left" -->
+## Abstract
+
+Mit [`abstract`](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/abstract) kann angegeben werden dass die Klasse nur als Basisklasse verwendet werden kann (es darf keine Instanz erstellt werden). Klassen die von einer abstrakten Klasse erben müssen alle Klassenmember die `abstract` sind implementieren und haben keine Implementierung von Code sondern nur die Definition!
+
+Wenn die Basis-Klasse keine Implementierung liefern soll, kann die Methode als abstract markiert werden. In der abgeleiteten Klasse ist ein override dann zwingend:
+
+```csharp
+public abstract class Tier
+{
+    public abstract void LautGeben();
+}
+
+public class Hund : Tier
+{
+    public override void LautGeben()
+    {
+        Console.WriteLine("Der Hund bellt.");
+    }
+}
+```
+
+---
+
+<!-- .slide: class="left" -->
+## Vergleich
+
+| Schlüsselwort |	Beschreibung |
+|---------------|----------------|
+| `virtual` |	Methode kann überschrieben werden, muss aber nicht.|
+| `override` | Wird in abgeleiteten Klassen verwendet, um die Basis-Methode zu überschreiben.|
+| `abstract` | Muss in abgeleiteten Klassen implementiert werden. Keine Basis-Implementierung erlaubt.|
+
+---
+
+<!-- .slide: class="left" -->
+## Sealed
+
+[`Sealed`](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/sealed) Verhindert, dass weitere Klassen von einer Klasse erben.
+
+```csharp
+public sealed class Tier
+{
+}
+
+// Diese Klasse würde einen Compiler-Fehler verursachen, da Mensch sealed ist
+// public class Hund : Tier
+// {
+// }
+```
+
+Note:
+* Dies wird genutzt, um sicherzustellen, dass die Klasse final ist und nicht weiter erweitert werden kann.
+* Bei Vererbung kann `sealed` auch bei Methoden verwendet werden. Hier verhindert es, dass eine Methode in einer weiteren abgeleiteten Klasse überschrieben wird.
 * In **VS** zeigen.
     * Zeigen: Beispiel "33_Vererbung virtual override"
-    * Je nach Zeit gibt es später hierzu mehr.
-* **ÜBUNG 6** Flugzeug
+* **ÜBUNG 6** Medienverwaltung

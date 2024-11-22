@@ -15,7 +15,7 @@ public sealed class Tier : Lebewesen
     // Methode der Basisklasse wird überschrieben
     public override void Output()
     {
-        alter = 5;
+        alter = 10;
         Console.WriteLine("Output Tier (überschrieben)");
         GetAlter();
     }

@@ -8,7 +8,7 @@ public class Program
     {
         Lebewesen lebeObjekt;
         // Fehler da Klasse abstract ist -> kein erstellen einer Instanz möglich
-        // lebeObjekt = new Lebewesen();
+        //lebeObjekt = new Lebewesen();
 
         // Aufruf abfolge?
         Tier tierObjekt = new Tier();
@@ -22,6 +22,13 @@ public class Program
 
         tierObjekt.GetAlter();
         lebeObjekt.GetAlter();
+
+        lebeObjekt.GetId();
+
+        Mensch menschObj = new Mensch();
+        menschObj.Output();
+        menschObj.GetAlter();
+        menschObj.GetId();
 
         Console.ReadLine();
     }

@@ -5,7 +5,7 @@ namespace Vererbung;
 internal class Mitarbeiter
 {
     // Nur in dieser Klassen verfügbar nicht von außerhalb.
-    // Da nur über den Konsturktor geändert wird kann es readonly gesetzt werden
+    // Da nur über den Konsturktor geändert, kann es readonly gesetzt werden
     private readonly string name;
 
     public Mitarbeiter()

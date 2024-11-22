@@ -488,7 +488,7 @@ Note:
 
 * Er besitzt keine Parameter, keine Zugriffsmodifizierer und kann nicht überladen werden.
 
-* Destruktoren werden verwendet, wenn vor der Zerstörung des Objekts noch Aktionen ausgeführt werden sollen.
+* Destruktoren werden verwendet, wenn vor der Entsorgung (Dispose) des Objekts noch Aktionen ausgeführt werden sollen.
 
 * Freigabe von Ressourcen oder Abspeichern einer Datei vor dem Schließen.
 
@@ -513,4 +513,5 @@ class Person
 ```
 
 Note: 
+* `person.Dispose()`
 * **ÜBUNG 3** Intervall 

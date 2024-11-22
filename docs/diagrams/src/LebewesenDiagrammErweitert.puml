@@ -1,0 +1,28 @@
+@startuml LebewesenDiagrammErweitert
+class Lebewesen {
+    + Gewicht
+    + Alter
+}
+
+class Tier {
+    + Besitzer
+}
+Lebewesen <|-- Tier
+
+class Mensch {
+    + Beruf
+}
+Lebewesen <|-- Mensch
+
+class Reptil {
+}
+Tier <|-- Reptil
+
+class Kontinent {
+}
+Kontinent -- Reptil  : < lebt
+Kontinent -- Reptil  : > beherbergt
+note right on link
+Assoziation
+end note
+@enduml
