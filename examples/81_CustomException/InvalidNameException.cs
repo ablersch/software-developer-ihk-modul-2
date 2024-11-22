@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace CustomException;
+﻿namespace CustomException;
 
 [Serializable]
 public class InvalidNameException : Exception
@@ -13,12 +11,6 @@ public class InvalidNameException : Exception
     /// <inheritdoc />
     public InvalidNameException(string name)
         : base($"Invalid Name: {name}")
-    {
-    }
-
-    /// <inheritdoc />
-    protected InvalidNameException(SerializationInfo serializationInfo, StreamingContext streamingContext)
-        : base(serializationInfo, streamingContext)
     {
     }
 }

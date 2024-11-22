@@ -4,19 +4,23 @@ namespace Vererbung_virtual_override;
 
 public sealed class Tier : Lebewesen
 {
-    // Muss implementiert werden, da dies in der Baisklasse mit "abstract" vorgegeben wurde
-    public override string GetId()
+    public Tier()
     {
-        Random r = new Random();
-        var x = r.Next(0, 100);
-        return "Tier-" + x;
+        Console.WriteLine("Tier Konstruktor");
+        alter = 10;
     }
 
     // Methode der Basisklasse wird überschrieben
     public override void Output()
     {
-        alter = 10;
-        Console.WriteLine("Output Tier (überschrieben)");
-        GetAlter();
+        Console.WriteLine("Output Tier");
+    }
+
+    // Muss implementiert werden, da dies in der Baisklasse mit "abstract" vorgegeben wurde
+    public override void OutputId()
+    {
+        Random r = new Random();
+        var x = r.Next(0, 100);
+        Console.WriteLine($"Tier-{x}");
     }
 }

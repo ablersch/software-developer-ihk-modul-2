@@ -24,6 +24,6 @@ count = users.Count(x => x.Age > 20);
 var sortedUsers = users.OrderBy(user => user.Age).ThenByDescending(user => user.Name).ToList();
 
 // Gruppieren und nur den Name auslesen
-var grouped = users.GroupBy(x => x.City).Select(x => x.Select(y => y.Name)).ToList();
-
-Console.ReadLine();
+var grouped = users.GroupBy(x => x.City)
+    .Select(x => x.Select(y => y.Name))
+    .ToList();

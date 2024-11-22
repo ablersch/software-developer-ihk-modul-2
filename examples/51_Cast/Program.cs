@@ -12,6 +12,11 @@ internal class Fahrzeug
     public string antrieb;
 }
 
+internal class Tier
+{
+    public string name;
+}
+
 internal class Program
 {
     private static void Main(string[] args)
@@ -19,16 +24,16 @@ internal class Program
         int i = 2;
         double d = 4.4;
         d = i;
-
         //i = d;
 
-        Fahrzeug fahr = new Fahrzeug();
+        Fahrzeug fahrzeug = new Fahrzeug();
         Auto pkw = new Auto();
 
         // Zuweisung ist ok, da Vererbung besteht
-        fahr = pkw;
+        fahrzeug = pkw;
+
         // Cast notwendig
-        //pkw = fahr;
+        //pkw = fahrzeug;
 
         // Zuweisung an Object möglich da alles von Object erbt
         Object objTemp = new Auto();
@@ -39,6 +44,7 @@ internal class Program
         objTemp = new Tier();
 
         // Prüfung ob Cast möglich
+        // Alles erbt von Object
         if (objTemp is Object)
         {
             Console.WriteLine("Ist Object");
@@ -62,11 +68,8 @@ internal class Program
 
         // Nicht möglich, Fehler
         pkw = objTemp as Auto;
-        if (pkw != null) { }
+        if (pkw != null)
+        {
+        }
     }
-}
-
-internal class Tier
-{
-    public string name;
 }

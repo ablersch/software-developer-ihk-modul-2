@@ -1,9 +1,11 @@
-﻿namespace Vererbung_virtual_override;
+﻿using System;
+
+namespace Vererbung_virtual_override;
 
 public class Mensch : Lebewesen
 {
-    public override string GetId()
+    public override void OutputId()
     {
-        return "Mensch-123";
+        Console.WriteLine("Mensch-123");
     }
 }

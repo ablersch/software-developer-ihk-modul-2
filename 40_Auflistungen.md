@@ -15,21 +15,21 @@ Vorteile gegenüber Arrays:
 * Erweiterte Funktionalitäten
 * Leistungsfähige Datenzugriffsmethoden
 * bessere Performance mit LINQ
-* Erweiter- und anpassbar
+* Erweiter- und Anpassbarkeit
 
 Note:
-* Dynamische Größe: Arrays haben eine feste Größe; Collections passen die zur Laufzeit dynamisch an.
-* großer Funktionsumfang: Arrays bieten nur grundlegende Funktionen und erfordern oft zusätzliche Logik; Collections bieten eine Vielzahl von Methoden und Eigenschaften, die Operationen wie Hinzufügen, Entfernen, Suchen, Sortieren und Filtern erleichtern.
-* Leistungsfähige Datenzugriffsmethoden: Bestimmte Collections ermöglicht schnellen Zugriff auf Elemente über Schlüssel (Dictionary) oder über die Reihenfolge (Queue)
-* bessere Performance mit LINQ: Arrays können auch mit LINQ abgefragt werden; Collections lassen sich nahtlos mit LINQ abfragen und bieten bessere Performance und Flexibilität bei größeren Datenmengen.
-* Erweiter- und anpassbar: Arrays sind weniger flexibel und bieten keine eingebauten Mechanismen zur Erweiterung; Collections können erweitert werden, um benutzerdefinierte Funktionen bereitzustellen
+* **Dynamische Größe:** Arrays haben eine feste Größe; Collections passen diese zur Laufzeit an.
+* **großer Funktionsumfang**: Arrays bieten nur grundlegende Funktionen und erfordern oft zusätzliche Logik; Collections bieten eine Vielzahl von Methoden und Eigenschaften, die Operationen wie Hinzufügen, Entfernen, Suchen, Sortieren und Filtern erleichtern.
+* **Leistungsfähige Datenzugriffsmethoden**: Bestimmte Collections ermöglicht schnellen Zugriff auf Elemente über Schlüssel (Dictionary) oder über die Reihenfolge (Queue).
+* **bessere Performance mit LINQ**: Arrays können auch mit LINQ abgefragt werden; Collections lassen sich nahtlos mit LINQ abfragen und bieten bessere Performance und Flexibilität bei größeren Datenmengen.
+* **Erweiter- und anpassbarkeit**: Arrays sind weniger flexibel und bieten keine eingebauten Mechanismen zur Erweiterung; Collections können erweitert werden, um benutzerdefinierte Funktionen bereitzustellen.
 
 ---
 
 <!-- .slide: class="left" -->
 ### Collection Namespaces
 
-* **System.Collections:** Dabei kann die Collection immer den Typ Object verwalten. Eine Collection kann somit verschiedene Typen beinhalten. D.h. es müssen alle Elemente beim Zugriff konvertiert werden.
+* **System.Collections:** Dabei kann die Collection immer den Typ `Object` verwalten. Eine Collection kann somit verschiedene Typen beinhalten. D.h. es müssen alle Elemente beim Zugriff konvertiert werden.
 
 * **System.Collections.Generics:** Diesen Nachteil haben die generischen Collections nicht und sind deshalb zu bevorzugen da diese **Typsicherheit** bieten. D.h. beim Instanziieren werden die Datentypen festgelegt.
 
@@ -42,8 +42,7 @@ Note: **VS** autom. Auflösung zeigen
 <!-- .slide: class="left" -->
 ## ArrayList
 
-Eine [ArrayList](https://docs.microsoft.com/de-de/dotnet/api/system.collections.arraylist?view=net-6.0) ist eine dynamische Liste von Objekten. Im Gegensatz zu Arrays, die eine feste Größe haben, kann eine ArrayList in ihrer Größe dynamisch wachsen und schrumpfen, wenn Elemente hinzugefügt oder entfernt werden.
-Eine häufig verwendete Klasse für Aufzählungen ist die Klasse
+Eine [`ArrayList`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.arraylist?view=net-6.0) ist eine dynamische Liste von Objekten. Im Gegensatz zu Arrays, die eine feste Größe haben, kann eine `ArrayList` in ihrer Größe dynamisch wachsen und schrumpfen, wenn Elemente hinzugefügt oder entfernt werden.
 
 * Dynamische Größe
 * Zugriff über Index
@@ -75,17 +74,18 @@ Console.WriteLine("2. Element: " + arrayList[1]);
 <!-- .slide: class="left" -->
 ## Hashtable
 
-Eine [Hashtabelle](https://docs.microsoft.com/de-de/dotnet/api/system.collections.hashtable?view=net-6.0) ist eine spezielle Art von Datenstruktur die Daten in Form von Schlüssel-Wert-Paaren speichert und über einen sogenannten Hashing-Mechanismus schnellen Zugriff auf die gespeicherten Daten bietet.
+Eine [`Hashtable`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.hashtable?view=net-6.0) ist eine spezielle Art von Datenstruktur die Daten in Form von Schlüssel-Wert-Paaren speichert und über einen sogenannten Hashing-Mechanismus schnellen Zugriff auf die gespeicherten Daten bietet.
 
-Kommt es nicht auf die Reihenfolge der Elemente an, kann man sich für eine  entscheiden. Dort kann ein bestimmtes Element zwar schnell gefunden werden, hat aber keinen Einfluss auf die Positionierung der Elemente in der Liste.
+Kommt es nicht auf die Reihenfolge der Elemente an, kann man sich dafür entscheiden. Es kann ein bestimmtes Element zwar schnell gefunden werden, man hat aber keinen Einfluss auf die Positionierung der Elemente in der Liste.
 
 * Schneller Zugriff über Schlüssel (Hashcode)
-* Kein Einfluss auf den Index
+* Keinen Einfluss auf den Index
 * Reihenfolge nicht beeinflussbar
 
 Note: 
 Bei einer Liste mit Indizes muss die Liste so lange durchlaufen werden bis eine Übereinstimmung gefunden wurde. Bei sehr vielen Einträgen, kann das sehr zeitaufwendig und rechenintensiv sein.
-Hashcode: Int Wert welcher über Algorithmus aus dem Schlüssel berechnet wird
+
+Hashcode: `Int`-Wert welcher über Algorithmus aus dem Schlüssel berechnet wird.
 
 ---
 
@@ -109,17 +109,17 @@ if (hashTable.ContainsValue("Audi")) {
 
 // Definiert ein Schlüssel-Wert-Paar für ein Wörterbuch. Es ist eine generische Struktur mit 2 Werten.
 // Kann bei Collections benutzt werden
-foreach (DictionaryEntry hashElements in hashTable) {
-     Console.WriteLine($"Key: {hashElements.Key} Wert: {hashElements.Value}");
+foreach (DictionaryEntry element in hashTable) {
+     Console.WriteLine($"Key: {element.Key} Wert: {element.Value}");
 }
 ```
 
 ---
 
 <!-- .slide: class="left" -->
-## List<T>
+## List\<T>
 
-Eine [List<T>](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1?view=net-6.0) ist eine generische, dynamische Liste. Sie speichert Elemente vom spezifischen Typ `T`, wodurch Typensicherheit gewährleistet wird.
+Eine [`List<T>`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1?view=net-6.0) ist eine generische, dynamische Liste. Sie speichert Elemente vom spezifischen Typ `T`, wodurch Typensicherheit gewährleistet wird.
 
 * Typsicherheit
 * Dynamische Größe
@@ -153,12 +153,15 @@ foreach (int i in liste) {
 }
 ```
 
+Note:
+* **VS** List Verwendung zeigen mit Zuweisung von Objekten und Objekten mit Vererbung.
+
 ---
 
 <!-- .slide: class="left" -->
 ## Dictionary<TKey, TValue>
 
-Das [Dictionary](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0) ist eine Sammlung von Schlüssel-Wert-Paaren, die einen schnellen Zugriff auf Elemente anhand ihres eindeutigen Schlüssels ermöglicht.
+Das [`Dictionary`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0) ist eine Sammlung von Schlüssel-Wert-Paaren, die einen schnellen Zugriff auf Elemente anhand ihres eindeutigen Schlüssels ermöglicht.
 
 Die Schlüssel und Werte können unterschiedliche Typen haben, wobei der Schlüssel typischerweise ein einzigartiges Objekt sein muss, um Verwechslungen zu vermeiden.
 
@@ -197,10 +200,6 @@ foreach (KeyValuePair<string, string> pair in dictionary) {
 }
 ```
 
-Note: 
-* **VS** List Verwendung zeigen mit Zuweisung von Objekten und Objekten mit Vererbung.
-* **ÜBUNG 7** Wetterstation
-
 ---
 
 <!-- .slide: class="left" -->
@@ -216,4 +215,5 @@ Note:
 * **`ImmutableList<T>`**: Unveränderliche Liste, ideal für unveränderliche Daten.
 
 Note:
-Jede Collection bietet Lösungen für spezifische Anforderungen wie Geschwindigkeit, Sortierung, Einzigartigkeit und Thread-Sicherheit.
+* Jede Collection bietet Lösungen für spezifische Anforderungen wie Geschwindigkeit, Sortierung, Einzigartigkeit und Thread-Sicherheit.
+* **ÜBUNG 7** Wetterstation

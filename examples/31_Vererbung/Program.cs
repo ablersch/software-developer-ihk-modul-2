@@ -15,7 +15,5 @@ internal class Program
 
         leiharbeiter = new Leiharbeiter("Paul", "Orizon");
         Console.WriteLine(leiharbeiter.GetData());
-
-        Console.ReadLine();
     }
 }

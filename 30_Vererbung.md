@@ -177,7 +177,7 @@ public class Hund : Tier
 Note:
 * Die Methode `LautGeben` wird in der Klasse `Hund` überschrieben.
 * Jetzt verwendet `Hund` seine eigene Version der Methode, anstatt die der Basis-Klasse.
-* `override` funktioniert nur, wenn die Basis-Klasse die Methode als `virtual`, `abstract` oder `override` definiert hat.
+* `override` funktioniert nur, wenn die Basis-Klasse die Methode als `virtual` oder `abstract` definiert hat.
 
 ---
 
@@ -211,8 +211,8 @@ public class Hund : Tier
 | Schlüsselwort |	Beschreibung |
 |---------------|----------------|
 | `virtual` |	Methode kann überschrieben werden, muss aber nicht.|
-| `override` | Wird in abgeleiteten Klassen verwendet, um die Basis-Methode zu überschreiben.|
 | `abstract` | Muss in abgeleiteten Klassen implementiert werden. Keine Basis-Implementierung erlaubt.|
+| `override` | Wird in abgeleiteten Klassen verwendet, um die Basis-Methode zu überschreiben.|
 
 ---
 
@@ -226,10 +226,10 @@ public sealed class Tier
 {
 }
 
-// Diese Klasse würde einen Compiler-Fehler verursachen, da Mensch sealed ist
-// public class Hund : Tier
-// {
-// }
+// Compiler-Fehler, da Tier sealed ist!
+public class Hund : Tier
+{
+}
 ```
 
 Note:
@@ -237,4 +237,5 @@ Note:
 * Bei Vererbung kann `sealed` auch bei Methoden verwendet werden. Hier verhindert es, dass eine Methode in einer weiteren abgeleiteten Klasse überschrieben wird.
 * In **VS** zeigen.
     * Zeigen: Beispiel "33_Vererbung virtual override"
+    * neue Klasse `Reptil`, Tier `sealed` setzen
 * **ÜBUNG 6** Medienverwaltung

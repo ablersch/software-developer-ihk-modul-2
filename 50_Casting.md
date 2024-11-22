@@ -7,9 +7,9 @@ Werte umwandeln.
 <!-- .slide: class="left" -->
 ## Casting (Umwandlung bzw. Typkonvertierung)
 
-* **is** Prüft ob ein Objekt mit einem bestimmten Typ kompatibel ist.
+* **`is`** Prüft ob ein Objekt mit einem bestimmten Typ kompatibel ist.
 
-* **as** Führt eine Konvertierung in den angegebenen Datentyp durch. Bei einem Fehler ist das Objekt null.
+* **`as`** Führt eine Konvertierung in den angegebenen Datentyp durch. Bei einem Fehler ist das Objekt `null`.
 
 * **Klassische Konvertierung:** Um eine Umwandlung durchzuführen, legen Sie den Typ, in den Sie umwandeln, in Klammern vor den zu konvertierenden Wert/Variable. Bei einem Fehler wird eine Exception geworfen.
 
@@ -30,7 +30,7 @@ Note:
 <!-- .slide: class="left" -->
 ## Umwandeln nach String
 
-Geht mit allen Objekten die die Methode `ToString()` von  der Klasse System.Object erben.
+Geht mit allen Objekten die die Methode `ToString()` von der Klasse System.Object erben.
 
 Die ToString-Methode wandelt den aktuellen Wert einer beliebigen Variablen in eine Textdarstellung um. Einige Typen können nicht sinnvoll als Text dargestellt werden, so dass sie ihren Namespace und Typnamen zurückgeben.
 
@@ -71,7 +71,6 @@ if (hans != null) // Erfolgreich wenn person nicht null ist
 ```
 
 Note:
-
 * **VS** Casting, und Static (z.B. Methode zum prüfen ob Email Adresse) zeigen. Casting machen in VS.
-* **ÜBUNG 8** Medienverwaltung Aufgabe 4
+* **ÜBUNG 8** Medienverwaltung
 * Erklärung zu statisch

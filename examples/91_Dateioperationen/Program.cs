@@ -13,7 +13,6 @@ internal class Program
 
         Console.WriteLine($"Datei: {logFilePath}");
 
-        /////////////////////////////////
         // Text schreiben
         // Datei wird automatisch erstellt
         using (var writer = new StreamWriter(logFilePath, true))
@@ -35,7 +34,6 @@ internal class Program
             File.Create(logFilePath);
         }
 
-        //////////////////////////////////
         // Text einlesen
         // using declaration syntax
         using StreamReader reader = new(logFilePath);
@@ -52,7 +50,5 @@ internal class Program
         Console.WriteLine("Erstellungszeitpunkt: \t" + fileInfo.CreationTime);
         Console.WriteLine("Letzte Änderung: \t" + fileInfo.LastWriteTime);
         Console.WriteLine("Größe in Byte: \t\t" + fileInfo.Length);
-
-        Console.ReadLine();
     }
 }

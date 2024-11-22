@@ -9,20 +9,17 @@ public abstract class Lebewesen
 
     protected Lebewesen()
     {
+        Console.WriteLine("Lebewesen Konstruktor");
         alter = 5;
     }
 
-    public int GetAlter()
-    {
-        return alter;
-    }
-
-    // Muss in den Kindklassen definiert werden
-    public abstract string GetId();
-
-    // Methode wird als überschreibbar gekennzeichnet
+    // Methode wird als überschreibbar gekennzeichnet.
+    // Kann bei Bedarf überschrieben/angepasst werden
     public virtual void Output()
     {
         Console.WriteLine("Output Lebewesen");
     }
+
+    // Muss in allen Kindklassen definiert werden
+    public abstract void OutputId();
 }
