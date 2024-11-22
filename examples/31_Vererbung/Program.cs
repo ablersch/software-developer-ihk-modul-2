@@ -13,7 +13,7 @@ internal class Program
         leiharbeiter = new Leiharbeiter("Ferchau");
         Console.WriteLine(leiharbeiter.GetData());
 
-        leiharbeiter = new Leiharbeiter("Paul", "Orizon");
+        leiharbeiter = new Leiharbeiter("Orizon", "Paul");
         Console.WriteLine(leiharbeiter.GetData());
     }
 }

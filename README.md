@@ -1,4 +1,4 @@
-# Modul II - C# Grundlagen
+# Modul II - C# Grundlagen Teil 2
 
 Diese Repository beinhaltet die Unterlagen für den Kurs **Software Developer IHK**
 
