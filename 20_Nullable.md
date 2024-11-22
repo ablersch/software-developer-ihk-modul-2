@@ -163,5 +163,3 @@ Vorteile:
 * Vor C# 8.0: Alle Referenztypen (`string`, `object`, etc.) konnten `null` sein. Es gab keine Compiler-Unterstützung, um vor `null`-Fehlern zu warnen.
 
 * Ab C# 8.0: Mit `nullable reference types` kann klar angeben, welche Variablen `null` sein dürfen (`string?`) und welche nicht (`string`). Das hilft, Fehler zu vermeiden und sichereren Code zu schreiben.
-
-Note: **Übung** tbd
