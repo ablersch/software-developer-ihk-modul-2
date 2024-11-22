@@ -1,0 +1,10 @@
+@startuml
+class Medium {
+    + Medium()
+    + void Entleihen(int signatur)
+    + void Rueckgabe(int signatur)
+    # signatur
+    # status
+    # titel
+}
+@enduml

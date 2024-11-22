@@ -1,0 +1,6 @@
+@startuml
+enum Leihstatus {
+    präsent,
+    entliehen
+}
+@enduml

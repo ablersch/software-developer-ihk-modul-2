@@ -1,0 +1,8 @@
+@startuml
+class Video {
+    + Video()
+    + Ausgabe()
+    - laufzeit
+}
+Medium <|-- Video
+@enduml

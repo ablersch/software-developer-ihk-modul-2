@@ -1,0 +1,22 @@
+﻿using System;
+
+namespace Medienverwaltung_Aufgabe_3;
+
+internal class Buch : Medium
+{
+    private int seitenzahl;
+
+    public Buch()
+    {
+        Console.WriteLine("Seitenzahl eingeben:");
+        while (!int.TryParse(Console.ReadLine(), out seitenzahl))
+        {
+            Console.WriteLine("Seitenzahl nicht gültig. Bitte nur ganze Zahlen eingeben:");
+        }
+    }
+
+    internal void Ausgabe()
+    {
+        Console.WriteLine("{0,-15} {1,-15} {2,-15} {3,-15} Seitenzahl {4,-15}", signatur, nameof(Buch), titel, status, seitenzahl);
+    }
+}

@@ -1,0 +1,8 @@
+@startuml
+class Buch {
+    + Buch()
+    + Ausgabe()
+    - seitenzahl
+}
+Medium <|-- Buch
+@enduml

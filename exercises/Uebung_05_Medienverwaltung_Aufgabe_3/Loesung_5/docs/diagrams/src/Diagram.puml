@@ -1,0 +1,7 @@
+@startuml Klassendiagramm
+!include .\\Buch.puml
+!include .\\Leihstatus.puml
+!include .\\Medium.puml
+!include .\\Program.puml
+!include .\\Video.puml
+@enduml
