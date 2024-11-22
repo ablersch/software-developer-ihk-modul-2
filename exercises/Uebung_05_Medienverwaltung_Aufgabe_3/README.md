@@ -20,19 +20,6 @@ Die allgemein gültigen Daten werden im `Medium()`-Konstruktor abgefragt. Die Vi
 
 **Hinweis:** Bei vererbenden Klassen wird zusätzlich zum Aufruf des eigenen Konstruktors auch der Konstruktor der Basisklasse aufgerufen wenn der Standardkonstruktor (`Klassenname()`) genutzt wird.
 
-## Teil 3 - sonstige Erweiterungen
-
-### Kommandos
-
-|Kommando    | Aktion
--------------|----------
-|„b“| Hinzufügen und Initialisieren eines neuen Buches|
-|„v“| Hinzufügen und Initialisieren eines neuen Videos|
-|„a“| Anzeigen der Eigenschaften aller angelegten Objekte|
-|„e Signatur“| Entleihen des durch die Signatur bezeichneten Objekts. z.B. e 5776|
-|„r Signatur“| Rückgabe des durch die Signatur bezeichneten Objekts
-|„q“|Programm beenden|
-
 ### Beispiel Ausgabe
 
 ```bash
