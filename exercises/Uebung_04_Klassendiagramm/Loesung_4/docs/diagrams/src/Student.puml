@@ -1,0 +1,8 @@
+@startuml
+class Student {
+    + SichFürModulEinschreiben()
+    + Matrikelnummer
+    + Durchschnittsnote
+}
+Person <|-- Student
+@enduml

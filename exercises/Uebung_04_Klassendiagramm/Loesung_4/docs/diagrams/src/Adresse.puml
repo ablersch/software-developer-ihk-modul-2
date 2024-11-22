@@ -1,0 +1,11 @@
+@startuml
+class Adresse {
+    + AdresseBestätigen()
+    + AlsBeschriftungDrucken()
+    + Strasse
+    + Stadt
+    + PLZ
+    + Land
+}
+Adresse -- Person : < bewohnt
+@enduml

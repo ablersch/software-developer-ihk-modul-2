@@ -1,0 +1,6 @@
+@startuml
+class Professor {
+    + Lohn
+}
+Person <|-- Professor
+@enduml

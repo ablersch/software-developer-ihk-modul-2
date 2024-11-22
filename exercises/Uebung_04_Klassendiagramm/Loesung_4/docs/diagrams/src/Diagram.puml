@@ -1,0 +1,6 @@
+@startuml Klassendiagramm
+!include .\\Adresse.puml
+!include .\\Person.puml
+!include .\\Professor.puml
+!include .\\Student.puml
+@enduml
