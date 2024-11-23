@@ -19,7 +19,7 @@ Vorteile gegenüber Arrays:
 
 Note:
 * **Dynamische Größe:** Arrays haben eine feste Größe; Collections passen diese zur Laufzeit an.
-* **großer Funktionsumfang**: Arrays bieten nur grundlegende Funktionen und erfordern oft zusätzliche Logik; Collections bieten eine Vielzahl von Methoden und Eigenschaften, die Operationen wie Hinzufügen, Entfernen, Suchen, Sortieren und Filtern erleichtern.
+* **Erweiterte Funktionalitäten**: Arrays bieten nur grundlegende Funktionen und erfordern oft zusätzliche Logik; Collections bieten eine Vielzahl von Methoden und Eigenschaften, die Operationen wie Hinzufügen, Entfernen, Suchen, Sortieren und Filtern erleichtern.
 * **Leistungsfähige Datenzugriffsmethoden**: Bestimmte Collections ermöglicht schnellen Zugriff auf Elemente über Schlüssel (Dictionary) oder über die Reihenfolge (Queue).
 * **bessere Performance mit LINQ**: Arrays können auch mit LINQ abgefragt werden; Collections lassen sich nahtlos mit LINQ abfragen und bieten bessere Performance und Flexibilität bei größeren Datenmengen.
 * **Erweiter- und anpassbarkeit**: Arrays sind weniger flexibel und bieten keine eingebauten Mechanismen zur Erweiterung; Collections können erweitert werden, um benutzerdefinierte Funktionen bereitzustellen.
@@ -34,8 +34,6 @@ Note:
 * **System.Collections.Generics:** Diesen Nachteil haben die generischen Collections nicht und sind deshalb zu bevorzugen da diese **Typsicherheit** bieten. D.h. beim Instanziieren werden die Datentypen festgelegt.
 
 Mehr zum Thema [Collections](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/concepts/collections)
-
-Note: **VS** autom. Auflösung zeigen
 
 ---
 

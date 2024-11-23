@@ -47,9 +47,9 @@ internal abstract class Medium
 
     internal abstract void Ausgabe();
 
-    internal void Entleihen(int sig)
+    internal void Entleihen(int signatur)
     {
-        if (signatur == sig)
+        if (this.signatur == signatur)
         {
             if (status == Leihstatus.präsent)
             {
@@ -63,9 +63,9 @@ internal abstract class Medium
         }
     }
 
-    internal void Rueckgabe(int sig)
+    internal void Rueckgabe(int signatur)
     {
-        if (signatur == sig)
+        if (this.signatur == signatur)
         {
             if (status == Leihstatus.entliehen)
             {

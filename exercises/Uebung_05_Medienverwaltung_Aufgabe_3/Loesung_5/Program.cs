@@ -6,7 +6,7 @@ internal class Program
 {
     private static void Main()
     {
-        string auswahl = "a";
+        string auswahl = string.Empty;
         int signatur;
         Video video = null;
         Buch buch = null;
