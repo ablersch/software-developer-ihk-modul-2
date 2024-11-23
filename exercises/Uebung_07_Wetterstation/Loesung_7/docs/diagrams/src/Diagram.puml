@@ -1,0 +1,5 @@
+@startuml Klassendiagramm
+!include .\\Wetter.puml
+!include .\\WetterBase.puml
+!include .\\Program.puml
+@enduml

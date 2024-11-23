@@ -1,0 +1,11 @@
+@startuml
+abstract class WetterBase {
+    - luftfeuchtigkeit
+    - stationsName
+    - temperatur
+    ___
+    + Luftfeuchtigkeit
+    + StationsName
+    + Temperatur
+}
+@enduml

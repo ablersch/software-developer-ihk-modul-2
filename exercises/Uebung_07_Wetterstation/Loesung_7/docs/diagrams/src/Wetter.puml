@@ -1,0 +1,14 @@
+@startuml
+class Wetter {
+    - Luftdruck
+    - Regenmenge
+    - Temperatur
+    ___
+    + Luftdruck
+    + Regenmenge
+    + Temperatur
+    ___
+    + Wetter()
+}
+WetterBase <|-- Wetter
+@enduml
