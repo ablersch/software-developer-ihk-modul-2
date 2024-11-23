@@ -53,7 +53,7 @@ Eine [`ArrayList`](https://docs.microsoft.com/de-de/dotnet/api/system.collection
 ### Beispiel ArrayList
 
 ```csharp []
-ArrayList arrayList = new ArrayList();
+var arrayList = new ArrayList();
 arrayList.Add(5);
 arrayList.Add("text");
 Console.WriteLine($"Elemente: {arrayList.Count}");
@@ -91,8 +91,7 @@ Hashcode: `Int`-Wert welcher über Algorithmus aus dem Schlüssel berechnet wird
 ### Beispiel Hashtable
 
 ```csharp []
-Hashtable hashTable = new Hashtable();
-
+var hashTable = new Hashtable();
 hashTable.Add("auto1", "Das Auto ist ein Audi");
 hashTable.Add("auto2", "Das Auto ist ein BMW");
 hashTable.Add("motorrad1", "Das Motorrad ist eine Ducati");
@@ -132,8 +131,7 @@ Eine [`List<T>`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.
 ### Beispiel List
 
 ```csharp []
-List<int> liste = new List<int>();
-
+var liste = new List<int>();
 liste.Add(40);
 liste.Add(50);
 liste.Add(60);
@@ -177,10 +175,7 @@ Die Schlüssel und Werte können unterschiedliche Typen haben, wobei der Schlüs
 ### Beispiel Dictionary
 
 ```csharp []
-string tempString;
-
-Dictionary<string, string> dictionary = new Dictionary<string, string>();
-
+var dictionary = new Dictionary<string, string>();
 dictionary.Add("tier1", "Hase");
 dictionary.Add("tier2", "Hund");
 dictionary.Add("tier3", "Esel");
@@ -189,7 +184,7 @@ if (dictionary.ContainsKey("tier1")) {
      Console.WriteLine($"Wert zum KEY tier1: {dictionary["tier1"]}");
 }
 
-if (dictionary.TryGetValue("tier1", out tempString)) {
+if (dictionary.TryGetValue("tier1", out string tempString)) {
      Console.WriteLine($"found Wert: {tempString}");
 }
 

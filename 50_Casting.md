@@ -30,9 +30,9 @@ Note:
 <!-- .slide: class="left" -->
 ## Umwandeln nach String
 
-Geht mit allen Objekten die die Methode `ToString()` von der Klasse System.Object erben.
+Geht mit allen Objekten die die Methode `ToString()` von der `Object`-Klasse erben.
 
-Die ToString-Methode wandelt den aktuellen Wert einer beliebigen Variablen in eine Textdarstellung um. Einige Typen können nicht sinnvoll als Text dargestellt werden, so dass sie ihren Namespace und Typnamen zurückgeben.
+Die `ToString()`-Methode wandelt den aktuellen Wert einer beliebigen Variablen in einen Text um. Einige Typen können nicht sinnvoll als Text dargestellt werden, so dass sie ihren Namespace und Typnamen zurückgeben.
 
 ```csharp []
 int number = 12;
@@ -56,21 +56,21 @@ WriteLine(me.ToString()); // System.Object
 ```csharp []
 Person hans;
 Object myObject = new Person();
-if (myObject is Person) // Prüft ob myObject mit Person kompatibel ist
+if (myObject is Person) // Prüft ob myObject vom Datentyp Person ist.
 {
-    hans = (Person)myObject; // Alternativ:  ((Person)myObject).GetName();
+    hans = (Person)myObject; 
     hans.GetName();
+    // ((Person)myObject).GetName();
 }
 
 
-hans = myObject as Person; // Führt eine Konvertierung aus
-if (hans != null) // Erfolgreich wenn person nicht null ist
+hans = myObject as Person; // Führt eine Konvertierung aus.
+if (hans != null) // Erfolgreich wenn myObject nicht null ist.
 {
     hans.GetName();
 }
 ```
 
 Note:
-* **VS** Casting, und Static (z.B. Methode zum prüfen ob Email Adresse) zeigen. Casting machen in VS.
+* **VS** Casting zeigen.
 * **ÜBUNG 8** Medienverwaltung
-* Erklärung zu statisch

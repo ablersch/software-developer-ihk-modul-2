@@ -25,7 +25,7 @@ internal class Program
 
             auswahl = Console.ReadLine();
             signatur = 0;
-            if (auswahl.Length > 5)
+            if (auswahl.Length > 5 && auswahl.Contains(' '))
             {
                 string[] temp = auswahl.Split(' ');
                 auswahl = temp[0];

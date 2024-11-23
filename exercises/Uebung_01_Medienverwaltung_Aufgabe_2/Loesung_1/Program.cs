@@ -27,7 +27,7 @@ internal class Program
 
             // Die Eingabe 'e 12345' aufteilen um die Auswahl, also 'e' zu erhalten und eventuell eine gefolgte Signatur.
             signatur = 0;
-            if (auswahl.Length > 5)
+            if (auswahl.Length > 5 && auswahl.Contains(' '))
             {
                 string[] temp = auswahl.Split(' ');
                 auswahl = temp[0];
