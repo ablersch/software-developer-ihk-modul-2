@@ -27,6 +27,7 @@ public class Program
 
         // Zuweisung erlaubt da von Basisklasse abgeleitet
         lebeObjekt = tierObjekt;
+
         lebeObjekt.Output();
         lebeObjekt.OutputId();
     }
