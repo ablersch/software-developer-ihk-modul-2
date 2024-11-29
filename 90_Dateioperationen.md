@@ -7,14 +7,14 @@ Mit Dateien arbeiten.
 <!-- .slide: class="left" -->
 ## Allgemein
 
-.Net stellt im `System.IO` Namespace viele Klassen für Dateioperationen zur Verfügung.
+C\# stellt im `System.IO` Namespace viele Klassen für Dateioperationen zur Verfügung.
 
-* Klassen [StreamReader](https://docs.microsoft.com/de-de/dotnet/api/system.io.streamreader?view=net-6.0) und [StreamWriter](https://docs.microsoft.com/de-de/dotnet/api/system.io.streamwriter?view=net-6.0) um Text aus Dateien zu lesen bzw. zu schreiben.
-* Klassen [File (static)](https://docs.microsoft.com/de-de/dotnet/api/system.io.file?view=net-6.0) und [FileInfo](https://docs.microsoft.com/de-de/dotnet/api/system.io.fileinfo?view=net-6.0) um Dateiinfos anzeigen zu lassen. Werden viele solcher Operationen durchgeführt ist FileInfo zu bevorzugen.
+* [`StreamReader`](https://docs.microsoft.com/de-de/dotnet/api/system.io.streamreader?view=net-6.0) und [`StreamWriter`](https://docs.microsoft.com/de-de/dotnet/api/system.io.streamwriter?view=net-6.0) um Text aus Dateien zu lesen bzw. zu schreiben.
+* [`File` (static)](https://docs.microsoft.com/de-de/dotnet/api/system.io.file?view=net-6.0) und [`FileInfo`](https://docs.microsoft.com/de-de/dotnet/api/system.io.fileinfo?view=net-6.0) um Dateiinfos anzeigen zu lassen. Werden viele solcher Operationen durchgeführt ist `FileInfo` zu bevorzugen.
   * Dateigröße ermitteln
   * Prüfung ob Datei existiert
   * Erstelldatum, Letzte Änderung usw.
-* Die Klassen [Directory (static)](https://docs.microsoft.com/de-de/dotnet/api/system.io.directory?view=net-6.0) und [DirectoryInfo](https://docs.microsoft.com/de-de/dotnet/api/system.io.directoryinfo?view=net-6.0) um mit Ordnern zu arbeiten.
+* [`Directory` (static)](https://docs.microsoft.com/de-de/dotnet/api/system.io.directory?view=net-6.0) und [`DirectoryInfo`](https://docs.microsoft.com/de-de/dotnet/api/system.io.directoryinfo?view=net-6.0) um mit Ordnern zu arbeiten.
   * Dateien eines Ordner lesen
   * Prüfung ob Ordner existiert
   * Order erstellen
@@ -24,23 +24,23 @@ Mit Dateien arbeiten.
 <!-- .slide: class="left" -->
 ## StreamReader und StreamWriter
 
-In Datei schreiben
+In Datei schreiben:
 
 ```csharp []
-using (StreamWriter writer = new StreamWriter("C:\\log.txt") ) {
-    writer.WriteLine("Schreibe das in die Datei");
+using (var writer = new StreamWriter("C:\\log.txt") ) {
+  writer.WriteLine("Schreibe das in die Datei");
 }
 ```
 
-Aus Datei lesen
+Aus Datei lesen:
 
 ```csharp []
 // using declaration syntax
-using StreamReader reader = new StreamReader(@"c:\log.txt"); 
+using var reader = new StreamReader(@"c:\log.txt"); 
 string einlesen = reader.ReadToEnd();
 ```
 
-Aus Datei lesen mit `FileInfo`
+Aus Datei lesen mit `FileInfo`:
 
 ```csharp []
 var fileInfo = new FileInfo(pfad);
@@ -48,45 +48,46 @@ var streamReader = fileInfo.OpenText();
 string line;
 // solange lesen solange nicht null zurück kommt
 while ((line = streamReader.ReadLine()) != null) {
-        Console.WriteLine(line);
+  Console.WriteLine(line);
 }
 streamReader.Dispose();
 ```
 
 Note: 
-* **VS** Dateioperationen
-* FileStream vs StreamWriter
-  * StreamWriter (TextWriter) ist ein Stream Decoder um Text zu schreiben.
-  * FileStream konvertiert Textdateien in byte[]
+* **VS** Beispiel "91_Dateioperationen"
+* `FileStream` vs `StreamWriter`
+  * `StreamWriter` (TextWriter) ist ein Stream Decoder um Text zu schreiben.
+  * `FileStream` konvertiert Textdateien in `byte[]`
 
 ---
 
 <!-- .slide: class="left" -->
-## Dispose() Methode
+## Dispose-Methode
 
 * Aufräumarbeiten werden von der Garbage Collection möglicherweise zeitverzögert ausgeführt, da sie dann durchgeführt werden, wenn das Programm wenig beschäftigt ist.
-* Sollen Aufräumarbeiten für ein Objekt zu einem bestimmten Zeitpunkt ausgeführt werden (beim Schließen von Dateien bzw Freigabe von Ressourcen) kann dies mit der Methode [Dispose()](https://docs.microsoft.com/de-de/dotnet/standard/garbage-collection/implementing-dispose) realisiert werden.
-* Die Methode ist bei allen Klassen verfügbar, welche die **IDisposable Schnittstelle** implementieren.
-* Einige Klassen bieten **Close()** und **Dispose()** an:
-  * In der Dispose() wird normalerweise die Close() ebenfalls aufgerufen.
-  * Um eine SQL Verbindung zu schließen ist Close() besser geeignet da diese danach wieder geöffnet werden kann (das Objekt bleibt bestehen).
-  * Bei Dispose() wird das Objekt zurückgesetzt d.h. ein weiteres Öffnen der Verbindung ist nicht möglich.
+* Sollen Aufräumarbeiten für ein Objekt zu einem bestimmten Zeitpunkt ausgeführt werden (beim Schließen von Dateien bzw Freigabe von Ressourcen) kann dies mit der Methode [`Dispose()`](https://docs.microsoft.com/de-de/dotnet/standard/garbage-collection/implementing-dispose) realisiert werden.
+* Die Methode ist bei allen Klassen verfügbar, welche die `IDisposable`-Schnittstelle implementieren.
+* Einige Klassen bieten `Close()` und `Dispose()` an:
+  * In der `Dispose()` wird normalerweise die `Close()` ebenfalls aufgerufen.
+  * Um eine SQL-Verbindung zu schließen ist `Close()` besser geeignet da diese danach wieder geöffnet werden kann (das Objekt bleibt bestehen).
+  * Bei `Dispose()` wird das Objekt zurückgesetzt d.h. ein weiteres Öffnen der Verbindung ist nicht möglich.
 
-Note: Möglichkeit Ressourcen frei zu geben
+Note: 
+Möglichkeit Ressourcen frei zu geben
 
 ---
 
 <!-- .slide: class="left" -->
-## using Anweisung
+## using-Anweisung
 
-[Using](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/using-statement) als Anweisung definiert einen Bereich in welchem das in der using Anweisung definierte Objekt Gültigkeit hat. Das deklarierte Objekt wird, nachdem der mit using definierte Gültigkeitsbereich verlassen wird, automatisch verworfen (**Dispose**). Damit wird sichergestellt das dies auch bei einem Ausnahmefehler geschieht.
+[`using`](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/using-statement) als Anweisung definiert einen Bereich in welchem das in der `using`-Anweisung definierte Objekt Gültigkeit hat. Das deklarierte Objekt wird, nachdem der mit `using` definierte Gültigkeitsbereich verlassen wird, automatisch verworfen (`Dispose`). Damit wird sichergestellt das dies auch bei einem Ausnahmefehler geschieht.
 
 * Nutzen bei Klassen, die auf Ressourcen zugreifen. z.B. 
   * Dateizugriffe
   * Datenbankabfragen
   * ...
-* Using kann bei allen Klassen die die **IDisposable Schnittstelle** implementieren angewendet werden.
-* Das Objekt wird im Kopf der using Anweisung erzeugt (soll nicht außerhalb erzeugt werden, da das Objekt ansonsten noch Gültigkeit hat)
+* Using kann bei allen Klassen die die `IDisposable`-Schnittstelle implementieren angewendet werden.
+* Das Objekt wird im Kopf der `using`-Anweisung erzeugt (soll nicht außerhalb erzeugt werden, da das Objekt ansonsten noch Gültigkeit hat)
 * **Fehler müssen nach wie vor abgefangen werden**
 
 ---
@@ -96,7 +97,7 @@ Note: Möglichkeit Ressourcen frei zu geben
 
 Im Anweisungsblock wird das zu verwendende Objekt initialisiert.
 
-```csharp []
+```csharp
 using (Klassenname objektname = new Klassenname() )
 {
   // Code der das Objekt, welches im Anweisungsblock erstellt wurde, benutzt.
@@ -114,7 +115,7 @@ objektname.xxxx;
 <!-- .slide: class="left" -->
 ### Beispiel
 
-Am Ende des Using Blocks wird für dieses Objekt automatisch die `Dispose()` Methode aufgerufen, und das Objekt somit verworfen/freigegeben.
+Am Ende des `using`-Blocks wird für dieses Objekt automatisch die `Dispose()` aufgerufen, und das Objekt somit verworfen/freigegeben.
 
 ```csharp []
 try 
@@ -131,7 +132,7 @@ catch (Exception e)
 ---
 
 <!-- .slide: class="left" -->
-Die selbe Funktionalität wie using bietet ein try-finally Block.
+Die selbe Funktionalität wie `using` bietet ein `try finally` Block.
 
 ```csharp []
 try 
@@ -155,7 +156,11 @@ catch (Exception e)
 ```
 
 Note:
-
+* **VS** zeigen
+  * z.B. DLL welche eine Methode bereitstellt um etwas in der Console auszugeben. 
+  * OutputType ändern
+  * DLL einbinden in anderem Projekt
+  * File und Assembly Version
 * **ÜBUNG** Logger
 * **ÜBUNG** Dateien einlesen
   * Test mit der DLL vom Nebensitzer oder von mir

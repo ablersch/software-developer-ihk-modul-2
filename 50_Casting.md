@@ -13,17 +13,44 @@ Werte umwandeln.
 
 * **Klassische Konvertierung:** Um eine Umwandlung durchzuführen, legen Sie den Typ, in den Sie umwandeln, in Klammern vor den zu konvertierenden Wert/Variable. Bei einem Fehler wird eine Exception geworfen.
 
-```csharp []
+```csharp
+int zahl = 42;         
+double d = zahl;        // Automatische Umwandlung von int zu double
+Console.WriteLine(d);   // Ausgabe: 42.0
+```
+
+```csharp
 double d = 1234.7;
-int zahl;
-// Cast double to int
-zahl = (int)d;    -> Ergebnis: 1234
+int zahl = (int)d;      // Explizite Umwandlung von double zu int
+Console.WriteLine(d);   // Ausgabe: 1234
 ```
 
 Note:
 
 * int -> Double implizit (autom. vom Compiler)
 * zahl = (int)d; explizit (auch mit Convert möglich)
+
+---
+
+<!-- .slide: class="left" -->
+## Beispiel
+
+```csharp []
+Person hans;
+Object myObject = new Person();
+if (myObject is Person)     // Prüft ob myObject vom Datentyp Person ist.
+{
+    hans = (Person)myObject; 
+    hans.GetName();
+}
+
+
+hans = myObject as Person;  // Führt eine Konvertierung aus.
+if (hans != null)           // Erfolgreich wenn myObject nicht null ist.
+{
+    hans.GetName();
+}
+```
 
 ---
 
@@ -46,29 +73,6 @@ WriteLine(now.ToString()); // aktuelles Datum
 
 object me = new object();
 WriteLine(me.ToString()); // System.Object
-```
-
----
-
-<!-- .slide: class="left" -->
-## Beispiel
-
-```csharp []
-Person hans;
-Object myObject = new Person();
-if (myObject is Person) // Prüft ob myObject vom Datentyp Person ist.
-{
-    hans = (Person)myObject; 
-    hans.GetName();
-    // ((Person)myObject).GetName();
-}
-
-
-hans = myObject as Person; // Führt eine Konvertierung aus.
-if (hans != null) // Erfolgreich wenn myObject nicht null ist.
-{
-    hans.GetName();
-}
 ```
 
 Note:

@@ -4,9 +4,10 @@
     new User() { Name = "Jane Doe", Age = 34, City = "Berlin"},
     new User() { Name = "Joe Doe", Age = 8, City = "Ulm"},
     new User() { Name = "Another Doe", Age = 15, City = "Ulm"},
+    new User() { Name = "Jane Roe", Age = 2, City = "Ulm"},
 };
 
-// Nur das Feld Name abfragen
+// die ersten beiden User abfragen
 var firstTwoUsers = users.Take(2).ToList();
 
 // Nur das Feld Name abfragen
@@ -18,12 +19,20 @@ var temp = users.Where(x => x.Age == 8).FirstOrDefault();
 
 // Wieviel Elemente gibt es welche ein Alter größer 20 haben
 int count = users.Where(x => x.Age > 20).Count();
-count = users.Count(x => x.Age > 20);
+// Alternative:
+//count = users.Count(x => x.Age > 20);
 
-// Sortieren
+// Sortieren nach Alter dann nach Name
 var sortedUsers = users.OrderBy(user => user.Age).ThenByDescending(user => user.Name).ToList();
 
-// Gruppieren und nur den Name auslesen
+// Gruppieren nach einem Schlüssel (Stadt)
+// Definieren, wie die Gruppen verarbeitet oder dargestellt werden soll.
 var grouped = users.GroupBy(x => x.City)
-    .Select(x => x.Select(y => y.Name))
-    .ToList();
+    .Select(group => new
+    {
+        Stadt = group.Key,
+        StadtCount = group.Count()
+        //NameUser = group.Select(x => x.Name)
+    });
+
+Console.WriteLine();

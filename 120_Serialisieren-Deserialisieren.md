@@ -86,4 +86,5 @@ public class Program
 
 Für fortgeschrittene Anwendungsfälle kannst man auch Einstellungen beim Serialisieren und Deserialisieren verwenden, um z. B. benutzerdefinierte Regeln zu definieren, wie Daten formatiert werden.
 
-Note:
+Note: 
+**ÜBUNG** Medienverwaltung Aufgabe 8

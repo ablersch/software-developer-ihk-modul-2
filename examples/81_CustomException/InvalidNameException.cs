@@ -1,6 +1,5 @@
 ﻿namespace CustomException;
 
-[Serializable]
 public class InvalidNameException : Exception
 {
     /// <inheritdoc />
@@ -9,8 +8,7 @@ public class InvalidNameException : Exception
     }
 
     /// <inheritdoc />
-    public InvalidNameException(string name)
-        : base($"Invalid Name: {name}")
+    public InvalidNameException(string name) : base($"Invalid Name: {name}")
     {
     }
 }

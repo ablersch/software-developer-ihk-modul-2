@@ -145,4 +145,5 @@ class Zeitschriften : Medien
 **Interfaces benutzen** um inhaltlich verschiedenen Klassen eine bestimmte Funktionalität zu bieten.
 **Abstrakte Klassen nutzen** als Basisklasse um inhaltlich gleichen Klassen eine gemeinsame Basis (die aber verändert oder erweitert werden kann) zu geben und zu erzwingen das bestimmte Methoden implementiert werden.
 
-Note: **ÜBUNG** Medienverwaltung Aufgabe 7 (noch weiter ausarbeiten)
+Note: 
+**ÜBUNG** Medienverwaltung Aufgabe 9 (noch weiter ausarbeiten)

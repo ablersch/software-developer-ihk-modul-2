@@ -24,12 +24,12 @@ Syntaxfehler werden in VS angezeigt.
 Die strukturierte Ausnahmebehandlung ermöglicht während der Laufzeit
 eine stabile und umfassende Fehlerbehandlung.
 
-* **`try`**: Mit der try-Anweisung wird der unsichere Programmcode, der Programmcode, der möglicherweise zu einem Fehler führen kann, gekapselt.
-* **`catch`**: Dem Try Codeblock werden dann ein oder mehrere catch-Blöcke zur Fehlerbehandlung zugewiesen, die beim eintreten eines bestimmten Fehlers abgearbeitet werden sollen.
-* **`finally`**: In einem abschließenden finally-Block, der in jedem Fall ausgeführt wird (immer), lassen sich Bereinigungsaufgaben durchführen oder Ressourcen freigeben (das Schließen von Dateien).
+* **`try`**: Mit der `try`-Anweisung wird der unsichere Programmcode, der Programmcode, der möglicherweise zu einem Fehler führen kann, gekapselt.
+* **`catch`**: Dem `try`-Codeblock werden dann ein oder mehrere `catch`-Blöcke zur Fehlerbehandlung zugewiesen, die beim eintreten eines bestimmten Fehlers abgearbeitet werden sollen.
+* **`finally`**: In einem abschließenden `finally`-Block, der in jedem Fall ausgeführt wird, lassen sich Bereinigungsaufgaben durchführen oder Ressourcen freigeben (das Schließen von Dateien).
 
 Note: 
-Ohne Try catch Programmfehler oder unsicherer Zustand (Dateizugriffe oder SQL Operationen)
+Ohne `try catch` Programmfehler oder unsicherer Zustand (Dateizugriffe oder SQL Operationen)
 
 ---
 
@@ -149,7 +149,7 @@ public static void Main()
 ```
 
 Note: 
-* **VS** Exception herbeirufen (z.B. Verwendung eines null-Objects).  
+* **VS** Exception herbeirufen (z.B. Verwendung eines `null`-Objects).  
   * Abfangen zeigen. 
   * `Throw` zweigen. 
   * Bedingte Breakpoints.
@@ -161,10 +161,9 @@ Note:
 
 C\# beinhaltet einige vordefinierte Fehlerklassen. Jedoch kann es sinnvoll sein, wenn die Geschäftslogik fehlschlägt, eine [benutzerdefinierte Ausnahmeklasse](https://docs.microsoft.com/de-de/dotnet/standard/exceptions/how-to-create-user-defined-exceptions) zu verwenden.
 
-z.B. NotFoundException, ForbiddenException, ForeignApiCallException, BadArgumentException
+z.B. `NotFoundException`, `ForbiddenException`, `ForeignApiCallException`, `BadArgumentException`
 
 ```csharp []
-[Serializable]
 public class InvalidStudentNameException : Exception
 {
     public InvalidStudentNameException() 
@@ -172,7 +171,7 @@ public class InvalidStudentNameException : Exception
     }
 
     public InvalidStudentNameException(string name)
-        : base(name)
+        : base(name) // Weiterleiten an die Basisklasse
     {
     }
 }
@@ -180,4 +179,4 @@ public class InvalidStudentNameException : Exception
 
 Note:
 
-* Beispiel hierzu in VS zeigen
+* In **VS** erstellen auf Basis des Beispiels "81_CustomException"

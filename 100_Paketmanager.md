@@ -77,6 +77,6 @@ Note: `Update-Package` damit kannst du ein Paket in allen Projekten der Lösung 
 * **Einfache Integration:** NuGet erleichtert die Integration von externen Bibliotheken und Tools.
 
 Note: 
-* **ÜBUNG** Medienverwaltung Aufgabe 6
+* **ÜBUNG** Medienverwaltung Aufgabe 7
 
 
