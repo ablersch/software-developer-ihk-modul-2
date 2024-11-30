@@ -40,7 +40,7 @@ internal class Program
             Console.WriteLine("Ausgabe der vorhandenen Medien 'a'");
             Console.WriteLine("Entleihen des Medium 'e Signatur'");
             Console.WriteLine("Rueckgabe des Medium 'r Signatur'");
-            Console.WriteLine("Löschen des Medium 'd Signatur'");
+            Console.WriteLine("Löschen des Medium 'l Signatur'");
             Console.WriteLine("Programm beenden 'q'\n");
 
             auswahl = Console.ReadLine();
@@ -82,11 +82,11 @@ internal class Program
 
                 case "e":
                     tempMedium = GetElement(signatur);
-                    tempMedium?.Entleihen(signatur);
+                    tempMedium?.Entleihen();
                     break;
 
                 case "r":
-                    GetElement(signatur)?.Rueckgabe(signatur);
+                    GetElement(signatur)?.Rueckgabe();
                     break;
 
                 case "l":

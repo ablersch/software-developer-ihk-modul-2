@@ -17,6 +17,6 @@ internal class Buch : Medium
 
     internal override void Ausgabe()
     {
-        Console.WriteLine("{0,-15} {1,-15} {2,-15} {3,-15} Seitenzahl {4,-15}", Signatur, nameof(Video), (titel.Length > 15) ? titel.Substring(0, 15) : titel, status, seitenzahl);
+        Console.WriteLine("{0,-15} {1,-15} {2,-15} {3,-15} Seitenzahl {4,-15}", Signatur, nameof(Video), KurzerTitel(), status, seitenzahl);
     }
 }

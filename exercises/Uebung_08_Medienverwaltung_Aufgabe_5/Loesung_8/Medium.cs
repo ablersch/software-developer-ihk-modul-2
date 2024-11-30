@@ -26,36 +26,35 @@ internal abstract class Medium
 
     internal abstract void Ausgabe();
 
-    internal void Entleihen(int signatur)
+    internal void Entleihen()
     {
-        if (Signatur == signatur)
+        if (status == Leihstatus.präsent)
         {
-            if (status == Leihstatus.präsent)
-            {
-                status = Leihstatus.entliehen;
-                Console.WriteLine($"{titel} erfolgreich ausgeliehen");
-            }
-            else
-            {
-                Console.WriteLine($"{titel} ist bereits entliehen");
-            }
+            status = Leihstatus.entliehen;
+            Console.WriteLine($"{titel} erfolgreich ausgeliehen");
+        }
+        else
+        {
+            Console.WriteLine($"{titel} ist bereits entliehen");
         }
     }
 
-    internal void Rueckgabe(int signatur)
+    internal void Rueckgabe()
     {
-        if (Signatur == signatur)
+        if (status == Leihstatus.entliehen)
         {
-            if (status == Leihstatus.entliehen)
-            {
-                status = Leihstatus.präsent;
-                Console.WriteLine($"{titel} efolgreich zurueckgegeben");
-            }
-            else
-            {
-                Console.WriteLine($"Rueckgabe von {titel} nicht möglich da das Medium nicht entliehen ist");
-            }
+            status = Leihstatus.präsent;
+            Console.WriteLine($"{titel} efolgreich zurueckgegeben");
         }
+        else
+        {
+            Console.WriteLine($"Rueckgabe von {titel} nicht möglich da das Medium nicht entliehen ist");
+        }
+    }
+
+    protected string KurzerTitel()
+    {
+        return (titel.Length > 15) ? titel.Substring(0, 15) : titel;
     }
 
     private static int SignaturErzeugen()
@@ -65,7 +64,8 @@ internal abstract class Medium
         do
         {
             newKey = random.Next(1000, 100000);
-        } while (Program.medienDic.ContainsKey(newKey));
+        }
+        while (Program.medienDic.ContainsKey(newKey));
 
         return newKey;
     }

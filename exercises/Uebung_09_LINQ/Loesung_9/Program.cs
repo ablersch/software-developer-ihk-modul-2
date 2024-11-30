@@ -1,4 +1,4 @@
-﻿using LinqAbfragen;
+﻿using Linq;
 
 List<Department> departments = new()
 {
@@ -21,21 +21,41 @@ List<Employee> employees = new()
 };
 
 // Den Mitarbeiter mit dem Nachname "Baum"
+var employeeBaum = employees.First(x => x.LastName == "Baum");
 
 // Den Mitarbeiter mit der höchsten Personalnummer
+var highestEmployeeNumber = employees.OrderByDescending(e => e.Number).FirstOrDefault();
 
-// Alle Mitarbeiter sortiert nach Personalnummer.
+var maxNumber = employees.Max(e => e.Number);
+var highestEmployeeNumber2 = employees.FirstOrDefault(x => x.Number == maxNumber);
 
-// Alle aktiven Mitarbeiter der IT Abteilung.
+// Alle Mitarbeiter sortiert nach Personalnummer
+var orderedEmployees = employees.OrderBy(o => o.Number).ToList();
 
-// Alle Vornamen der Mitarbeiter aus der IT Abteilung.
+// Alle aktiven Mitarbeiter der IT Abteilung
+var itEmployees = employees.Where(x => x.Department.Name == "IT" && x.Active).ToList();
 
-// Alle Mitarbeiter gruppiert nach Abteilung.
+// Alle Vornamen der Mitarbeiter aus der IT Abteilung
+var itFirstNamesEmployees = employees.Where(x => x.Department.Name == "IT").Select(s => s.FirstName).ToList();
 
-// Abteilungen bei denen der Manager mit "Ka" beginnt.
+// Alle Mitarbeiter gruppiert nach Abteilung
+var groupedEmployeesByDepartment = employees.GroupBy(g => g.Department.Name).ToList();
+
+// Abteilungen bei denen der Manager mit "Ka" beginnt
+var departmentsWithKaManager = departments.Where(x => x.Manager.StartsWith("Ka")).ToList();
 
 // Den Manager der Abteilung in der Max Mustermann arbeitet
+var maxsManager = employees.Where(e => e.FirstName == "Max" && e.LastName == "Mustermann").Select(e => e.Department?.Manager).FirstOrDefault();
 
-// Gibt es Mitarbeiter mit Personalnummern von 2000 - 3999.
+// Gibt es Mitarbeiter mit Personalnummern von 2000 - 3999
+bool employeeRange = employees.Any(s => s.Number >= 2000 && s.Number <= 3999);
 
-// Name der Abteilungen mit der Anzahl an aktiven Mitarbeitern.
+// Name der Abteilungen mit der Anzahl an aktiven Mitarbeitern
+var departmentsWithActiveEmployeeCount = employees
+    .Where(x => x.Active)
+    .GroupBy(x => x.Department.Name)
+    .Select(group => new
+    {
+        Department = group.Key,
+        Count = group.Count()
+    });
