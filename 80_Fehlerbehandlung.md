@@ -55,7 +55,7 @@ catch (ExceptionType ExceptionName)
 [finally]
 {
   ...
-}]
+}
 ```
 
 Mehr zum Thema [Try-Catch](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/try-catch) und [Best practices für Fehlerbehandlung](https://docs.microsoft.com/de-de/dotnet/standard/exceptions/best-practices-for-exceptions)

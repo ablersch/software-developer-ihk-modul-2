@@ -15,9 +15,9 @@ Note:
 * Aussprache: Link
 * Daten aus verschiedenen Datenquellen abrufen:
   *  Collections
-  *  ADO.Net DataSet
-  *  XML Dokumente
-  *  Webservice D
+  *  ADO.Net-DataSet
+  *  XML-Dokumente
+  *  Webservices
   *  Datenbanken
 
 ---
@@ -34,15 +34,6 @@ Note:
 ---
 
 <!-- .slide: class="left" -->
-### LINQ Abfragen
-
-LINQ-Abfragen geben Ergebnisse als Objekte zurück. So muss man sich nicht um die Umwandlung verschiedener Formate in Objekte kümmern.
-
-![LINQ Benutzung](images/Linq-execution.png)
-
----
-
-<!-- .slide: class="left" -->
 ### Vorteile von LINQ
 
 * **Vertraute Sprache:** Entwickler müssen nicht für jede Art von Datenquelle oder Datenformat eine neue Abfragesprache erlernen.
@@ -50,6 +41,15 @@ LINQ-Abfragen geben Ergebnisse als Objekte zurück. So muss man sich nicht um di
 * **Lesbarer Code:** LINQ macht den Code besser les- und pflegbar.
 * **Standardisierte Abfrage mehrerer Datenquellen:** Die gleiche LINQ-Syntax kann für die Abfrage mehrerer Datenquellen verwendet werden.
 * **IntelliSense-Unterstützung:** LINQ bietet IntelliSense an.
+
+---
+
+<!-- .slide: class="left" -->
+### LINQ Abfragen
+
+LINQ-Abfragen geben Ergebnisse als Objekte zurück. So muss man sich nicht um die Umwandlung verschiedener Formate in Objekte kümmern.
+
+![LINQ Benutzung](images/Linq-execution.png)
 
 ---
 
@@ -178,7 +178,8 @@ var sortNum = numbers.OrderBy(number => number).ToList();
 ```
 
 Note: 
-Abfrage wird erst ausgeführt wenn mit den Daten gearbeitet wird z.B. iterieren, `ToList()`, `Count()`,  D.h. es sind Abfragen über mehrere Zeilen möglich.
+* `OrderBy`: aufsteigend (1-9)
+* Abfrage wird erst ausgeführt wenn mit den Daten gearbeitet wird z.B. iteriert, `ToList()`, `Count()`,  D.h. es sind Abfragen über mehrere Zeilen möglich.
 
 ---
 
@@ -199,10 +200,10 @@ Quantifizieren | `All`, `Any`, `Contains`
 
 Note:
 * `OrderBy`: aufsteigend (1-9)
-* `ToLookup`: dasselbe wie `GroupBy`; der einzige Unterschied ist, dass die Ausführung von `GroupBy` aufgeschoben wird, während `ToLookup` sofort ausgeführt wird.
 * `Descending`: absteigend (9 -1)
 * `Reverse`: Sortierung umdrehen
-* `GroupBy`: Daten Gruppeiren, oft zusammen mit `Select` um zu definiert, wie die Gruppen verarbeitet oder dargestellt werden.
+* `ToLookup`: dasselbe wie `GroupBy`; der einzige Unterschied ist, dass die Ausführung von `GroupBy` aufgeschoben wird, während `ToLookup` sofort ausgeführt wird.
+* `GroupBy`: Daten Gruppieren, oft zusammen mit `Select` um zu definiert, wie die Gruppen verarbeitet oder dargestellt werden.
 * `All`: gibt `true` zurück wenn alle Elemente eine bestimmte Bedingung erfüllen
 * `Any`: Prüft ob ein Element eine bestimmte Bedingung erfüllt.
 
@@ -252,7 +253,7 @@ var users = new List<User>()
     new User() { Name = "Another Doe", Age = 15 },
 };
 
-// Nur das Feld Name abfragen
+// Nur das Feld "Name" abfragen
 var names = users.Select(x => x.Name).ToList();
 
 // Ein Benutzer mit dem Alter von 8 abfragen. Wird keiner gefunden wird null geliefert
