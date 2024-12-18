@@ -54,7 +54,7 @@ JSON verwendet zwei Hauptstrukturen:
 
 Note:
 * Schlüssel-Wert-Paare: 
-  * `"Vorname": "Max"` (der Wert ist ein String) oder 
+  * `"Vorname": "Max"` (der Wert ist ein String) 
   * `"Alter": 30` (der Wert ist eine Zahl).
 * Array: `"Hobbys": ["Programmieren", "Lesen", "Laufen"]`, wobei die Hobbys als Liste von Strings dargestellt werden.
 * Boolean-Wert: `"Verheiratet": true` ist ein Boolescher Wert.

@@ -5,12 +5,20 @@ Wie muss eine Klasse aussehen?
 ---
 
 <!-- .slide: class="left" -->
-## Was ist ein [Interface]((https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/interface)) (Schnittstelle)
+## Was ist ein Interface (Schnittstelle)
 
-* wichtigstes Konstrukt in der Programmierung, um Code sauber zu strukturieren.
+Ein [Interface](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/interface) ist eine Sammlung von Methodensignaturen, Eigenschaften oder Ereignissen, die von einer Klasse implementiert werden müssen. Es ist ein Vertrag, der festlegt, welche Funktionalitäten eine Klasse bereitstellen muss, ohne deren konkrete Implementierung vorzugeben.
+
+Interfaces ermöglichen:
+
+**Abstraktion**: Der Fokus liegt auf dem "Was" und nicht dem "Wie".
+**Polymorphismus**: Unterschiedliche Klassen können auf dieselbe Weise verwendet werden, wenn sie dasselbe Interface implementieren.
+
+Note:
+* wichtiges Konstrukt in der Programmierung, um Code sauber zu strukturieren.
 * Definiert einen Vertrag.
 * Jede Klasse die diesen Vertrag implementiert muss auch die im Vertrag definierten Member bereitstellen.
-* Trennen und entkoppeln den Kontrakt und die Implementierung.
+* Trennen und entkoppeln den Vertrag und die Implementierung.
 * beschreiben eine Gruppe verwandter Methoden, die zu einer beliebigen Klasse oder Struktur gehören können.
 
 ---
@@ -35,12 +43,19 @@ Note:
 ---
 
 <!-- .slide: class="left" -->
-## Anwendungsfälle
+## Vorteile und Anwendungsfälle
 
-* Codedefinition von der Implementierung trennen.
-* Damit Klassen einfach testbar werden.
-* Um Sicherheit zu erreichen, sollten bestimmte Details ausgeblendet werden und nur die wichtigen Details eines Objekts (einer Schnittstelle) angezeigt werden.
-* C# unterstützt keine "Mehrfachvererbung". Mit Schnittstellen kann dies jedoch erreicht werden, da die Klasse mehrere Schnittstellen implementieren kann.
+* **Definition von Standards/Verträgen**: Ein Interface definiert den Vertrag, den jede implementierende Klasse einhalten muss, ohne die interne Logik offenzulegen.
+* **Flexibilität durch Mehrfachvererbung**: In C\# kann eine Klasse nur von einer Basisklasse erben, aber sie kann mehrere `Interfaces` implementieren.
+* **Förderung der Testbarkeit**: Interfaces erleichtern Unit Tests durch die Verwendung von Mock-Objekten.
+* **Erstellen von Plugins und Erweiterungen**: Nützlich in modularen Anwendungen, bei denen neue Funktionalitäten hinzugefügt werden können.
+* **Strategien und Austauschbarkeit**: Verschiedene Implementierungen einer Funktionalität können durch Interfaces ausgetauscht werden.
+* **Dependency Injection (DI)**: Interfaces sind in der Dependency Injection (DI) weit verbreitet, da sie das Einbinden von Abhängigkeiten (z. B. Services) erleichtern.
+
+Note:
+* zu 3: Ein Interface wie `ILogger` kann in Tests durch eine simulierte Implementierung ersetzt werden.
+* zu 4: Ein Spiel könnte ein Interface IWeapon verwenden, sodass neue Waffentypen einfach hinzugefügt werden können.
+* zu 5: Eine App, die verschiedene Authentifizierungsmechanismen (z. B. OAuth, JWT) unterstützt
 
 ---
 
@@ -57,20 +72,16 @@ public interface IMedien
 // Einbinden der Schnittstelle
 class Zeitschriften : IMedien 
 {
-  public void List() {
+  public void List() 
+  {
     Console.WriteLine("Ausgabe der Eigenschaften");
   }
   
-  public int Signatur {
-    get{...}
-    set{...}
-  }
-  ...
+  public int Signatur { get; set; }
 }
 ```
 
 Note:
-
 * **VS** Interface zeigen
 
 ---
@@ -127,12 +138,12 @@ class Zeitschriften : Medien
 <!-- .slide: class="left" -->
 ## Interface vs abstrakte Klasse
 
-* Interface:
+**Interface**:
   * Eine Klasse kann mehrere Interfaces einbinden.
   * Ein Interface besitzt nur Definitionen von öffentlichen Eigenschaften und Methoden welche später selbst programmiert werden müssen.
   * Kein Konstruktor möglich
 
-* abstrakte Klasse:
+**abstrakte Klasse**:
   * Es kann nur von einer abstrakten Klasse geerbt werden.
   * Eine abstrakte Klasse kann Felder und Methoden vererben und zusätzlich Methodenrümpfe (Methodendefinitionen) definieren die implementiert werden und programmiert werden müssen.
   * Konstruktoren können definiert werden
@@ -142,8 +153,9 @@ class Zeitschriften : Medien
 <!-- .slide: class="left" -->
 ### Anwendungsfälle
 
-**Interfaces benutzen** um inhaltlich verschiedenen Klassen eine bestimmte Funktionalität zu bieten.
-**Abstrakte Klassen nutzen** als Basisklasse um inhaltlich gleichen Klassen eine gemeinsame Basis (die aber verändert oder erweitert werden kann) zu geben und zu erzwingen das bestimmte Methoden implementiert werden.
+**Interfaces** benutzen um inhaltlich verschiedenen Klassen eine bestimmte Funktionalität zu bieten.
+
+**Abstrakte Klassen** nutzen als Basisklasse um inhaltlich gleichen Klassen eine gemeinsame Basis (die aber verändert oder erweitert werden kann) zu geben und zu erzwingen das bestimmte Methoden implementiert werden.
 
 Note: 
-**ÜBUNG** Medienverwaltung Aufgabe 9 (noch weiter ausarbeiten)
+**ÜBUNG** Medienverwaltung Aufgabe 9

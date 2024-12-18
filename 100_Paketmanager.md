@@ -1,6 +1,6 @@
 # Paketmanager 
 
-Paketmanager in C#
+Paketmanager in C\#
 
 ---
 
@@ -9,7 +9,7 @@ Paketmanager in C#
 
 [NuGet](https://www.nuget.org/) ist der Paketmanager für .NET, der es Entwicklern ermöglicht, Bibliotheken und Tools einfach zu finden, zu installieren und zu verwalten. Es bietet eine zentrale Anlaufstelle für das Teilen von wiederverwendbarem Code.
 
-* NuGet-Pakete werden von einer öffentlichen oder privaten Quelle bezogen.
+NuGet-Pakete werden von einer öffentlichen oder privaten Quelle bezogen.
 
 Note: 
 * Packages zeigen auf NuGet Website.
@@ -51,13 +51,14 @@ dotnet add package <Paketname> --version <Version>
 Update-Package
 ```
 
-* **Pakete deinstallieren:** Um ein Paket zu entfernen, kannst du den NuGet-Paket-Manager oder die CLI verwenden:
+* **Pakete deinstallieren:** Um ein Paket zu entfernen, kann man den NuGet-Paket-Manager oder die CLI verwenden:
 
- ```bash
- dotnet remove package <Paketname>
+```bash
+dotnet remove package <Paketname>
 ```
 
-Note: `Update-Package` damit kannst du ein Paket in allen Projekten der Lösung gleichzeitig aktualisieren:
+Note: 
+* `Update-Package`: damit kann man ein Paket in allen Projekten der Lösung gleichzeitig aktualisieren.
 
 ---
 
@@ -65,7 +66,7 @@ Note: `Update-Package` damit kannst du ein Paket in allen Projekten der Lösung 
 ## Abhängigkeiten
 
 * Jedes NuGet-Paket kann Abhängigkeiten zu anderen Paketen haben. Diese werden automatisch mitinstalliert.
-* Wenn du ein Paket installierst, werden auch seine Abhängigkeiten in deinem Projekt geladen.
+* Wenn man ein Paket installiert, werden auch seine Abhängigkeiten in das Projekt geladen.
 
 ---
 

@@ -170,7 +170,7 @@ public class InvalidStudentNameException : Exception
     {  
     }
 
-    public InvalidStudentNameException(string name)
+    public InvalidStudentNameException(string name) // Message
         : base(name) // Weiterleiten an die Basisklasse
     {
     }
