@@ -64,7 +64,7 @@ writer.WriteLine("Hello, World!");
 <!-- .slide: class="left" -->
 ## Manuelles Aufrufen von `Dispose`
 
-Ohne `using` kann die Methode `Dispose` auch manuell aufrufen, aber das birgt Risiken:
+Ohne `using` kann die Methode `Dispose` auch manuell aufgerufen werden:
 
 ```csharp
 StreamWriter writer = null;
@@ -92,7 +92,7 @@ finally
 
 Das `using`-Statement ruft die `Dispose`-Methode automatisch auf, auch wenn innerhalb des Blocks eine Ausnahme ausgelöst wird. Deshalb ist kein zusätzlicher `try`-`catch`-Block erforderlich, um sicherzustellen, dass Ressourcen freigegeben werden.
 
-Ein `try`-`catch`-Block ist dann sinnvoll, wenn eine Ausnahme gezielt behandelt oder eine benutzerdefinierte Fehlermeldung ausgeben werden soll. Ebenfalls sinnvoll ist es beim Erzeugen des Objekts um dort Fehler abfangen zu können.
+Ein `try`-`catch`-Block ist dann sinnvoll, wenn eine Ausnahme gezielt behandelt oder eine benutzerdefinierte Fehlermeldung ausgeben werden soll. Ebenfalls sinnvoll ist es beim Erzeugen des Objekts, um dort Fehler abfangen zu können.
 
 * **Fehler beim Öffnen der Datei**: Datei existiert nicht, Berechtigungen fehlen.
 * **Lese-/Schreibfehler**: Netzwerkprobleme oder Festplattenfehler.
@@ -127,14 +127,16 @@ catch (IOException ex)
 <!-- .slide: class="left" -->
 ## Dateioperationen
 
-Dateioperationen sind ein grundlegender Bestandteil der Programmierung und ermöglichen es, mit Dateien auf einem Computer zu arbeiten. In C\# stellt der Namespace `System.IO` Klassen und Methoden bereit, um Dateien zu erstellen, zu lesen, zu schreiben, zu löschen und vieles mehr.
+Dateioperationen ermöglichen es, mit Dateien auf einem Computer zu arbeiten. In C\# stellt der Namespace `System.IO` Klassen und Methoden bereit, um Dateien zu erstellen, zu lesen, zu schreiben, zu löschen und vieles mehr.
 
 ---
 
 <!-- .slide: class="left" -->
 ## Datei erstellen, Text schreiben und lesen
 
-Mit der Methode `File.WriteAllText` kann eine Datei erstellt und Text in diese Datei geschreiben werden. Mit `File.ReadAllText` kann der Text ausgelesen werden.
+Mit der Methode `File.WriteAllText` kann eine Datei erstellt und Text in diese Datei geschreiben werden. 
+
+Mit `File.ReadAllText` kann der Text ausgelesen werden.
 
 ```csharp
 using System;
@@ -180,9 +182,10 @@ class Program
   {
     string dateipfad = "example.txt";
 
-    // Datei löschen
+    // Prüfen ob Datei existiert
     if (File.Exists(dateipfad))
     {
+      // Datei löschen
       File.Delete(dateipfad);
       Console.WriteLine($"Die Datei {dateipfad} wurde gelöscht.");
     }
@@ -210,12 +213,12 @@ class Program
 {
   static void Main()
   {
-    string ordnerpfad = "NeuerOrdner";
+    string ordnerPfad = "NeuerOrdner";
 
     // Ordner erstellen
-    Directory.CreateDirectory(ordnerpfad);
+    Directory.CreateDirectory(ordnerPfad);
 
-    Console.WriteLine($"Der Ordner {ordnerpfad} wurde erstellt.");
+    Console.WriteLine($"Der Ordner {ordnerPfad} wurde erstellt.");
   }
 }
 ```
@@ -258,11 +261,11 @@ Nachteile:
 
 Der `StreamWriter` wird verwendet, um Text in einen Datenstrom (z. B. eine Datei) zu schreiben. Er arbeitet effizient, da er Daten in einem Puffer speichert und sie blockweise schreibt, anstatt jeden Schreibvorgang einzeln auszuführen.
 
-Wichtige Eigenschaften
+Wichtige Eigenschaften:
 * `AutoFlush`: Bestimmt, ob der Puffer automatisch nach jedem Schreibvorgang geleert wird.
 * `BaseStream`: Der zugrunde liegende Datenstrom, der mit dem StreamWriter verwendet wird.
 
-Wichtige Methoden
+Wichtige Methoden:
 * `Write(string)`: Schreibt eine Zeichenfolge in den Stream.
 * `WriteLine(string)`: Schreibt eine Zeichenfolge gefolgt von einem Zeilenumbruch.
 * `Flush()`: Leert den Puffer und schreibt alle Daten sofort.
@@ -281,12 +284,10 @@ Note:
 In Datei schreiben:
 
 ```csharp []
-using (var writer = new StreamWriter("C:\\log.txt") ) 
-{
-  writer.WriteLine("Schreibe das in die Datei");
-  writer.Write("Zeilen können verbunden sein");
-  writer.Write(" und enden hier.");
-}
+using var writer = new StreamWriter("C:\\log.txt");
+writer.WriteLine("Schreibe das in die Datei");
+writer.Write("Zeilen können verbunden sein");
+writer.Write(" und enden hier.");
 ```
 
 ---
@@ -296,12 +297,12 @@ using (var writer = new StreamWriter("C:\\log.txt") )
 
 Der `StreamReader` wird verwendet, um Text aus einem Datenstrom (z. B. einer Datei) zu lesen. Er ist ideal, wenn man Dateien zeilenweise oder stückweise verarbeiten möchte.
 
-Wichtige Eigenschaften
+Wichtige Eigenschaften:
 * `EndOfStream`: Gibt an, ob der Stream vollständig gelesen wurde.
 * `BaseStream`: Der zugrunde liegende Datenstrom, der mit dem StreamReader verwendet wird.
 * `CurrentEncoding`: Gibt die verwendete Textkodierung zurück.
 
-Wichtige Methoden
+Wichtige Methoden:
 * `Read()`: Liest ein einzelnes Zeichen aus dem Stream.
 * `ReadLine()`: Liest eine vollständige Zeile aus dem Stream.
 * `ReadToEnd()`: Liest den gesamten Rest des Streams als String.
@@ -411,6 +412,5 @@ Note:
   * DLL einbinden in anderem Projekt
   * File und Assembly Version
 * **ÜBUNG** Logger
+* **ÜBUNG** Medienverwaltung Aufgabe 6
 * **ÜBUNG** Dateien einlesen
-  * Test mit der DLL vom Nebensitzer oder von mir
-* **ÜBUNG** Medienverwaltung Aufgabe 5
