@@ -148,4 +148,14 @@ Note:
 Für fortgeschrittene Anwendungsfälle kann man auch Einstellungen beim Serialisieren und Deserialisieren verwenden, um z. B. benutzerdefinierte Regeln zu definieren, wie Daten formatiert werden.
 
 Note: 
+```csharp
+private static readonly JsonSerializerOptions options = new()
+    {
+        WriteIndented = true, // Für schön formatierten JSON-Ausgabe
+        Converters =
+        {
+            new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) // Falls Enums existieren
+        }
+    };
+```
 **ÜBUNG** Medienverwaltung Aufgabe 8

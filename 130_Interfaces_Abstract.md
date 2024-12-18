@@ -18,8 +18,8 @@ Note:
 * wichtiges Konstrukt in der Programmierung, um Code sauber zu strukturieren.
 * Definiert einen Vertrag.
 * Jede Klasse die diesen Vertrag implementiert muss auch die im Vertrag definierten Member bereitstellen.
-* Trennen und entkoppeln den Vertrag und die Implementierung.
-* beschreiben eine Gruppe verwandter Methoden, die zu einer beliebigen Klasse oder Struktur gehören können.
+* Trennt und entkoppelt den Vertrag und die Implementierung.
+* beschreibt eine Gruppe verwandter Methoden, die zu einer beliebigen Klasse oder Struktur gehören können.
 
 ---
 
