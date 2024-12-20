@@ -6,7 +6,8 @@ Der Eintrag soll die Signatur beinhalten bei welcher es ein Problem gab. Nutzen 
 
 Um eine Klassenbibliothek einzubinden müssen Sie dem Projekt einen Verweis auf die DLL hinzufügen. Außerdem sollten Sie den Namespace der DLL in Ihr Projekt einbinden (`using`).
 
+## Beispiel Ausgabe
 
 ```bash
-Fehler beim Leihen/Rueckgeben von Signatur 25265.
+Fehler beim Entleihen von Signatur 25265.
 ```

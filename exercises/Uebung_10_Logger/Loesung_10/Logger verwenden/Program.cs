@@ -16,6 +16,7 @@ namespace Logger_verwenden
             LoggerUtil.WriteToLog("das ist ein logger text1", LoggerUtil.LogTyp.Error);
             LoggerUtil.WriteToLog("das ist ein logger text2", LoggerUtil.LogTyp.Warning);
             LoggerUtil.WriteToLog("das ist ein logger text3", LoggerUtil.LogTyp.Information);
+
             Console.ReadLine();
         }
     }

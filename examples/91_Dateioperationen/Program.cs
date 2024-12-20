@@ -13,29 +13,20 @@ internal class Program
 
         Console.WriteLine($"Datei: {logFilePath}");
 
-        // Text schreiben
-        // Datei wird automatisch erstellt
+        if (!File.Exists(logFilePath))
+        {
+            Console.WriteLine($"Datei {logFilePath} existiert nicht.");
+        }
+        File.WriteAllText(logFilePath, "Text in die Datei schreiben.");
+        File.Delete(logFilePath);
+
+        // Text schreiben, Datei wird automatisch erstellt
         using (var writer = new StreamWriter(logFilePath, true))
         {
             writer.WriteLine("Schreibe das in die Datei");
         }
 
-        File.Delete(logFilePath);
-
-        var fileInfo = new FileInfo(logFilePath);
-        var writer2 = fileInfo.AppendText();
-        writer2.WriteLine("### Schreibe Text in die LogDatei ###");
-        writer2.WriteLine("### Schreibe Text in die LogDatei  2###");
-        writer2.Close();
-
-        // Prüfen ob Datei existiert
-        if (!File.Exists(logFilePath))
-        {
-            File.Create(logFilePath);
-        }
-
         // Text einlesen
-        // using declaration syntax
         using StreamReader reader = new(logFilePath);
 
         // alle Zeichen einlesen
@@ -44,7 +35,10 @@ internal class Program
         // ließt eine Zeile
         // einlesen = reader.ReadLine();
 
-        Console.WriteLine(einlesen);
+        var fileInfo = new FileInfo(logFilePath);
+
+        using var fileInfoWriter = fileInfo.AppendText();
+        fileInfoWriter.WriteLine("### Schreibe Text in die LogDatei ###");
 
         // Dateiinfos ausgeben
         Console.WriteLine("Erstellungszeitpunkt: \t" + fileInfo.CreationTime);
