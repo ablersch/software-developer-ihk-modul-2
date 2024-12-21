@@ -44,6 +44,9 @@ public class Program
 }
 ```
 
+Note:
+* **VS** zeigen wie Klasse serialisiert wird
+
 ---
 
 <!-- .slide: class="left" -->

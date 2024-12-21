@@ -46,7 +46,14 @@ JSON verwendet zwei Hauptstrukturen:
   "Alter": 30,
   "Beruf": "Entwickler",
   "Hobbys": ["Programmieren", "Lesen", "Laufen"],
-  "Verheiratet": true
+  "Verheiratet": true,
+  "Wohnadresse":
+  {
+  	"Strasse": "Bach Weg",
+    "Hausnummer": 12,
+    "Stadt": "Ulm",
+    "PLZ": 88888
+  }
 }
 ```
 
@@ -58,6 +65,7 @@ Note:
   * `"Alter": 30` (der Wert ist eine Zahl).
 * Array: `"Hobbys": ["Programmieren", "Lesen", "Laufen"]`, wobei die Hobbys als Liste von Strings dargestellt werden.
 * Boolean-Wert: `"Verheiratet": true` ist ein Boolescher Wert.
+* Objekt `"Wohnadresse"`
 
 
 ---
