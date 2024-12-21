@@ -49,7 +49,7 @@ JSON verwendet zwei Hauptstrukturen:
   "Verheiratet": true,
   "Wohnadresse":
   {
-  	"Strasse": "Bach Weg",
+    "Strasse": "Bach Weg",
     "Hausnummer": 12,
     "Stadt": "Ulm",
     "PLZ": 88888
