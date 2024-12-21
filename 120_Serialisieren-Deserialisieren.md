@@ -84,8 +84,11 @@ public class Program
 ## Voraussetzungen
 
 * Nur Properties können serialisiert werden
+
 * Es wird ein parameterloser Konstruktor benötigt
+
 * Oder ein Konstruktur mit genau so vielen Parametern wie die JSON Daten
+
 * Ein Konstuktor welcher mit `[JsonConstructor]` markiert ist
 
 Note:
