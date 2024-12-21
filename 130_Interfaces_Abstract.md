@@ -20,6 +20,7 @@ Note:
 * Jede Klasse die diesen Vertrag implementiert muss auch die im Vertrag definierten Member bereitstellen.
 * Trennt und entkoppelt den Vertrag und die Implementierung.
 * beschreibt eine Gruppe verwandter Methoden, die zu einer beliebigen Klasse oder Struktur gehören können.
+* **Polymorphismus**: Überladen von Methoden; Vererbung und Methodenüberschreibung
 
 ---
 
