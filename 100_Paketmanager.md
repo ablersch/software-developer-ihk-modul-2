@@ -79,5 +79,3 @@ Note:
 
 Note: 
 * **ÜBUNG** Medienverwaltung Aufgabe 7
-
-

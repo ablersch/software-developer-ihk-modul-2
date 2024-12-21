@@ -108,7 +108,7 @@ public abstract class Medium
 ```
 
 Note: 
-Wenn man eine Basisklasse wie Medium und abgeleitete Klassen wie Buch oder Film hat, benötigt der Deserialisierungsprozess eine Möglichkeit, den konkreten Typ des Objekts zu identifizieren.
+Wenn man eine Basisklasse wie `Medium` und abgeleitete Klassen wie `Buch` oder `Film` hat, benötigt der Deserialisierungsprozess eine Möglichkeit, den konkreten Typ des Objekts zu identifizieren.
 
 ---
 
