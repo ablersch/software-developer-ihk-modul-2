@@ -83,7 +83,8 @@ class Zeitschriften : IMedien
 
 Note:
 * **VS** Interface erstellen
-  * Quick Actions --> Pull up tp Interface
+  * Quick Actions --> Pull up to Interface
+* **ÜBUNG** Medienverwaltung Aufgabe 9
 
 ---
 
@@ -108,7 +109,7 @@ Note:
 
 Note: 
 * z.B. geometrische Berechnung: 
-  * Umfang gilt bei allen Klassen (Kreis, Rechteck, Dreieck), ist aber bei allen anderst zu berechnen.
+  * Umfang gilt bei allen Klassen wie z.B. Kreis, Rechteck oder Dreieck, ist aber bei allen anderst zu berechnen.
 
 ---
 
@@ -144,12 +145,12 @@ class Zeitschriften : Medien
 **Interface**:
   * Eine Klasse kann mehrere Interfaces einbinden.
   * Ein Interface besitzt nur Definitionen von öffentlichen Eigenschaften und Methoden welche später selbst programmiert werden müssen.
-  * Kein Konstruktor möglich
+  * Kein Konstruktor möglich.
 
 **abstrakte Klasse**:
   * Es kann nur von einer abstrakten Klasse geerbt werden.
-  * Eine abstrakte Klasse kann Felder und Methoden vererben und zusätzlich Methodendefinitionen definieren die implementiert werden und ausprogrammiert werden müssen.
-  * Konstruktoren können definiert werden
+  * Eine abstrakte Klasse kann Eigenschaften und Methoden vererben und zusätzlich Methodendefinitionen definieren die implementiert werden und ausprogrammiert werden müssen.
+  * Konstruktoren können definiert werden.
 
 ---
 
@@ -159,6 +160,3 @@ class Zeitschriften : Medien
 **Interfaces** benutzen um inhaltlich verschiedenen Klassen eine bestimmte Funktionalität zu bieten.
 
 **Abstrakte Klassen** nutzen als Basisklasse um inhaltlich gleichen Klassen eine gemeinsame Basis (die aber verändert oder erweitert werden kann) zu geben und zu erzwingen das bestimmte Methoden implementiert werden.
-
-Note: 
-**ÜBUNG** Medienverwaltung Aufgabe 9

@@ -2,10 +2,11 @@
 using System.Text.Json.Serialization;
 using Serilog;
 
-namespace Medienverwaltung_Aufgabe_8;
+namespace Medienverwaltung_Aufgabe_9;
 
 [JsonDerivedType(typeof(Buch), "Buch")]
 [JsonDerivedType(typeof(Video), "Video")]
+[JsonDerivedType(typeof(Tonie), "Tonie")]
 public abstract class Medium
 {
     public Medium(int signatur, string titel, Leihstatus status)

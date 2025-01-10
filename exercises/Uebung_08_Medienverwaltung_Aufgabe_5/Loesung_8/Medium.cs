@@ -44,7 +44,7 @@ internal abstract class Medium
         if (status == Leihstatus.entliehen)
         {
             status = Leihstatus.präsent;
-            Console.WriteLine($"{titel} efolgreich zurueckgegeben");
+            Console.WriteLine($"{titel} erfolgreich zurueckgegeben");
         }
         else
         {
