@@ -9,18 +9,18 @@ Wie muss eine Klasse aussehen?
 
 Ein [Interface](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/interface) ist eine Sammlung von Methodensignaturen, Eigenschaften oder Ereignissen, die von einer Klasse implementiert werden müssen. Es ist ein Vertrag, der festlegt, welche Funktionalitäten eine Klasse bereitstellen muss, ohne deren konkrete Implementierung vorzugeben.
 
-Interfaces ermöglichen:
+**Interfaces ermöglichen**:
 
 **Abstraktion**: Der Fokus liegt auf dem "Was" und nicht dem "Wie".
+
 **Polymorphismus**: Unterschiedliche Klassen können auf dieselbe Weise verwendet werden, wenn sie dasselbe Interface implementieren.
 
 Note:
 * wichtiges Konstrukt in der Programmierung, um Code sauber zu strukturieren.
-* Definiert einen Vertrag.
 * Jede Klasse die diesen Vertrag implementiert muss auch die im Vertrag definierten Member bereitstellen.
 * Trennt und entkoppelt den Vertrag und die Implementierung.
 * beschreibt eine Gruppe verwandter Methoden, die zu einer beliebigen Klasse oder Struktur gehören können.
-* **Polymorphismus**: Überladen von Methoden; Vererbung und Methodenüberschreibung
+* **Polymorphismus**: Überladen von Methoden; Vererbung und Methodenüberschreibung.
 
 ---
 
@@ -31,13 +31,12 @@ Note:
 * Die Schnittstellenmember besitzen selbst keine Codeimplementierung sondern nur Definitionen.
 * Schnittstellenmember sind automatisch öffentlich.
 * Sie dürfen keine Felder enthalten.
-* Eine Klasse darf von mehreren Schnittstellen erben.
 * Von einer Schnittstelle kann keine Instanz erstellt werden.
+* Eine Klasse darf von mehreren Schnittstellen erben.
 
 Note:
-
 * `Interface`-Klasse beginnt mit "I"
-* Schnittstellen können aus Methoden, Eigenschaften und Ereignissen bestehen.
+* Sollte in einer eigenen Datei definiet werden.
 * Keine Zugriffsmodifizierer zugelassen.
 * Es müssen in einer Klasse, welche ein Interface einbindet, alle Methoden implementiert werden.
 
@@ -55,7 +54,7 @@ Note:
 
 Note:
 * zu 3: Ein Interface wie `ILogger` kann in Tests durch eine simulierte Implementierung ersetzt werden.
-* zu 4: Ein Spiel könnte ein Interface IWeapon verwenden, sodass neue Waffentypen einfach hinzugefügt werden können.
+* zu 4: Ein Spiel könnte ein Interface `IWeapon` verwenden, sodass neue Waffentypen einfach hinzugefügt werden können.
 * zu 5: Eine App, die verschiedene Authentifizierungsmechanismen (z. B. OAuth, JWT) unterstützt
 
 ---
@@ -63,10 +62,10 @@ Note:
 <!-- .slide: class="left" -->
 ### Beispiel Interface
 
-```csharp []
+```csharp
 public interface IMedien 
 {
-  int Signatur {get; set;}
+  int Signatur { get; set; }
   void List();
 }
 
@@ -83,7 +82,8 @@ class Zeitschriften : IMedien
 ```
 
 Note:
-* **VS** Interface zeigen
+* **VS** Interface erstellen
+  * Quick Actions --> Pull up tp Interface
 
 ---
 
@@ -106,14 +106,16 @@ Note:
 
   * In der abgeleiteten Klasse müssen die abstrakten Methoden mit [`override`](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/override) überschrieben werden.
 
-Note: z.B. geometrische Berechnung: Umfang gilt bei allen Klassen (Kreis, Rechteck, Dreieck), ist aber überall anderst zu berechnen.
+Note: 
+* z.B. geometrische Berechnung: 
+  * Umfang gilt bei allen Klassen (Kreis, Rechteck, Dreieck), ist aber bei allen anderst zu berechnen.
 
 ---
 
 <!-- .slide: class="left" -->
 ### Beispiel abstrakte Klasse
 
-```csharp []
+```csharp
 public abstract class Medien 
 {
   abstract public void List();
@@ -146,7 +148,7 @@ class Zeitschriften : Medien
 
 **abstrakte Klasse**:
   * Es kann nur von einer abstrakten Klasse geerbt werden.
-  * Eine abstrakte Klasse kann Felder und Methoden vererben und zusätzlich Methodenrümpfe (Methodendefinitionen) definieren die implementiert werden und programmiert werden müssen.
+  * Eine abstrakte Klasse kann Felder und Methoden vererben und zusätzlich Methodendefinitionen definieren die implementiert werden und ausprogrammiert werden müssen.
   * Konstruktoren können definiert werden
 
 ---

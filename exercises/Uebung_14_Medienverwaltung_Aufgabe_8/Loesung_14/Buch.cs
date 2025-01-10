@@ -19,7 +19,7 @@ internal class Buch : Medium
             Console.WriteLine("Seitenzahl eingeben:");
             if (!int.TryParse(Console.ReadLine(), out int seitenzahl))
             {
-                Log.Logger.Warning("Seitenzahl nicht gültig. Bitte nur ganze Zahlen eingeben.");
+                Log.Warning("Seitenzahl nicht gültig. Bitte nur ganze Zahlen eingeben.");
             }
             else
             {
