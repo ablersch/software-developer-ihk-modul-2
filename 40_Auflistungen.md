@@ -20,11 +20,9 @@ Mehr zum Thema [Collections](https://docs.microsoft.com/de-de/dotnet/csharp/prog
   
 * **Erweiterte Funktionalitäten**: Arrays bieten nur grundlegende Funktionen und erfordern oft zusätzliche Logik. Collections bieten eine Vielzahl von Methoden und Eigenschaften, die Operationen wie Hinzufügen, Entfernen, Suchen, Sortieren und Filtern erleichtern.
   
-* **Leistungsfähige Datenzugriffsmethoden**: Bestimmte Collections ermöglicht schnellen Zugriff auf Elemente über Schlüssel oder über die Reihenfolge.
+* **Leistungsfähige Datenzugriffsmethoden**: Bestimmte Collections ermöglichen schnellen Zugriff auf Elemente über Schlüssel oder über die Reihenfolge.
 
 * **bessere Performance mit LINQ**: Arrays können auch mit LINQ abgefragt werden Collections aber bieten bessere Performance und Flexibilität bei größeren Datenmengen.
-
-* **Erweiter- und anpassbarkeit**: Arrays sind weniger flexibel und bieten keine eingebauten Mechanismen zur Erweiterung. Collections können erweitert werden, um benutzerdefinierte Funktionen bereitzustellen.
 
 ---
 
@@ -33,10 +31,13 @@ Mehr zum Thema [Collections](https://docs.microsoft.com/de-de/dotnet/csharp/prog
 
 Eine [`List<T>`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1) ist eine dynamische Liste welche Elemente vom spezifischen Typ `T` speichert.
 
+**Vorteile**:
 * ✔ einfach zu verwenden.
 * ✔ Dynamische Größe.
 * ✔ Zugriff über Index.
 * ✔ Gute Performance für das Hinzufügen am Ende.
+
+**Nachteile**:
 * ✖ Nicht für schnelle Suche nach Werten optimiert.
 * ✖ Langsames Einfügen oder Löschen in der Mitte.
 
@@ -74,16 +75,16 @@ Note:
 <!-- .slide: class="left" -->
 ## Dictionary\<TKey, TValue>
 
-Das [`Dictionary`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2) ist eine Hash-Table basierte Sammlung von Schlüssel-Wert-Paaren, die einen schnellen Zugriff auf Elemente anhand ihres eindeutigen Schlüssels ermöglicht.
+Das [`Dictionary`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2) ist eine Hash-Table basierte Sammlung von Schlüssel-Wert-Paaren, die einen schnellen Zugriff auf Elemente anhand ihres eindeutigen Schlüssels ermöglicht. Die Schlüssel und Werte können unterschiedliche Datentypen haben. Der Schlüssel muss eindeutig sein.
 
-Die Schlüssel und Werte können unterschiedliche Datentypen haben. Der Schlüssel muss eindeutig sein.
+**TKey** Der Typ des Schlüssels im Wörterbuch. **TValue** Der Typ des Wertes im Wörterbuch.
 
-**TKey** Der Typ des Schlüssels im Wörterbuch.
-**TValue** Der Typ des Wertes im Wörterbuch.
-
+**Vorteile**:
 * ✔ Sehr schnelles Suchen, Einfügen und Entfernen.
 * ✔ Geeignet für große Datenmengen mit Schlüssel-Zugriff.
 * ✔ Kein doppelter Schlüssel erlaubt.
+
+**Nachteile**:
 * ✖ Höherer Speicherverbrauch als eine Liste.
 * ✖ Schlüssel müssen eindeutig sein.
 * ✖ Keine garantierte Reihenfolge.
@@ -122,12 +123,12 @@ foreach (KeyValuePair<string, string> pair in dictionary)
 
 Eine ungeordnete Menge von eindeutigen Elementen mit schneller Suche.
 
-Vorteile:
+**Vorteile**:
 * ✔ Sehr schnelle Such- und Einfügeoperationen.
 * ✔ Automatische Verhinderung von doppelten Einträgen.
 * ✔ Effizienter als eine `List<T>` für die Prüfung, ob ein Element vorhanden ist.
 
-Nachteile:
+**Nachteile**:
 * ✖ Keine garantierte Reihenfolge.
 * ✖ Höherer Speicherverbrauch als eine `List<T>`.
 * ✖ Kein direkter Indexzugriff.
