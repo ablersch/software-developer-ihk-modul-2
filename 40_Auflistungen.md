@@ -1,129 +1,44 @@
 # Collections (Auflistungen)
 
-Datenstrukturen zum Speichern und Verwalten von Daten.
+Datenstrukturen zum speichern und verwalten von Daten.
 
 ---
 
 <!-- .slide: class="left" -->
-## Collection Klassen
+## Auflistungen
 
 Collections sind spezialisierte Datenstrukturen, die das Speichern, Verwalten und Durchsuchen von Objekten auf effiziente und benutzerfreundliche Weise ermöglichen. Es gibt verschiedene Arten von Collections, die jeweils für unterschiedliche Anwendungsfälle optimiert sind.
-
-Vorteile gegenüber Arrays:
-
-* Dynamische Größe
-* Erweiterte Funktionalitäten
-* Leistungsfähige Datenzugriffsmethoden
-* bessere Performance mit LINQ
-* Erweiter- und Anpassbarkeit
-
-Note:
-* **Dynamische Größe:** Arrays haben eine feste Größe; Collections passen diese zur Laufzeit an.
-* **Erweiterte Funktionalitäten**: Arrays bieten nur grundlegende Funktionen und erfordern oft zusätzliche Logik; Collections bieten eine Vielzahl von Methoden und Eigenschaften, die Operationen wie Hinzufügen, Entfernen, Suchen, Sortieren und Filtern erleichtern.
-* **Leistungsfähige Datenzugriffsmethoden**: Bestimmte Collections ermöglicht schnellen Zugriff auf Elemente über Schlüssel (Dictionary) oder über die Reihenfolge (Queue).
-* **bessere Performance mit LINQ**: Arrays können auch mit LINQ abgefragt werden; Collections lassen sich nahtlos mit LINQ abfragen und bieten bessere Performance und Flexibilität bei größeren Datenmengen.
-* **Erweiter- und anpassbarkeit**: Arrays sind weniger flexibel und bieten keine eingebauten Mechanismen zur Erweiterung; Collections können erweitert werden, um benutzerdefinierte Funktionen bereitzustellen.
-
----
-
-<!-- .slide: class="left" -->
-### Collection Namespaces
-
-* **System.Collections:** Dabei kann die Collection immer den Typ `Object` verwalten. Eine Collection kann somit verschiedene Typen beinhalten. D.h. es müssen alle Elemente beim Zugriff konvertiert werden.
-
-* **System.Collections.Generics:** Diesen Nachteil haben die generischen Collections nicht und sind deshalb zu bevorzugen da diese **Typsicherheit** bieten. D.h. beim Instanziieren werden die Datentypen festgelegt.
 
 Mehr zum Thema [Collections](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/concepts/collections)
 
 ---
 
 <!-- .slide: class="left" -->
-## ArrayList
+## Vorteile
 
-Eine [`ArrayList`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.arraylist?view=net-6.0) ist eine dynamische Liste von Objekten. Im Gegensatz zu Arrays, die eine feste Größe haben, kann eine `ArrayList` in ihrer Größe dynamisch wachsen und schrumpfen, wenn Elemente hinzugefügt oder entfernt werden.
+* **Dynamische Größe**: Arrays haben eine feste Größe; Collections passen diese zur Laufzeit an.
+  
+* **Erweiterte Funktionalitäten**: Arrays bieten nur grundlegende Funktionen und erfordern oft zusätzliche Logik; Collections bieten eine Vielzahl von Methoden und Eigenschaften, die Operationen wie Hinzufügen, Entfernen, Suchen, Sortieren und Filtern erleichtern.
+  
+* **Leistungsfähige Datenzugriffsmethoden**: Bestimmte Collections ermöglicht schnellen Zugriff auf Elemente über Schlüssel (Dictionary) oder über die Reihenfolge (Queue).
 
-* Dynamische Größe
-* Zugriff über Index
-* kann beliebige Objekte speichern
-* Performance schlechter als bei `List<T>`
+* **bessere Performance mit LINQ**: Arrays können auch mit LINQ abgefragt werden; Collections lassen sich nahtlos mit LINQ abfragen und bieten bessere Performance und Flexibilität bei größeren Datenmengen.
 
----
-
-<!-- .slide: class="left" -->
-### Beispiel ArrayList
-
-```csharp []
-var arrayList = new ArrayList();
-arrayList.Add(5);
-arrayList.Add("text");
-Console.WriteLine($"Elemente: {arrayList.Count}");
-
-// Der Typ wird beim Kompilieren des Codes festgelegt
-foreach (var element in arrayList) 
-{
-     Console.WriteLine(element);
-}
-arrayList[1] = 10;
-Console.WriteLine("2. Element: " + arrayList[1]);
-```
-
----
-
-<!-- .slide: class="left" -->
-## Hashtable
-
-Eine [`Hashtable`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.hashtable?view=net-6.0) ist eine spezielle Art von Datenstruktur die Daten in Form von Schlüssel-Wert-Paaren speichert und über einen sogenannten Hashing-Mechanismus schnellen Zugriff auf die gespeicherten Daten bietet.
-
-Kommt es nicht auf die Reihenfolge der Elemente an, kann man sich dafür entscheiden. Es kann ein bestimmtes Element zwar schnell gefunden werden, man hat aber keinen Einfluss auf die Positionierung der Elemente in der Liste.
-
-* Schneller Zugriff über Schlüssel (Hashcode)
-* Keinen Einfluss auf den Index
-* Reihenfolge nicht beeinflussbar
-
-Note: 
-Bei einer Liste mit Indizes muss die Liste so lange durchlaufen werden bis eine Übereinstimmung gefunden wurde. Bei sehr vielen Einträgen, kann das sehr zeitaufwendig und rechenintensiv sein.
-
-Hashcode: `Int`-Wert welcher über Algorithmus aus dem Schlüssel berechnet wird.
-
----
-
-<!-- .slide: class="left" -->
-### Beispiel Hashtable
-
-```csharp []
-var hashTable = new Hashtable();
-hashTable.Add("auto1", "Das Auto ist ein Audi");
-hashTable.Add("auto2", "Das Auto ist ein BMW");
-hashTable.Add("motorrad1", "Das Motorrad ist eine Ducati");
-
-if (hashTable.ContainsKey("auto1")) {
-     Console.WriteLine($"Ausgabe des Wertes von KEY auto1: {hashTable["auto1"]}");
-}
-
-if (hashTable.ContainsValue("Audi")) {
-     Console.WriteLine("beinhaltet WERT Audi");
-}
-
-// Definiert ein Schlüssel-Wert-Paar für ein Wörterbuch. Es ist eine generische Struktur mit 2 Werten.
-// Kann bei Collections benutzt werden
-foreach (DictionaryEntry element in hashTable) {
-     Console.WriteLine($"Key: {element.Key} Wert: {element.Value}");
-}
-```
+* **Erweiter- und anpassbarkeit**: Arrays sind weniger flexibel und bieten keine eingebauten Mechanismen zur Erweiterung; Collections können erweitert werden, um benutzerdefinierte Funktionen bereitzustellen.
 
 ---
 
 <!-- .slide: class="left" -->
 ## List\<T>
 
-Eine [`List<T>`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1?view=net-6.0) ist eine generische, dynamische Liste. Sie speichert Elemente vom spezifischen Typ `T`, wodurch Typensicherheit gewährleistet wird.
+Eine [`List<T>`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1) ist eine dynamische Liste welche Elemente vom spezifischen Typ `T` speichert.
 
-* Typsicherheit
-* Dynamische Größe
-* Zugriff über Index
-* Kein schneller Zugriff (`Dictionary` ist schneller)
-* Listen sind ideal für Schleifen
-* Werden in C\# häufig genutzt
+* ✅ einfach zu verwenden.
+* ✅ Dynamische Größe.
+* ✅ Zugriff über Index.
+* ✅ Gute Performance für das Hinzufügen am Ende.
+* ❌ Nicht für schnelle Suche nach Werten optimiert.
+* ❌ Langsames Einfügen oder Löschen in der Mitte.
 
 ---
 
@@ -150,24 +65,27 @@ foreach (int i in liste) {
 ```
 
 Note:
-* **VS** List Verwendung zeigen mit Zuweisung von Objekten und Objekten mit Vererbung.
+* **VS** `List` Verwendung zeigen mit Zuweisung von Objekten und Objekten mit Vererbung.
 
 ---
 
 <!-- .slide: class="left" -->
 ## Dictionary<TKey, TValue>
 
-Das [`Dictionary`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0) ist eine Sammlung von Schlüssel-Wert-Paaren, die einen schnellen Zugriff auf Elemente anhand ihres eindeutigen Schlüssels ermöglicht.
+Das [`Dictionary`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2) ist eine Hash-Table basierte Sammlung von Schlüssel-Wert-Paaren, die einen schnellen Zugriff auf Elemente anhand ihres eindeutigen Schlüssels ermöglicht.
 
-Die Schlüssel und Werte können unterschiedliche Typen haben, wobei der Schlüssel typischerweise ein einzigartiges Objekt sein muss, um Verwechslungen zu vermeiden.
+Die Schlüssel und Werte können unterschiedliche Datentypen haben. wobei der Schlüssel typischerweise ein einzigartiges Objekt sein muss, um Verwechslungen zu vermeiden.
 
 **TKey** Der Typ des Schlüssels im Wörterbuch.
 **TValue** Der Typ des Wertes im Wörterbuch.
 
 
-* Schneller Zugriff mit Schlüsseln (ist einer `Hashtable` oder einer `List` vorzuziehen)
-* Schlüssel-Wert-Paare
-* Typsicherheit
+* ✔ Sehr schnelles Suchen, Einfügen und Entfernen.
+* ✔ Geeignet für große Datenmengen mit Schlüssel-Zugriff.
+* ✔ Kein doppelter Schlüssel erlaubt.
+* ✖ Höherer Speicherverbrauch als eine Liste.
+* ✖ Schlüssel müssen eindeutig sein.
+* ✖ Keine garantierte Reihenfolge.
 
 ---
 
@@ -196,9 +114,54 @@ foreach (KeyValuePair<string, string> pair in dictionary) {
 ---
 
 <!-- .slide: class="left" -->
+## HashSet<T>
+
+Eine ungeordnete Menge von eindeutigen Elementen mit schneller Suche.
+
+Vorteile:
+✔ Sehr schnelle Such- und Einfügeoperationen.
+✔ Automatische Verhinderung von doppelten Einträgen.
+✔ Effizienter als eine `List<T>` für die Prüfung, ob ein Element vorhanden ist.
+
+Nachteile:
+✖ Keine garantierte Reihenfolge.
+✖ Höherer Speicherverbrauch als eine `List<T>`.
+✖ Kein direkter Indexzugriff.
+
+---
+
+<!-- .slide: class="left" -->
+## Beispiel HashSet<T>
+
+```csharp
+HashSet<int> zahlen = new HashSet<int> { 1, 2, 3, 4, 5 };
+
+// Einfügen eines neuen Werts
+bool hinzugefügt = zahlen.Add(3); // Wird nicht hinzugefügt, da 3 bereits existiert
+Console.WriteLine($"Wurde die 3 hinzugefügt? {hinzugefügt}"); // False
+
+hinzugefügt = zahlen.Add(6); // Wird hinzugefügt, da 6 noch nicht existiert
+Console.WriteLine($"Wurde die 6 hinzugefügt? {hinzugefügt}"); // True
+
+// Ausgabe der Werte
+Console.WriteLine("HashSet-Inhalt:");
+foreach (var zahl in zahlen)
+{
+     Console.WriteLine(zahl);
+}
+
+// Prüfen, ob ein Element existiert
+Console.WriteLine($"Enthält das HashSet die Zahl 4? {zahlen.Contains(4)}"); // True
+
+// Entfernen eines Elements
+zahlen.Remove(2);
+```
+
+---
+
+<!-- .slide: class="left" -->
 ## weitere Collections
 
-* **`HashSet<T>`**: Sammlung eindeutiger Werte ohne bestimmter Reihenfolge, keine Duplikate.
 * **`Queue<T>`**: FIFO-Warteschlange (First In, First Out).
 * **`Stack<T>`**: LIFO-Stapel (Last In, First Out).
 * **`SortedList`**<TKey, TValue>: Sortierte Schlüssel-Wert-Paare.
@@ -209,4 +172,5 @@ foreach (KeyValuePair<string, string> pair in dictionary) {
 
 Note:
 * Jede Collection bietet Lösungen für spezifische Anforderungen wie Geschwindigkeit, Sortierung, Einzigartigkeit und Thread-Sicherheit.
-* **ÜBUNG 7** Wetterstation
+* **ÜBUNG 7** Geometrische Formen
+  * Für die Übung `Math`-Klasse notwendig

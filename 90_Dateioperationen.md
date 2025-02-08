@@ -1,6 +1,6 @@
-# Dateioperationen
+# Dateioperationen und DLLs
 
-Mit Dateien arbeiten.
+Mit Dateien arbeiten, DLLs erstellen und nutzen
 
 ---
 
@@ -404,6 +404,62 @@ Verwende `FileInfo` wenn man:
 * Wiederholt mit derselben Datei arbeiten will
 * Zusätzliche Informationen über eine Datei benötigt (z. B. Größe, Erstellungszeit, Änderungszeit).
 
+---
+
+<!-- .slide: class="left" -->
+## DLL
+
+DLLs (Dynamic Link Libraries) sind eine praktische Möglichkeit, Code wiederverwendbar, modular und wartbar zu machen. Sie sind besonders nützlich in großen Projekten oder wenn man Funktionalität mit mehreren Anwendungen teilen möchte.
+
+**Vorteile**:
+
+* **Wiederverwendbarkeit**: Eine DLL kann in mehreren Projekten verwendet werden, ohne den Code zu duplizieren.
+* **Modularität**: Große Projekte können in kleinere, übersichtlichere Module aufgeteilt werden.
+* **Wartbarkeit**: Änderungen in einer DLL müssen nicht in jeder Anwendung separat gemacht werden – es reicht, die DLL zu aktualisieren.
+
+---
+
+<!-- .slide: class="left" -->
+## DLL erstellen
+
+In Visual Studio ein neues "Class Library (.NET)-Projekt" erstellen.
+
+```csharp
+namespace MathLibrary
+{
+    public class Calculator
+    {
+        public int Add(int a, int b)
+        {
+            return a + b;
+        }
+    }
+}
+```
+
+---
+
+<!-- .slide: class="left" -->
+## Nutzung der DLL in einer Konsolenanwendung
+
+Ein neues Konsolenprojekt erstellen und die DLL als Referenz hinzufügen.
+
+```csharp
+using System;
+using MathLibrary;  // Namespace der DLL
+
+class Program
+{
+    static void Main()
+    {
+        Calculator calc = new Calculator();
+        int result = calc.Add(5, 7);
+        Console.WriteLine($"Ergebnis: {result}");
+    }
+}
+```
+
+Nach dem Kompilieren und Verknüpfen der DLL kann die Konsolenanwendung auf die `Calculator`-Klasse zugreifen.
 
 Note:
 * **VS** zeigen

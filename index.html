@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="css/headers.css">
 
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="plugin/highlight/vs2015.css" id="highlight-theme">
 
 		<link href="images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
 
@@ -26,6 +26,10 @@
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+			// Change highlight theme
+			var highlightThemeLink = document.getElementById('highlight-theme');
+			highlightThemeLink.href = (window.location.search.match(/print-pdf/gi)) ? 'plugin/highlight/isbl-editor-light.css' : 'plugin/highlight/vs2015.css';
 		</script>
 
 <style>
