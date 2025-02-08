@@ -27,11 +27,11 @@
 
 ## Ausgabe
 
-In der `Main()` erstellen Sie zwei Listen um Rechtecke und Kreise speichern zu können. Erstellen Sie mehrere Instanzen von `Rechteck` und `Kreis` und füge sie zur passenden Liste hinzu. 
+In der `Main()` erstellen Sie eine Liste um Formen speichern zu können. Erstellen Sie mehrere Instanzen von `Rechteck` und `Kreis` und füge Sie diese der Liste hinzu. 
 
 Die Daten können statisch hinterlegt werden. Keine Eingabe über die Konsole notwendig.
 
-Durchlaufen Sie die Listen mit einer Schleife und geben Sie für jede Form den Namen und die berechnete Fläche aus.
+Durchlaufen Sie die Liste mit einer Schleife und geben Sie für jede Form den Namen und die berechnete Fläche aus.
 
 ### Ausgabe
 

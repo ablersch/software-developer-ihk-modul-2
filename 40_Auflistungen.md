@@ -7,24 +7,24 @@ Datenstrukturen zum speichern und verwalten von Daten.
 <!-- .slide: class="left" -->
 ## Auflistungen
 
-Collections sind spezialisierte Datenstrukturen, die das Speichern, Verwalten und Durchsuchen von Objekten auf effiziente und benutzerfreundliche Weise ermöglichen. Es gibt verschiedene Arten von Collections, die jeweils für unterschiedliche Anwendungsfälle optimiert sind.
+Collections sind Datenstrukturen, die das Speichern, Verwalten und Durchsuchen von Objekten auf effiziente und benutzerfreundliche Weise ermöglichen. Es gibt verschiedene Arten von Collections, die jeweils für unterschiedliche Anwendungsfälle optimiert sind.
 
 Mehr zum Thema [Collections](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/concepts/collections)
 
 ---
 
 <!-- .slide: class="left" -->
-## Vorteile
+## Vorteile gegenüber Arrays
 
-* **Dynamische Größe**: Arrays haben eine feste Größe; Collections passen diese zur Laufzeit an.
+* **Dynamische Größe**: Arrays haben eine feste Größe, Collections passen diese zur Laufzeit an.
   
-* **Erweiterte Funktionalitäten**: Arrays bieten nur grundlegende Funktionen und erfordern oft zusätzliche Logik; Collections bieten eine Vielzahl von Methoden und Eigenschaften, die Operationen wie Hinzufügen, Entfernen, Suchen, Sortieren und Filtern erleichtern.
+* **Erweiterte Funktionalitäten**: Arrays bieten nur grundlegende Funktionen und erfordern oft zusätzliche Logik. Collections bieten eine Vielzahl von Methoden und Eigenschaften, die Operationen wie Hinzufügen, Entfernen, Suchen, Sortieren und Filtern erleichtern.
   
-* **Leistungsfähige Datenzugriffsmethoden**: Bestimmte Collections ermöglicht schnellen Zugriff auf Elemente über Schlüssel (Dictionary) oder über die Reihenfolge (Queue).
+* **Leistungsfähige Datenzugriffsmethoden**: Bestimmte Collections ermöglicht schnellen Zugriff auf Elemente über Schlüssel oder über die Reihenfolge.
 
-* **bessere Performance mit LINQ**: Arrays können auch mit LINQ abgefragt werden; Collections lassen sich nahtlos mit LINQ abfragen und bieten bessere Performance und Flexibilität bei größeren Datenmengen.
+* **bessere Performance mit LINQ**: Arrays können auch mit LINQ abgefragt werden Collections aber bieten bessere Performance und Flexibilität bei größeren Datenmengen.
 
-* **Erweiter- und anpassbarkeit**: Arrays sind weniger flexibel und bieten keine eingebauten Mechanismen zur Erweiterung; Collections können erweitert werden, um benutzerdefinierte Funktionen bereitzustellen.
+* **Erweiter- und anpassbarkeit**: Arrays sind weniger flexibel und bieten keine eingebauten Mechanismen zur Erweiterung. Collections können erweitert werden, um benutzerdefinierte Funktionen bereitzustellen.
 
 ---
 
@@ -33,12 +33,12 @@ Mehr zum Thema [Collections](https://docs.microsoft.com/de-de/dotnet/csharp/prog
 
 Eine [`List<T>`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1) ist eine dynamische Liste welche Elemente vom spezifischen Typ `T` speichert.
 
-* ✅ einfach zu verwenden.
-* ✅ Dynamische Größe.
-* ✅ Zugriff über Index.
-* ✅ Gute Performance für das Hinzufügen am Ende.
-* ❌ Nicht für schnelle Suche nach Werten optimiert.
-* ❌ Langsames Einfügen oder Löschen in der Mitte.
+* ✔ einfach zu verwenden.
+* ✔ Dynamische Größe.
+* ✔ Zugriff über Index.
+* ✔ Gute Performance für das Hinzufügen am Ende.
+* ✖ Nicht für schnelle Suche nach Werten optimiert.
+* ✖ Langsames Einfügen oder Löschen in der Mitte.
 
 ---
 
@@ -53,13 +53,15 @@ liste.Add(60);
 
 Console.WriteLine($"Anzahl Elemente: {liste.Count}");
 
-if (liste.Contains(40)) {
+if (liste.Contains(40)) 
+{
      Console.WriteLine("Liste beinhaltet Wert 40");
 }
 
 Console.WriteLine($"2. Wert {liste[1]}");
 
-foreach (int i in liste) {
+foreach (int i in liste) 
+{
      Console.WriteLine(i);
 }
 ```
@@ -70,15 +72,14 @@ Note:
 ---
 
 <!-- .slide: class="left" -->
-## Dictionary<TKey, TValue>
+## Dictionary\<TKey, TValue>
 
 Das [`Dictionary`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2) ist eine Hash-Table basierte Sammlung von Schlüssel-Wert-Paaren, die einen schnellen Zugriff auf Elemente anhand ihres eindeutigen Schlüssels ermöglicht.
 
-Die Schlüssel und Werte können unterschiedliche Datentypen haben. wobei der Schlüssel typischerweise ein einzigartiges Objekt sein muss, um Verwechslungen zu vermeiden.
+Die Schlüssel und Werte können unterschiedliche Datentypen haben. Der Schlüssel muss eindeutig sein.
 
 **TKey** Der Typ des Schlüssels im Wörterbuch.
 **TValue** Der Typ des Wertes im Wörterbuch.
-
 
 * ✔ Sehr schnelles Suchen, Einfügen und Entfernen.
 * ✔ Geeignet für große Datenmengen mit Schlüssel-Zugriff.
@@ -90,7 +91,7 @@ Die Schlüssel und Werte können unterschiedliche Datentypen haben. wobei der Sc
 ---
 
 <!-- .slide: class="left" -->
-### Beispiel Dictionary
+### Beispiel Dictionary\<TKey, TValue>
 
 ```csharp []
 var dictionary = new Dictionary<string, string>();
@@ -98,15 +99,18 @@ dictionary.Add("tier1", "Hase");
 dictionary.Add("tier2", "Hund");
 dictionary.Add("tier3", "Esel");
 
-if (dictionary.ContainsKey("tier1")) {
+if (dictionary.ContainsKey("tier1")) 
+{
      Console.WriteLine($"Wert zum KEY tier1: {dictionary["tier1"]}");
 }
 
-if (dictionary.TryGetValue("tier1", out string tempString)) {
+if (dictionary.TryGetValue("tier1", out string tempString)) 
+{
      Console.WriteLine($"found Wert: {tempString}");
 }
 
-foreach (KeyValuePair<string, string> pair in dictionary) {
+foreach (KeyValuePair<string, string> pair in dictionary) 
+{
      Console.WriteLine($"Key: {pair.Key} Wert: {pair.Value}");
 }
 ```
@@ -114,24 +118,24 @@ foreach (KeyValuePair<string, string> pair in dictionary) {
 ---
 
 <!-- .slide: class="left" -->
-## HashSet<T>
+## HashSet\<T>
 
 Eine ungeordnete Menge von eindeutigen Elementen mit schneller Suche.
 
 Vorteile:
-✔ Sehr schnelle Such- und Einfügeoperationen.
-✔ Automatische Verhinderung von doppelten Einträgen.
-✔ Effizienter als eine `List<T>` für die Prüfung, ob ein Element vorhanden ist.
+* ✔ Sehr schnelle Such- und Einfügeoperationen.
+* ✔ Automatische Verhinderung von doppelten Einträgen.
+* ✔ Effizienter als eine `List<T>` für die Prüfung, ob ein Element vorhanden ist.
 
 Nachteile:
-✖ Keine garantierte Reihenfolge.
-✖ Höherer Speicherverbrauch als eine `List<T>`.
-✖ Kein direkter Indexzugriff.
+* ✖ Keine garantierte Reihenfolge.
+* ✖ Höherer Speicherverbrauch als eine `List<T>`.
+* ✖ Kein direkter Indexzugriff.
 
 ---
 
 <!-- .slide: class="left" -->
-## Beispiel HashSet<T>
+## Beispiel HashSet\<T>
 
 ```csharp
 HashSet<int> zahlen = new HashSet<int> { 1, 2, 3, 4, 5 };
@@ -143,7 +147,6 @@ Console.WriteLine($"Wurde die 3 hinzugefügt? {hinzugefügt}"); // False
 hinzugefügt = zahlen.Add(6); // Wird hinzugefügt, da 6 noch nicht existiert
 Console.WriteLine($"Wurde die 6 hinzugefügt? {hinzugefügt}"); // True
 
-// Ausgabe der Werte
 Console.WriteLine("HashSet-Inhalt:");
 foreach (var zahl in zahlen)
 {
