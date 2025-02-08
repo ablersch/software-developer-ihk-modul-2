@@ -75,7 +75,7 @@ Note:
 <!-- .slide: class="left" -->
 ## Dictionary\<TKey, TValue>
 
-Das [`Dictionary`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2) ist eine Hash-Table basierte Sammlung von Schlüssel-Wert-Paaren, die einen schnellen Zugriff auf Elemente anhand ihres eindeutigen Schlüssels ermöglicht. Die Schlüssel und Werte können unterschiedliche Datentypen haben. Der Schlüssel muss eindeutig sein.
+Das [`Dictionary`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.dictionary-2) ist eine Hash-Table basierte Sammlung von Schlüssel-Wert-Paaren, die einen schnellen Zugriff auf Elemente anhand ihres eindeutigen Schlüssels ermöglicht.
 
 **TKey** Der Typ des Schlüssels im Wörterbuch. **TValue** Der Typ des Wertes im Wörterbuch.
 
