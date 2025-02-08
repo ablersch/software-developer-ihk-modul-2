@@ -9,7 +9,7 @@ Datenstrukturen zum speichern und verwalten von Daten.
 
 Collections sind Datenstrukturen, die das Speichern, Verwalten und Durchsuchen von Objekten auf effiziente und benutzerfreundliche Weise ermöglichen. Es gibt verschiedene Arten von Collections, die jeweils für unterschiedliche Anwendungsfälle optimiert sind.
 
-Mehr zum Thema [Collections](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/concepts/collections)
+Mehr zum Thema [Collections](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/concepts/collections).
 
 ---
 
@@ -44,7 +44,7 @@ Eine [`List<T>`](https://docs.microsoft.com/de-de/dotnet/api/system.collections.
 ---
 
 <!-- .slide: class="left" -->
-### Beispiel List
+### Beispiel List\<T>
 
 ```csharp []
 var liste = new List<int>();
