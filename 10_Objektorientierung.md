@@ -219,7 +219,7 @@ Note:
 ---
 
 <!-- .slide: class="left" -->
-### Eigenschaft (Property)
+### Auto-Property
 
 Eigenschaften können automatisch erstellt werden, wenn keine zusätzliche Logik benötigt wird. Das vereinfacht den Code:
 
@@ -292,6 +292,24 @@ Note:
   * Prüfen auf leeren String in der Eigenschaft.
   * Sichtbarkeit von Variablen (Felder, Eigenschaften, Methoden) als Wdh
   * * **ÜBUNG 2** Sekundenspeicher
+
+---
+
+<!-- .slide: class="left" -->
+### Warum Eigenschaften verwenden?
+
+* **Kapselung & Kontrolle:** Properties ermöglichen es, den Zugriff auf Felder zu steuern, z. B. durch `get`- und `set`-Methoden.
+* **Automatische Properties:** Wenn keine zusätzliche Logik nötig ist, kann man Auto-Properties nutzen.
+* **Read-Only & Schreibschutz:** Properties ermöglichen z. B. nur lesbaren Zugriff (`get` ohne `set`).
+* **Getter-Logik & Berechnete Werte:** Ein Property kann einen Wert berechnen, anstatt ihn direkt zu speichern.
+* **Datenbindung & Serialisierung**
+    * **WPF, WinForms & Blazor:** Properties ermöglichen Datenbindung (`INotifyPropertyChanged`).
+    * **JSON/XML-Serialisierung:** Properties sind oft nötig, weil viele Serializer keine Felder unterstützen
+
+**Wann sind Felder sinnvoll?**
+* In privaten, internen Kontexten, wenn keine zusätzliche Logik nötig ist.
+* In Performance-kritischen Bereichen, wo der Overhead von Properties vermieden werden soll.
+* Bei Readonly-Feldern (`readonly int myField;`), die nur im Konstruktor gesetzt werden.
 
 ---
 
